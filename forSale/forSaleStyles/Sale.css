@@ -18,13 +18,18 @@ main {
   display: flex;
   flex-direction: column;
   width: 285px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-right: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+.apartmentPic {
+  padding-bottom: 20px;
 }
 .apartment-description {
   display: flex;
   flex-direction: column;
+}
+.apartment-description span {
+  padding-bottom: 10px;
 }
 .apartment-description .price {
   font-size: 24px;
@@ -44,4 +49,10 @@ main {
   font-size: 10px;
   line-height: 12px;
   color: rgba(0, 0, 0, 0.5);
+}
+.more-details span {
+  padding-right: 10px;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
 }
