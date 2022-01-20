@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+.apartment-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.apartment {
+  display: flex;
+  flex-direction: column;
+  width: 285px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+.apartment-description {
+  display: flex;
+  flex-direction: column;
+}
+.apartment-description .price {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+}
+.apartment-description .title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
+.address,
+.announce-date {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
