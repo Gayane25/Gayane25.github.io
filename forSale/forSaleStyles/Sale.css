@@ -195,3 +195,43 @@ main {
   line-height: 12px;
   font-weight: 400;
 }
+
+.footer-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #2d363c;
+  flex-direction: row;
+  padding-bottom: 50px;
+  margin-top: 165px;
+  padding-left: 135px;
+  padding-top: 50px;
+  width: 100%;
+}
+.footer-side h3 {
+  font-family: Roboto;
+  padding-bottom: 6px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+.footer-side ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.footer-side ul li {
+  padding-bottom: 6px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.footer-side ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+}
