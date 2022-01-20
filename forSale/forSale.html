@@ -10,13 +10,59 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./forSaleStyles/Sale.css" />
     <title>Apartment for sale</title>
   </head>
   <body>
-    <header></header>
+    <header class="header-side">
+      <div class="nav-side">
+        <span class="logo"><img src="../assets/logo.png" alt="logo icon"></span>
+        <ul>
+          <li><a href="#">For sale</a></li>
+          <li><a href="#">For rent</a></li>
+          <li><a href="#">Daily rental</a></li>
+          <li><a href="#">Projects</a></li>
+        </ul>
+      </div>
+      <div class="account-side">
+        <button type="submit" class="advertise-button">
+          Advertise
+        </button>
+        <span class="account-icon"><a href="#"><i class="fas fa-user-circle"style ="width:30px"></i></a></span>
+      </div>
+    </header>
     <main>
-      <section class="select-section"></section>
+      <div class="select-section">
+        <select name="" id=""class="select-style">
+          <option value="province">Province</option>
+          <option value="province">Province</option>
+        </select>
+        <select name="" id=""class="select-style">
+          <option value="housing">Housing</option>
+          <option value="housing">Housing</option>
+        </select>
+        <select name="" id=""class="select-style">
+          <option value="price">Price</option>
+          <option value="price">Price</option>
+        </select>
+        <select name="" id=""class="select-style">
+          <option value="size">Size(&#13217)</option>
+          <option value="size">Size(&#13217)</option>
+        </select>
+        <select name="" id=""class="select-style">
+          <option value="member">Member of room</option>
+          <option value="member">Member of room</option>
+        </select>
+        <form action="">
+          <div class="search-line">
+          <input type="text" class="inputIcon"placeholder="Search...">
+          <span><i class="fas fa-search" style="color: rgba(0, 0, 0, 0.1);line-height: 2"></i></span>
+          </div>
+        </form>
+        <span class="filter"><i class="fas fa-filter"></i></span>
+        
+      </div>
       <section class="smart-sort">
           <span class="page-title">Apartment for sale</span>
           <span class="found-results">(32.564) results found.</span>
