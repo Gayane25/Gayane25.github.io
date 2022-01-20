@@ -1,30 +1,122 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container-fluid{
+
+body {
+    font-family: Roboto sans-serif Arial;
+}
+
+a{
+    text-decoration: none;
+}
+
+.flex-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.container-fluid {
     width: 1440px;
+    margin: 0 auto;
 }
 
 /* Header */
-.for-sale-content-header{
+.for-sale-content-header {
     width: 100%;
     height: 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 9px 120px;
 }
 
+.header-container {
+    width: 1162px;
+    height: 42px;
+    justify-content: space-between;
+}
+
+.left-nav {
+    width: 450px;
+    height: 42px;
+    justify-content: space-between;
+}
+
+.logo {
+    align-items: center;
+    width: 120px;
+    justify-content: flex-start;
+}
+
+.logo-img {
+    width: 30px;
+    height: 42px;
+    margin-right: 8px;
+    background-image: url("../assets/images/group.png");
+}
+
+.logo-title {
+
+}
+.logo p{
+    font-size: 18px;
+    line-height: 21px;
+    font-family: Roboto;
+}
+.nav-container {
+    width: 330px;
+    padding: 13px 0 13px 40px;
+}
+nav{
+    justify-content: space-between;
+}
+a.nav-item {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    font-family: Roboto;
+}
+
+.right-nav {
+    width: 167px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-advertise-button {
+    height: 30px;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 5px 23px;
+    font-family: Roboto;
+    color: #FFFFFF;
+    background: #E02828;
+    border-radius: 5px;
+}
+
+.profile-button {
+    width: 25px;
+    height: 25px;
+    background: url("../assets/images/profile.png");
+
+}
+
+
 /* Footer */
-.for-sale-content-footer{
+.for-sale-content-footer {
     margin-top: 3548px;
     padding-top: 50px;
     width: 100%;
     height: 290px;
     background: #2D363C;
     color: #FFF;
-    font-family: Roboto sans-serif Arial;
 
 }
-.footer-container{
+
+.footer-container {
     width: 81%;
     margin: 0 auto;
     display: flex;
@@ -32,25 +124,31 @@
     flex-wrap: nowrap;
     justify-content: space-between;
 }
-.footer-homefast{
+
+.footer-homefast {
 
 }
-.footer-our-services{
+
+.footer-our-services {
 
 }
-.footer-other{
+
+.footer-other {
 
 }
-.footer-container ul{
+
+.footer-container ul {
     list-style-type: none;
 }
-.list-item{
+
+.list-item {
     font-size: 14px;
     line-height: 16px;
     color: rgba(255, 255, 255, 0.5);
     padding-top: 5px;
 }
-.title-item{
+
+.title-item {
     font-size: 18px;
     line-height: 21px;
 }
