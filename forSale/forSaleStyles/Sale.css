@@ -8,18 +8,59 @@ main {
   flex-direction: column;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
+  background-color: #f8f8f8;
 }
 .apartment-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
+.smart-sort {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 21px;
+  padding-top: 31px;
+  padding-left: 120px;
+}
+.smart-sort .page-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  padding-right: 12px;
+}
+.smart-sort .found-results {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 2.5;
+  color: rgba(0, 0, 0, 0.5);
+  padding-right: 12px;
+}
+#smart-select {
+  width: 218px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  /* identical to box height */
+  color: #000000;
+}
+
 .apartment {
   display: flex;
   flex-direction: column;
   width: 285px;
   padding: 10px;
-  border: 1px solid black;
+  margin: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background-color: white;
 }
 .apartmentPic {
   padding-bottom: 20px;
