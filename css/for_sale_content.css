@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-fluid{
+    width: 1440px;
+}
+
+/* Header */
+.for-sale-content-header{
+    width: 100%;
+    height: 60px;
+}
+
+/* Footer */
+.for-sale-content-footer{
+    margin-top: 3548px;
+    padding-top: 50px;
+    width: 100%;
+    height: 290px;
+    background: #2D363C;
+    color: #FFF;
+    font-family: Roboto sans-serif Arial;
+
+}
+.footer-container{
+    width: 81%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.footer-homefast{
+
+}
+.footer-our-services{
+
+}
+.footer-other{
+
+}
+.footer-container ul{
+    list-style-type: none;
+}
+.list-item{
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: 5px;
+}
+.title-item{
+    font-size: 18px;
+    line-height: 21px;
+}
