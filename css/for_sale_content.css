@@ -3,7 +3,8 @@
     --danger-button-bg: #E02828;
     --dark-text-color: #000;
     --light-text-color: #FFF;
-    --transparent-text-color: rgba(255, 255, 255, 0.5);
+    --transparent-light-text-color: rgba(255, 255, 255, 0.5);
+    --transparent-dark-text-color: rgba(0, 0, 0, 0.5);
 }
 * {
     margin: 0;
@@ -109,9 +110,145 @@ a.nav-item {
 }
 
 
+/* Main */
+.specialist{
+    position: relative;
+    padding-top: 9px;
+
+}
+.experience-icon{
+    position: absolute;
+    background: url("../assets/images/experience.png");
+    width: 24px;
+    height: 29px;
+    top: 0;
+    left: 0;
+}
+.specialist-border{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+}
+.specialist-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.specialist-image{
+    width: 115px;
+    height: 115px;
+    background: url("../assets/images/specialist_profile.png");
+}
+.specialist-status{
+    background: url("../assets/images/premium.png");
+    width: 67px;
+    height: 19px;
+    position: absolute;
+    left: 37%;
+    top: 64%;
+}
+.full_name{
+    margin-top: 20px;
+}
+.full_name p{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+}
+.specialist-position{
+    margin-top: 5px;
+}
+.specialist-position p{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--transparent-dark-text-color);
+}
+.call-button{
+    margin: 5px 0px;
+}
+.call-button button{
+    color: var(--light-text-color);
+    font-family: Roboto;
+    font-size: 11px;
+    line-height: 13px;
+    border-radius: 5px;
+    background: #31AA52;
+    padding: 12px 57px;
+}
+.send-message-button{
+    margin: 5px 0px;
+}
+.send-message-button button{
+    font-family: Roboto;
+    font-size: 11px;
+    line-height: 13px;
+    border: 1px solid #434FAA;
+    border-radius: 5px;
+    color: #434FAA;
+    padding: 12px 50px;
+}
+
+.for-sale-content-main{
+    width: 1200px;
+    margin: 30px auto 0;
+    min-height: 1000px;
+}
+.main-wrapper{
+    width: 900px;
+}
+.main-aside{
+    width: 260px;
+    margin-left: 40px;
+    padding-top: 60px;
+}
+.house-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.house-subtitle h2{
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+.house-location{
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+}
+p.house-location:before {
+    content: "";
+    display: block;
+    background: url("../assets/images/map_icon.png") no-repeat;
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin: 0 6px 0 0;
+}
+.house-price{
+    width: 49%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.house-price> span{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+}
+.house-subtitle{
+    width: 50%;
+}
+
+
+
 /* Footer */
 .for-sale-content-footer {
-    margin-top: 3548px;
     padding-top: 50px;
     width: 100%;
     height: 290px;
@@ -137,7 +274,7 @@ a.nav-item {
 .list-item {
     font-size: 14px;
     line-height: 16px;
-    color: var(--transparent-text-color);
+    color: var(--transparent-light-text-color);
     padding-top: 5px;
 }
 
