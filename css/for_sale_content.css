@@ -406,7 +406,7 @@ p.house-location:before {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    padding: 20px 19px 20px;
+    padding: 20px 19px 18px 19px;
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -436,6 +436,20 @@ p.house-location:before {
 .house-features-right ul{
     margin-top: 20px;
 }
+
+.house-location-section{
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 19px 19px 19px;
+    margin-top: 20px;
+}
+.house-location-section .map{
+    width: 860px;
+    height: 358px;
+    margin-top: 19px;
+    background: url("../assets/images/map.png");
+}
+
 /* Footer */
 .for-sale-content-footer {
     padding-top: 50px;
