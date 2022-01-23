@@ -5,6 +5,7 @@
     --light-text-color: #FFFFFF;
     --transparent-light-text-color: rgba(255, 255, 255, 0.5);
     --transparent-dark-text-color: rgba(0, 0, 0, 0.5);
+    --danger-progress-fill: #E75353;
 }
 
 * {
@@ -358,35 +359,43 @@ p.house-location:before {
     padding-top: 24px;
 }
 
-.general-info-left,.general-info-right {
+.general-info-left, .general-info-right {
     display: flex;
     flex-direction: row;
 }
-.general-info-right{
- margin-left: 211px;
+
+.general-info-right {
+    margin-left: 211px;
 }
-.general-info-right .right-content{
+
+.general-info-right .right-content {
     margin-left: 45px;
 }
+
 .left-title p {
     color: var(--transparent-dark-text-color);
 }
-.right-content{
+
+.right-content {
     margin-left: 18px;
 }
+
 .general-info-container p {
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 15px;
 }
-.general-info-container .advertise-number{
+
+.general-info-container .advertise-number {
     color: var(--danger-button-bg);
 }
-.general-info-container p:last-child{
+
+.general-info-container p:last-child {
     margin: 0;
 }
-.house-explanation{
+
+.house-explanation {
     width: 100%;
     background: #FFFFFF;
     padding: 20px 20px 18px 19px;
@@ -394,7 +403,8 @@ p.house-location:before {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
-.house-explanation p{
+
+.house-explanation p {
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
@@ -402,7 +412,7 @@ p.house-location:before {
     margin-top: 20px;
 }
 
-.house-features{
+.house-features {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -412,43 +422,156 @@ p.house-location:before {
     flex-direction: row;
 
 }
-.house-features-left{
+
+.house-features-left {
     width: 57%;
 }
-.house-features ul{
+
+.house-features ul {
     list-style-position: inside;
     list-style-type: none;
     margin-top: 15px;
 }
-.house-features ul li{
+
+.house-features ul li {
     font-size: 14px;
     line-height: 16px;
     color: var(--transparent-dark-text-color);
     margin-bottom: 5px;
 }
-.house-features ul li:last-child{
+
+.house-features ul li:last-child {
     margin: 0;
 }
-.house-features ul li:before{
+
+.house-features ul li:before {
     content: url("../assets/images/check.png");
     margin-right: 10px;
 }
-.house-features-right ul{
+
+.house-features-right ul {
     margin-top: 20px;
 }
 
-.house-location-section{
+.house-location-section {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px 19px 19px 19px;
     margin-top: 20px;
 }
-.house-location-section .map{
+
+.house-location-section .map {
     width: 860px;
     height: 358px;
     margin-top: 19px;
     background: url("../assets/images/map.png");
 }
+
+.house-price-changes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+
+}
+
+.house-price-changes h6 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.price-changes-left h6 {
+    margin-top: 20px;
+}
+
+.house-price-changes .text-right {
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.price-changes-left {
+    width: 380px;
+    padding: 20px 19px 19px 19px;
+
+}
+
+.price-changes-right {
+    width: 418px;
+    padding: 29px 19px 19px 19px;
+}
+
+.tabs-header {
+    margin-top: 21px;
+    margin-bottom: 25px;
+}
+
+.tab-header:first-child {
+    margin-left: 0;
+}
+
+.tab-header {
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 25px;
+    color: var(--transparent-dark-text-color);
+}
+
+.tab-selected {
+    border-radius: 5px;
+    padding: 4px 5px 2px 4px;
+}
+
+.price-changes-left .tab-selected {
+    border: 1px solid var(--danger-button-bg);
+    color: var(--danger-button-bg);
+}
+
+.price-changes-right .tab-selected {
+    border: 1px solid #9FCBFF;
+    color: #9FCBFF;
+}
+.tab-title{
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 20px;
+    color: #000;
+}
+.progress{
+    height: 0;
+    border-right: 5px solid transparent;
+    border-top-right-radius: 5px;
+    position: relative;
+}
+.progress span{
+    color: #fff;
+    position: absolute;
+    font-size: 14px;
+    line-height: 16px;
+    top: -18px;
+    right: 0;
+}
+.danger-progress{
+    border: 1px solid var(--danger-progress-fill);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.primary-progress{
+    border: 1px solid #9FCBFF;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.danger-progress-fill{
+    border-top:23px solid var(--danger-progress-fill);
+}
+.primary-progress-fill{
+    border-top:23px solid #9FCBFF;
+}
+
 
 /* Footer */
 .for-sale-content-footer {
