@@ -1,29 +1,3 @@
-.div-header {
-  width: 1440px;
-  height: 60px;
-  padding-left: 120px;
-  display: flex;
-  justify-content: space-between;
-}
-
-#advertise {
-  background: #e02828;
-  border-radius: 5px;
-  width: 122px;
-  height: 30px;
-  color: white;
-  border: none;
-  position: absolute;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  outline: 0;
-  list-style-position: inside;
-}
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -47,4 +21,46 @@
 .nav-block li > a {
   text-decoration: none;
   padding: 0 15px;
+}
+
+.main-search {
+  position: relative;
+  width: 100%;
+  height: 452px;
+  background-image: url(../assets/homepagebackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.search {
+  width: 500px;
+  height: 40px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+.search-button {
+  margin: 125px auto;
+  padding: 0px;
+  width: 500px;
+  height: 202px;
+  left: 470px;
+}
+.search-icon{
+  border: none;
+  position: absolute;
+  top: 296px;
+  right: 555px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/Button\ Search.png);
+}
+h3 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  color: #ffffff;
 }
