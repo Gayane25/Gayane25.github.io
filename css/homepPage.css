@@ -1,0 +1,50 @@
+.div-header {
+  width: 1440px;
+  height: 60px;
+  padding-left: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#advertise {
+  background: #e02828;
+  border-radius: 5px;
+  width: 122px;
+  height: 30px;
+  color: white;
+  border: none;
+  position: absolute;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: 0;
+  list-style-position: inside;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.logo-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-block > ul {
+  display: flex;
+}
+.nav-block li {
+  list-style: none;
+}
+.nav-block li > a {
+  text-decoration: none;
+  padding: 0 15px;
+}
