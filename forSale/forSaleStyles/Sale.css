@@ -57,7 +57,7 @@
   color: black;
 }
 .signUp-container {
-  display: flex;
+  display: none;
   flex-direction: row;
   /* flex-wrap: wrap; */
   padding-top: 85px;
