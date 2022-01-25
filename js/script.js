@@ -3,7 +3,7 @@ let clickMe = document.getElementById('clickMe');
 const overlay = document.getElementById('overlay');
 let spanClose = document.getElementsByClassName('close')[0];
 clickMe.onclick = function () {
-  popUpPage.style.display = 'block';
+  popUpPage.style.display = 'none';
 };
 spanClose.onclick = function () {
   popUpPage.style.display = 'none';

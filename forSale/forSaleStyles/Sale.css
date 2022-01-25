@@ -3,6 +3,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: 'Roboto';
+  background-color: #edeef6;
+}
+.modal-container {
+  /* opacity: 0;
+  pointer-events: none; */
+  position: fixed;
+  top: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #f8f8f8;
+  top: 15px;
+  height: 900px;
+  width: 1200px;
+  display: none;
+  /* justify-content: center; */
+  /* padding-top: 85px; */
+  margin-left: 45px;
+}
+.modal {
+  background-color: #f8f8f8;
+  padding-top: 30px;
+  padding-left: 25px;
+  /* width: 1150px; */
+  /* height: 600px;  */
+  /* max-width: 100%; */
+}
+
+#close {
+  padding: 20px;
+}
+
 .header-side {
   display: flex;
   flex-direction: row;
@@ -57,20 +91,25 @@
   color: black;
 }
 .signUp-container {
-  display: none;
+  display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
-  padding-top: 85px;
-  /* padding-left: 147px; */
-  background-color: #f8f8f8;
+  /* position: fixed;
+  transform: translate(-50% -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  width: 1200px;
+  max-width: 90%;
+  background-color: #f8f8f8; */
 }
+
 .signUp-container-left {
   display: flex;
   border: 1px solid rgba(0, 0, 0, 0.3);
   flex-direction: column;
   /* justify-content: center; */
-  padding-left: 60px;
-  padding-right: 62px;
+  padding-left: 100px;
+  padding-right: 80px;
   padding-top: 100px;
   text-align: center;
 }
@@ -139,7 +178,7 @@
 }
 .connect-google {
   width: 100%;
-  height: 40px;
+  /* height: 40px; */
   z-index: 1;
   background: #434faa;
   border-radius: 5px;
@@ -147,7 +186,8 @@
   font-size: 18px;
   line-height: 2;
   color: #ffffff;
-  padding-bottom: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .connect-google img {
   padding-left: 4px;

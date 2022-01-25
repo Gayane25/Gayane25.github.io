@@ -1,23 +1,13 @@
-const popUpPage = document.getElementById('popUp-page');
-let clickMe = document.getElementById('clickMe');
-const overlay = document.getElementById('overlay');
-let spanClose = document.getElementsByClassName('close')[0];
-clickMe.onclick = function () {
-  popUpPage.style.display = 'flex';
-};
-spanClose.onclick = function () {
-  popUpPage.style.display = 'none';
-};
+const open = document.getElementById('open');
+const body = document.querySelector('body');
+const modal_container = document.getElementById('modal-container');
+const close = document.getElementById('close');
 
-popUpPage.addEventListener('click', function (event) {
-  if (event.target == popUpPage) {
-    popUpPage.style.display = 'none';
-  }
-});
-
-overlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('popUpPage.active');
-  modals.forEach(popUpPage => {
-    spanClose(popUpPage);
-  });
-});
+open.onclick = function () {
+  modal_container.style.display = 'flex';
+  body.style.backgroundColor = 'rgba(0,0,0,0.3)';
+};
+close.onclick = function () {
+  modal_container.style.display = 'none';
+  body.style.backgroundColor = '#edeef6';
+};
