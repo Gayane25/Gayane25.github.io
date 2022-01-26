@@ -26,6 +26,18 @@ function pageOnLoad() {
                         viewPhoneButton.innerText = mainText
                     },5000)
                 })
+
+                window.addEventListener('scroll', ()=>{
+                    let content = document.querySelector('.progress')
+                    let contentPosition =content.getBoundingClientRect().top
+                    let screenPosition = window.innerHeight
+
+                    if(contentPosition < screenPosition){
+                        alert('hey man')
+                    }
+                })
+
+
             })
         })
         .catch(err => {
@@ -90,7 +102,7 @@ function drawUserSection({avatar, email, phoneNumber, firstName, lastName, isPre
     return userHtml
 }
 
-function drawMainSection({      mainPictureUrl,
+function drawMainSection({ latitude,longitude,     mainPictureUrl,
                              title,addressCity,addressStreet,price,
                              advertisementNo,createdAt,advertisementStatus,housingShape,rooms,grossArea,netArea,warmingType,buildingAge,floorLocation,isAvailableWithLoan,isFurnished,dues,isAsSwap,frontDirection,rentalIncome}) {
     const titleSection = document.getElementById('house-title')
@@ -98,14 +110,14 @@ function drawMainSection({      mainPictureUrl,
     const generalInfoSection = document.getElementById('house-general-info')
     const explanationSection = document.getElementById('house-explanation')
     const featuresSection = document.getElementById('house-features')
-    const locationSection = document.getElementById('house-location-section')
-
+    latitude = parseFloat(latitude)
+    longitude = parseFloat(longitude)
+    myMap({lat:latitude,lng:longitude})
     titleSection.innerHTML = drawTitleSection(title,addressCity,addressStreet, price)
     picturesSection.innerHTML = drawPicturesSection(mainPictureUrl)
     generalInfoSection.innerHTML = drawGeneralInfoSection(advertisementNo,createdAt,advertisementStatus,housingShape,rooms,buildingAge,grossArea,netArea,warmingType,buildingAge,floorLocation,isAvailableWithLoan,isFurnished,dues,isAsSwap,frontDirection,rentalIncome)
     explanationSection.innerHTML = drawExplanationSection()
     featuresSection.innerHTML = drawFeaturesSection()
-    locationSection.innerHTML = drawLocationSection()
 
 }
 
@@ -230,12 +242,4 @@ function drawFeaturesSection() {
                         <li>Market</li>
                     </ul>
                 </div>`
-}
-
-
-function drawLocationSection() {
-    return `<h4 class="general-info-header">Location Information</h4>
-                <div class="map">
-                    <img src="../assets/images/map.png" alt="">
-                </div>`;
 }
