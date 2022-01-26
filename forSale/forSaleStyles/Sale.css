@@ -25,7 +25,7 @@
   list-style-type: none;
 }
 .nav-side ul li {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   padding-right: 20px;
   font-style: normal;
   font-weight: normal;
@@ -44,7 +44,7 @@
   width: 122px;
   height: 30px;
   color: white;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   border: none;
   border-radius: 4px;
   background-color: #e02828;
@@ -61,7 +61,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f8f8f8;
 }
 .select-section {
@@ -78,7 +78,7 @@ main {
   background-color: white;
 }
 .select-section .select-style {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 135px;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -93,7 +93,7 @@ main {
 .search-line {
   display: flex;
   flex-direction: row;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 135px;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.1);

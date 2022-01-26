@@ -75,13 +75,13 @@ h3 {
   justify-content: space-between;
   margin-top: 66px;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-inline: 20px;
 }
 .dream-house-text {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
   padding-top: 30px;
-
 }
 .dream-house-text h4 {
   text-transform: capitalize;
@@ -90,18 +90,59 @@ h3 {
   line-height: 28px;
   padding-bottom: 20px;
 }
-.search-on-map-button{
+.search-on-map-button {
   width: 122px;
   height: 30px;
   color: white;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   border: none;
   border-radius: 4px;
   background-color: #e02828;
 }
-.dream-house-text p{
+.dream-house-text p {
   font-size: 14px;
   line-height: 16px;
   color: rgba(0, 0, 0, 0.5);
   padding-bottom: 98px;
+}
+#feature-projects {
+  font-size: 24px;
+  padding-left: 20px;
+}
+.life-project {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-top: 66px;
+  margin-inline: 20px;
+}
+.life-project-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 30px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.life-project-text h4 {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  padding-bottom: 20px;
+  color: black;
+}
+.life-project-text p {
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  padding-top: 18px;
+}
+.view-projct-buttone {
+  width: 100px;
+  height: 25px;
+  border: 1px solid #e02828;
+  color: #e02828;
+  border-radius: 5px;
+  background-color: white;
 }
