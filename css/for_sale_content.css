@@ -469,9 +469,11 @@ p.house-location:before {
     width: 860px;
     height: 358px;
     margin-top: 19px;
-    background: url("../assets/images/map.png");
 }
-
+.map img{
+    width: 100%;
+    height: 100%;
+}
 .house-price-changes {
     display: flex;
     flex-direction: row;
@@ -782,13 +784,13 @@ p.house-location:before {
 }
 .name-placeholder{
     height: 15px;
-    width: 80%;
+    width: 40%;
     margin: 4px auto;
     border-radius: 5px
 }
 .profession-placeholder{
     height: 15px;
-    width: 80%;
+    width: 40%;
     margin: 3px auto 4px;
     border-radius: 5px
 }
