@@ -157,6 +157,7 @@ main {
   padding: 10px;
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
 
   background-color: white;
 }
@@ -234,4 +235,12 @@ main {
 .footer-side ul li a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.5);
+}
+.apartment-cover{
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }

@@ -154,9 +154,14 @@ a.nav-item {
 .specialist-image {
     width: 115px;
     height: 115px;
-    background: url("../assets/images/specialist_profile.png");
+    border-radius: 50%;
+    border: 2px solid yellow;
 }
-
+.specialist-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
 .specialist-status {
     background: url("../assets/images/premium.png");
     width: 67px;
@@ -534,19 +539,22 @@ p.house-location:before {
     border: 1px solid #9FCBFF;
     color: #9FCBFF;
 }
-.tab-title{
+
+.tab-title {
     font-size: 14px;
     line-height: 16px;
     margin-top: 20px;
     color: #000;
 }
-.progress{
+
+.progress {
     height: 0;
     border-right: 5px solid transparent;
     border-top-right-radius: 5px;
     position: relative;
 }
-.progress span{
+
+.progress span {
     color: #fff;
     position: absolute;
     font-size: 14px;
@@ -554,80 +562,96 @@ p.house-location:before {
     top: -18px;
     right: 0;
 }
-.danger-progress{
+
+.danger-progress {
     border: 1px solid var(--danger-progress-fill);
     border-radius: 5px;
     margin-top: 10px;
 }
-.primary-progress{
+
+.primary-progress {
     border: 1px solid #9FCBFF;
     border-radius: 5px;
     margin-top: 10px;
 }
 
-.danger-progress-fill{
-    border-top:23px solid var(--danger-progress-fill);
+.danger-progress-fill {
+    border-top: 23px solid var(--danger-progress-fill);
 }
-.primary-progress-fill{
-    border-top:23px solid #9FCBFF;
+
+.primary-progress-fill {
+    border-top: 23px solid #9FCBFF;
 }
-.house-market-info{
+
+.house-market-info {
     margin-top: 20px;
 }
-.house-demographic{
+
+.house-demographic {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px 19px 20px 19px;
     margin-top: 15px;
 }
-.demographic-heads{
+
+.demographic-heads {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.demographic-heads h6{
+
+.demographic-heads h6 {
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
 }
-.pie-chart-container{
+
+.pie-chart-container {
     width: 100%;
     padding-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.pie-chart-item{
+
+.pie-chart-item {
     width: 183px;
     height: 313px;
 }
-.char-item-image{
+
+.char-item-image {
     width: 100%;
     height: 180px;
     margin-top: 20px;
     position: relative;
 }
-.char-item-image img{
+
+.char-item-image img {
     position: absolute;
 }
-.edu_chart-img{
+
+.edu_chart-img {
     top: calc(50% - 25.5px);
     left: calc(50% - 25px);
 }
-.couple_chart-img{
+
+.couple_chart-img {
     top: calc(50% - 25px);
     left: calc(50% - 25px);
 }
-.group_chart-img{
+
+.group_chart-img {
     top: calc(50% - 25px);
     left: calc(50% - 17px);
 }
-.pie-chart-item h5{
+
+.pie-chart-item h5 {
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
     text-align: center;
 }
-.chart-info{
+
+.chart-info {
     width: 100%;
     height: 75px;
     margin-top: 28px;
@@ -635,23 +659,28 @@ p.house-location:before {
     flex-direction: row;
     flex-wrap: wrap;
 }
-.chart-info-color{
+
+.chart-info-color {
     width: 14px;
     height: 14px;
     border-radius: 50%;
     margin-right: 5px;
 }
-.chart-info span{
+
+.chart-info span {
     font-size: 12px;
     line-height: 14px;
 }
-.chart-info-item{
+
+.chart-info-item {
     display: flex;
     flex-direction: row;
 }
-.chart-info-item:nth-child(odd){
+
+.chart-info-item:nth-child(odd) {
     width: 60%;
 }
+
 .piechart2 {
     --chart: 50%;
     --hole: 55%;
@@ -661,22 +690,22 @@ p.house-location:before {
     height: 100%;
     position: relative;
 }
+
 .piechart2:after {
-    background:
-            radial-gradient(
-                    circle closest-side,
-                    white 0,
-                    white var(--hole),
-                    transparent 0%
-            ),
-            conic-gradient(
-                    orange 0%,
-                    red var(--chart),
-                    green 0%,
-                    green 95%,
-                    transparent 0%,
-                    transparent 100%
-            );
+    background: radial-gradient(
+            circle closest-side,
+            white 0,
+            white var(--hole),
+            transparent 0%
+    ),
+    conic-gradient(
+            orange 0%,
+            red var(--chart),
+            green 0%,
+            green 95%,
+            transparent 0%,
+            transparent 100%
+    );
     xdisplay: block;
     content: '';
     position: absolute;
@@ -685,8 +714,6 @@ p.house-location:before {
     background-color: blue;
     border-radius: 50%;
 }
-
-
 
 
 /* Footer */
@@ -724,3 +751,63 @@ p.house-location:before {
     font-size: 18px;
     line-height: 21px;
 }
+
+
+/* Loader */
+.loader-container {
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+@keyframes placeholder {
+    0% { background-position: -600px 0 }
+    100% { background-position: 600px 0 }
+}
+
+.animated-background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholder;
+    animation-timing-function: linear;
+    background: #eeeeee;
+    background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
+    background-size: 1200px 100px;
+
+}
+.name-placeholder{
+    height: 15px;
+    width: 80%;
+    margin: 4px auto;
+    border-radius: 5px
+}
+.profession-placeholder{
+    height: 15px;
+    width: 80%;
+    margin: 3px auto 4px;
+    border-radius: 5px
+}
+.button-placeholder{
+    height: 30px;
+    width: 60%;
+    margin: 3px auto;
+    border-radius: 5px
+}
+.profile-image {
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 115px;
+    height: 115px;
+    margin-bottom: 15px
+}
+
+
+
+
+
+
