@@ -17,11 +17,25 @@ function pageOnLoad() {
             getDataFromApi(`https://61e932047bc0550017bc6112.mockapi.io/users`, adv.createdByUser).then(user => {
                 const userContainerDiv = document.getElementById('main-aside')
                 userContainerDiv.innerHTML = drawUserSection(user)
+
+                const viewPhoneButton = document.getElementById('view_phone');
+                viewPhoneButton.addEventListener('click', function (event){
+                    const mainText = event.target.innerText
+                    viewPhoneButton.innerText = event.target.getAttribute('phoneNumber')
+                    const newTimeout = setTimeout(()=>{
+                        viewPhoneButton.innerText = mainText
+                    },5000)
+                })
             })
         })
         .catch(err => {
             console.log(err)
         })
+
+
+
+
+
 
 
 }
@@ -55,7 +69,7 @@ function drawUserSection({avatar, email, phoneNumber, firstName, lastName, isPre
                                             <path d="M14.5916 11.0085L12.4983 8.91519C11.7507 8.16759 10.4798 8.46666 10.1807 9.43852C9.95646 10.1114 9.20886 10.4852 8.53601 10.3356C7.0408 9.96184 5.02227 8.01807 4.64847 6.4481C4.42418 5.77522 4.87275 5.02762 5.54559 4.80336C6.51748 4.50432 6.81652 3.23339 6.06892 2.48579L3.97562 0.392493C3.37754 -0.130831 2.48041 -0.130831 1.95709 0.392493L0.536636 1.81294C-0.883814 3.30815 0.686158 7.27046 4.1999 10.7842C7.71365 14.298 11.676 15.9427 13.1712 14.4475L14.5916 13.027C15.115 12.4289 15.115 11.5318 14.5916 11.0085Z"
                                                   fill="white"/>
                                         </svg>
-                                        <span class="span-button">VIEW PHONE</span>
+                                        <span class="span-button" id="view_phone" phoneNumber = "${phoneNumber}">VIEW PHONE</span>
                                     </div>
                                     <div class="send-message-button">
                                         <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +80,7 @@ function drawUserSection({avatar, email, phoneNumber, firstName, lastName, isPre
                                             <path d="M9.08465 8.14313L7.75809 9.01688C7.67934 9.06844 7.59027 9.09375 7.50027 9.09375C7.41027 9.09375 7.32121 9.06844 7.24246 9.01688L5.9159 8.14219L0.0302734 11.865C0.102461 12.3103 0.471836 12.6563 0.937773 12.6563H14.0628C14.5287 12.6563 14.8981 12.3103 14.9703 11.865L9.08465 8.14313Z"
                                                   fill="#434FAA"/>
                                         </svg>
-                                        <span class="span-button">SEND MESSAGE</span>
+                                        <a href="mailto:info@aca.am" class="span-button">SEND MESSAGE</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,17 +90,19 @@ function drawUserSection({avatar, email, phoneNumber, firstName, lastName, isPre
     return userHtml
 }
 
-function drawMainSection({mainPictureUrl,title,addressCity,addressStreet,price,advertisementNo,buildingAge,dues,}) {
+function drawMainSection({      mainPictureUrl,
+                             title,addressCity,addressStreet,price,
+                             advertisementNo,createdAt,advertisementStatus,housingShape,rooms,grossArea,netArea,warmingType,buildingAge,floorLocation,isAvailableWithLoan,isFurnished,dues,isAsSwap,frontDirection,rentalIncome}) {
     const titleSection = document.getElementById('house-title')
-    const picturesSection = document.getElementsByClassName('house-pictures')
-    const generalInfoSection = document.getElementsByClassName('house-general-info')
-    const explanationSection = document.getElementsByClassName('house-explanation')
-    const featuresSection = document.getElementsByClassName('house-features')
-    const locationSection = document.getElementsByClassName('house-location-section')
+    const picturesSection = document.getElementById('house-pictures')
+    const generalInfoSection = document.getElementById('house-general-info')
+    const explanationSection = document.getElementById('house-explanation')
+    const featuresSection = document.getElementById('house-features')
+    const locationSection = document.getElementById('house-location-section')
 
     titleSection.innerHTML = drawTitleSection(title,addressCity,addressStreet, price)
     picturesSection.innerHTML = drawPicturesSection(mainPictureUrl)
-    generalInfoSection.innerHTML = drawGeneralInfoSection()
+    generalInfoSection.innerHTML = drawGeneralInfoSection(advertisementNo,createdAt,advertisementStatus,housingShape,rooms,buildingAge,grossArea,netArea,warmingType,buildingAge,floorLocation,isAvailableWithLoan,isFurnished,dues,isAsSwap,frontDirection,rentalIncome)
     explanationSection.innerHTML = drawExplanationSection()
     featuresSection.innerHTML = drawFeaturesSection()
     locationSection.innerHTML = drawLocationSection()
@@ -120,7 +136,7 @@ function drawPicturesSection(mainPictureUrl) {
 }
 
 
-function drawGeneralInfoSection() {
+function drawGeneralInfoSection(advertisementNo,createdAt,advertisementStatus,housingShape,rooms,buildingAge,grossArea,netArea,warmingType,buildingAge,floorLocation,isAvailableWithLoan,isFurnished,dues,isAsSwap,frontDirection,rentalIncome) {
     return `<h4 class="general-info-header">General Information</h4>
                 <div class="general-info-container">
                     <div class="general-info-left">
@@ -135,14 +151,14 @@ function drawGeneralInfoSection() {
                             <p>Building Age</p>
                         </div>
                         <div class="right-content">
-                            <p class="advertise-number">0-1234</p>
-                            <p>26 November 2020</p>
-                            <p>Sale</p>
-                            <p>Apartment</p>
-                            <p>3 + 1</p>
-                            <p>150 M² / 135 M²</p>
-                            <p>Natural Gas</p>
-                            <p>5</p>
+                            <p class="advertise-number">${advertisementNo}</p>
+                            <p>${createdAt}</p>
+                            <p>${advertisementStatus}</p>
+                            <p>${housingShape}</p>
+                            <p>${rooms}</p>
+                            <p>${grossArea} M² / ${netArea} M²</p>
+                            <p>${warmingType}</p>
+                            <p>${buildingAge}</p>
                         </div>
                     </div>
                     <div class="general-info-right">
@@ -156,13 +172,13 @@ function drawGeneralInfoSection() {
                             <p>Rental Income</p>
                         </div>
                         <div class="right-content">
-                            <p>10</p>
-                            <p>Appropriate</p>
-                            <p>Not</p>
-                            <p>1.200 $</p>
-                            <p>Not</p>
-                            <p>Northwest</p>
-                            <p>3.000 $</p>
+                            <p>${floorLocation}</p>
+                            <p>${isAvailableWithLoan}</p>
+                            <p>${isFurnished}</p>
+                            <p>${dues} $</p>
+                            <p>${isAsSwap}</p>
+                            <p>${frontDirection}</p>
+                            <p>${rentalIncome} $</p>
                         </div>
                     </div>
                 </div>`
