@@ -146,3 +146,20 @@ h3 {
   border-radius: 5px;
   background-color: white;
 }
+.life-projects{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #2d363c;
+  flex-direction: row;
+  padding-bottom: 50px;
+  margin-top: 165px;
+  padding-left: 135px;
+  padding-top: 50px;
+  width: 100%;
+}
