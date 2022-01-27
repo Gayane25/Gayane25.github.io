@@ -550,22 +550,27 @@ p.house-location:before {
 }
 
 .progress {
+    height: 23px;
+    width: 100%;
+    position: relative;
+
+}
+.progress span{
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 0;
     border-right: 5px solid transparent;
     border-top-right-radius: 5px;
-    position: relative;
+}
+.danger-progress span {
+    border-top: 23px solid var(--danger-progress-fill);
+}
+.progress span.active{
+    width: 100%;
     animation: fillBars 2.5s 1;
 }
-
-.progress span {
-    color: #fff;
-    position: absolute;
-    font-size: 14px;
-    line-height: 16px;
-    top: -18px;
-    right: 0;
-}
-
 .danger-progress {
     border: 1px solid var(--danger-progress-fill);
     border-radius: 5px;
@@ -576,7 +581,7 @@ p.house-location:before {
         width: 0;
     }
     to{
-        width: 59%;
+        width: 100%;
     }
 }
 .primary-progress {
@@ -585,11 +590,7 @@ p.house-location:before {
     margin-top: 10px;
 }
 
-.danger-progress-fill {
-    border-top: 23px solid var(--danger-progress-fill);
-}
-
-.primary-progress-fill {
+.primary-progress span {
     border-top: 23px solid #9FCBFF;
 }
 

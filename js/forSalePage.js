@@ -1,5 +1,15 @@
 window.addEventListener("load", pageOnLoad);
+window.addEventListener('scroll', ()=>{
+    let content = document.querySelector('.progress-span')
+    let contentPosition =content.getBoundingClientRect().top
+    let screenPosition = window.innerHeight
 
+    if(contentPosition < screenPosition){
+        document.querySelectorAll('.progress-span').forEach(el=>{
+            el.classList.add('active')
+        })
+    }
+})
 
 function pageOnLoad() {
     const url = window.location;
@@ -26,18 +36,6 @@ function pageOnLoad() {
                         viewPhoneButton.innerText = mainText
                     },5000)
                 })
-
-                window.addEventListener('scroll', ()=>{
-                    let content = document.querySelector('.progress')
-                    let contentPosition =content.getBoundingClientRect().top
-                    let screenPosition = window.innerHeight
-
-                    if(contentPosition < screenPosition){
-                        alert('hey man')
-                    }
-                })
-
-
             })
         })
         .catch(err => {
