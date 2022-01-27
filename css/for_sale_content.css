@@ -692,7 +692,7 @@ p.house-location:before {
     width: 60%;
 }
 
-.piechart2 {
+.piechart {
     --chart: 50%;
     --hole: 55%;
 
@@ -702,7 +702,7 @@ p.house-location:before {
     position: relative;
 }
 
-.piechart2:after {
+.piechart1:after {
     background: radial-gradient(
             circle closest-side,
             white 0,
@@ -710,10 +710,10 @@ p.house-location:before {
             transparent 0%
     ),
     conic-gradient(
-            orange 0%,
-            red var(--chart),
-            green 0%,
-            green 95%,
+            #FADDDD 0%,
+            #F19898 var(--chart),
+            #EC7575 0%,
+            #EC7575 95%,
             transparent 0%,
             transparent 100%
     );
@@ -722,7 +722,53 @@ p.house-location:before {
     position: absolute;
     width: inherit;
     height: inherit;
-    background-color: blue;
+    background-color: #E75353;
+    border-radius: 50%;
+}
+.piechart2:after {
+    background: radial-gradient(
+            circle closest-side,
+            white 0,
+            white var(--hole),
+            transparent 0%
+    ),
+    conic-gradient(
+            #FFF5DB 0%,
+            #FEE194 var(--chart),
+            #FED770 0%,
+            #FED770 95%,
+            transparent 0%,
+            transparent 100%
+    );
+    xdisplay: block;
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #FECD4C;
+    border-radius: 50%;
+}
+.piechart3:after {
+    background: radial-gradient(
+            circle closest-side,
+            white 0,
+            white var(--hole),
+            transparent 0%
+    ),
+    conic-gradient(
+            #D1EFD7 0%,
+            #D1EFD7 var(--chart),
+            #A4DEB0 0%,
+            #A4DEB0 95%,
+            transparent 0%,
+            transparent 100%
+    );
+    xdisplay: block;
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #8DD69C;
     border-radius: 50%;
 }
 
