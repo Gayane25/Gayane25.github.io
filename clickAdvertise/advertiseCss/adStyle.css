@@ -2,3 +2,8 @@ main {
   /* padding-left:120px; */
   padding-top: 38px;
 }
+.pages-sequence{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+}
