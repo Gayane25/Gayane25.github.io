@@ -151,6 +151,10 @@ function drawTitleSection(title, addressCity, addressStreet, price) {
 
 function drawPicturesSection(mainPictureUrl) {
 return            `<div class="images-container">
+                    <div class="slider-buttons">
+                        <input type="image" src="../assets/images/left_arrow.png">
+                        <input type="image" src="../assets/images/right_arrow.png">
+                    </div>
                       <div class="mySlides">
                         <div class="numbertext">1 / 6</div>
                         <img src="https://picsum.photos/200">
