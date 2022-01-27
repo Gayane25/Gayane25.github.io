@@ -295,36 +295,73 @@ p.house-location:before {
     width: 50%;
 }
 
+
+/* Slider Section */
 .house-pictures {
     width: 900px;
     padding-top: 18px;
 }
 
-.main-picture {
-    padding: 0;
-    height: 360px;
-    position: relative;
-}
-
-.main-picture img {
-    width: 100%;
-    height: 360px;
-}
-
-.additional-pictures {
-    margin: 0;
-    width: 100%;
-    padding-top: 9px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.additional-pictures img {
+.column img {
+    vertical-align: middle;
     width: 218px;
     height: 105px;
 }
 
+.images-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mySlides {
+    display: none;
+}
+.mySlides img{
+    width: 100%;
+    height: 360px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    margin-top: 5px;
+    float: left;
+    width: 16.66%;
+}
+
+.demo {
+    opacity: 0.6;
+}
+
+.activeImg,
+.demo:hover {
+    opacity: 1;
+}
 .slider-buttons {
     position: absolute;
     top: 152px;
@@ -340,6 +377,8 @@ p.house-location:before {
     width: 55px;
     height: 55px;
 }
+/* End of Slider */
+
 
 .house-general-info {
     width: 100%;

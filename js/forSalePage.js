@@ -1,11 +1,11 @@
 window.addEventListener("load", pageOnLoad);
-window.addEventListener('scroll', ()=>{
+window.addEventListener('scroll', () => {
     let content = document.querySelector('.progress-span')
-    let contentPosition =content.getBoundingClientRect().top
+    let contentPosition = content.getBoundingClientRect().top
     let screenPosition = window.innerHeight
 
-    if(contentPosition < screenPosition){
-        document.querySelectorAll('.progress-span').forEach(el=>{
+    if (contentPosition < screenPosition) {
+        document.querySelectorAll('.progress-span').forEach(el => {
             el.classList.add('active')
         })
     }
@@ -29,23 +29,21 @@ function pageOnLoad() {
                 userContainerDiv.innerHTML = drawUserSection(user)
 
                 const viewPhoneButton = document.getElementById('view_phone');
-                viewPhoneButton.addEventListener('click', function (event){
+                viewPhoneButton.addEventListener('click', function (event) {
                     const mainText = event.target.innerText
                     viewPhoneButton.innerText = event.target.getAttribute('phoneNumber')
-                    const newTimeout = setTimeout(()=>{
+                    const newTimeout = setTimeout(() => {
                         viewPhoneButton.innerText = mainText
-                    },5000)
+                    }, 5000)
                 })
+
+
+                showSlides(1);
             })
         })
         .catch(err => {
             console.log(err)
         })
-
-
-
-
-
 
 
 }
@@ -100,9 +98,31 @@ function drawUserSection({avatar, email, phoneNumber, firstName, lastName, isPre
     return userHtml
 }
 
-function drawMainSection({ latitude,longitude,     mainPictureUrl,
-                             title,addressCity,addressStreet,price,
-                             advertisementNo,createdAt,advertisementStatus,housingShape,rooms,grossArea,netArea,warmingType,buildingAge,floorLocation,isAvailableWithLoan,isFurnished,dues,isAsSwap,frontDirection,rentalIncome}) {
+function drawMainSection({
+                             latitude,
+                             longitude,
+                             mainPictureUrl,
+                             title,
+                             addressCity,
+                             addressStreet,
+                             price,
+                             advertisementNo,
+                             createdAt,
+                             advertisementStatus,
+                             housingShape,
+                             rooms,
+                             grossArea,
+                             netArea,
+                             warmingType,
+                             buildingAge,
+                             floorLocation,
+                             isAvailableWithLoan,
+                             isFurnished,
+                             dues,
+                             isAsSwap,
+                             frontDirection,
+                             rentalIncome
+                         }) {
     const titleSection = document.getElementById('house-title')
     const picturesSection = document.getElementById('house-pictures')
     const generalInfoSection = document.getElementById('house-general-info')
@@ -110,17 +130,17 @@ function drawMainSection({ latitude,longitude,     mainPictureUrl,
     const featuresSection = document.getElementById('house-features')
     latitude = parseFloat(latitude)
     longitude = parseFloat(longitude)
-    myMap({lat:latitude,lng:longitude})
-    titleSection.innerHTML = drawTitleSection(title,addressCity,addressStreet, price)
+    myMap({lat: latitude, lng: longitude})
+    titleSection.innerHTML = drawTitleSection(title, addressCity, addressStreet, price)
     picturesSection.innerHTML = drawPicturesSection(mainPictureUrl)
-    generalInfoSection.innerHTML = drawGeneralInfoSection(advertisementNo,createdAt,advertisementStatus,housingShape,rooms,buildingAge,grossArea,netArea,warmingType,buildingAge,floorLocation,isAvailableWithLoan,isFurnished,dues,isAsSwap,frontDirection,rentalIncome)
+    generalInfoSection.innerHTML = drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, isFurnished, dues, isAsSwap, frontDirection, rentalIncome)
     explanationSection.innerHTML = drawExplanationSection()
     featuresSection.innerHTML = drawFeaturesSection()
 
 }
 
-function drawTitleSection(title,addressCity,addressStreet, price) {
-    return     `<div class="house-subtitle">
+function drawTitleSection(title, addressCity, addressStreet, price) {
+    return `<div class="house-subtitle">
                     <h2>${title}</h2>
                     <p class="house-location">${addressCity}, ${addressStreet}</p>
                 </div>
@@ -130,23 +150,63 @@ function drawTitleSection(title,addressCity,addressStreet, price) {
 }
 
 function drawPicturesSection(mainPictureUrl) {
-    return `<div class="main-picture">
-                    <img src=${mainPictureUrl} alt="" id="houseMainPicture">
-                    <div class="slider-buttons">
-                        <input type="image" src="../assets/images/left_arrow.png">
-                        <input type="image" src="../assets/images/right_arrow.png">
-                    </div>
-                </div>
-                <div class="additional-pictures">
-                    <img src="../assets/images/house_main.png" alt="">
-                    <img src="../assets/images/house_main.png" alt="">
-                    <img src="../assets/images/house_main.png" alt="">
-                    <img src="../assets/images/house_main.png" alt="">
-                </div>`
+return            `<div class="images-container">
+                      <div class="mySlides">
+                        <div class="numbertext">1 / 6</div>
+                        <img src="https://picsum.photos/200">
+                      </div>
+                    
+                      <div class="mySlides">
+                        <div class="numbertext">2 / 6</div>
+                        <img src="https://picsum.photos/300">
+                      </div>
+                    
+                      <div class="mySlides">
+                        <div class="numbertext">3 / 6</div>
+                        <img src="https://picsum.photos/400">
+                      </div>
+                        
+                      <div class="mySlides">
+                        <div class="numbertext">4 / 6</div>
+                        <img src="https://picsum.photos/500">
+                      </div>
+                    
+                      <div class="mySlides">
+                        <div class="numbertext">5 / 6</div>
+                        <img src="https://picsum.photos/600">
+                      </div>
+                        
+                      <div class="mySlides">
+                        <div class="numbertext">6 / 6</div>
+                        <img src="https://picsum.photos/700">
+                      </div>
+                    
+                    
+                      <div class="row">
+                        <div class="column">
+                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                        </div>    
+                        <div class="column">
+                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                        </div>
+                      </div>
+                    </div>`
 }
 
-
-function drawGeneralInfoSection(advertisementNo,createdAt,advertisementStatus,housingShape,rooms,buildingAge,grossArea,netArea,warmingType,buildingAge,floorLocation,isAvailableWithLoan,isFurnished,dues,isAsSwap,frontDirection,rentalIncome) {
+// plusSlides(1)
+function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, isFurnished, dues, isAsSwap, frontDirection, rentalIncome) {
     return `<h4 class="general-info-header">General Information</h4>
                 <div class="general-info-container">
                     <div class="general-info-left">
