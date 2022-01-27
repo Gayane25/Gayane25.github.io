@@ -361,6 +361,9 @@ main {
   flex-wrap: wrap;
   justify-content: center;
 }
+.apartment-list a {
+  text-decoration: none;
+}
 .apartment {
   display: flex;
   flex-direction: column;
