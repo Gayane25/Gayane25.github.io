@@ -152,8 +152,8 @@ function drawTitleSection(title, addressCity, addressStreet, price) {
 function drawPicturesSection(mainPictureUrl) {
 return            `<div class="images-container">
                     <div class="slider-buttons">
-                        <input type="image" src="../assets/images/left_arrow.png">
-                        <input type="image" src="../assets/images/right_arrow.png">
+                        <input onclick="plusSlides(-1)" type="image" src="../assets/images/left_arrow.png">
+                        <input onclick="plusSlides(1)" type="image" src="../assets/images/right_arrow.png">
                     </div>
                       <div class="mySlides">
                         <div class="numbertext">1 / 6</div>
@@ -209,7 +209,7 @@ return            `<div class="images-container">
                     </div>`
 }
 
-// plusSlides(1)
+
 function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, isFurnished, dues, isAsSwap, frontDirection, rentalIncome) {
     return `<h4 class="general-info-header">General Information</h4>
                 <div class="general-info-container">
