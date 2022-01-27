@@ -2,8 +2,28 @@ main {
   /* padding-left:120px; */
   padding-top: 38px;
 }
-.pages-sequence{
-  display:flex;
-  flex-direction:row;
+.pages-sequence {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+}
+.pages-sequence .grey-line {
+  width: 138px;
+  height: 2px;
+  background-color: #aeaeae;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  top: 17px;
+}
+.categories{
+  display:flex;
+  flex-direction: row;
+  padding-top: 38px;
+}
+.section-forms {
+  padding-left: 120px;
+}
+.section-forms h4{
+
 }
