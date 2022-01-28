@@ -391,7 +391,10 @@ p.house-location:before {
     flex-direction: row;
     justify-content: space-between;
 }
-
+.slider-buttons input:focus{
+    outline: none;
+    border: none;
+}
 .slider-buttons svg {
     width: 55px;
     height: 55px;
