@@ -73,9 +73,9 @@ function drawUserSection({avatar, email, phoneNumber, firstName, lastName, isPre
                                         <p id="userProfession">${profession}</p>
                                     </div>
                                     <div class="call-button">
-                                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg viewBox="0 0 15 15"  xmlns="http://www.w3.org/2000/svg">
                                             <path d="M14.5916 11.0085L12.4983 8.91519C11.7507 8.16759 10.4798 8.46666 10.1807 9.43852C9.95646 10.1114 9.20886 10.4852 8.53601 10.3356C7.0408 9.96184 5.02227 8.01807 4.64847 6.4481C4.42418 5.77522 4.87275 5.02762 5.54559 4.80336C6.51748 4.50432 6.81652 3.23339 6.06892 2.48579L3.97562 0.392493C3.37754 -0.130831 2.48041 -0.130831 1.95709 0.392493L0.536636 1.81294C-0.883814 3.30815 0.686158 7.27046 4.1999 10.7842C7.71365 14.298 11.676 15.9427 13.1712 14.4475L14.5916 13.027C15.115 12.4289 15.115 11.5318 14.5916 11.0085Z"
-                                                  fill="white"/>
+                                                  />
                                         </svg>
                                         <span class="span-button" id="view_phone" phoneNumber = "${phoneNumber}">VIEW PHONE</span>
                                     </div>
@@ -121,7 +121,8 @@ function drawMainSection({
                              dues,
                              isAsSwap,
                              frontDirection,
-                             rentalIncome
+                             rentalIncome,
+                             interiorFeatures
                          }) {
     const titleSection = document.getElementById('house-title')
     const picturesSection = document.getElementById('house-pictures')
@@ -135,7 +136,7 @@ function drawMainSection({
     picturesSection.innerHTML = drawPicturesSection(mainPictureUrl)
     generalInfoSection.innerHTML = drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, isFurnished, dues, isAsSwap, frontDirection, rentalIncome)
     explanationSection.innerHTML = drawExplanationSection()
-    featuresSection.innerHTML = drawFeaturesSection()
+    featuresSection.innerHTML = drawFeaturesSection(interiorFeatures[0])
 
 }
 
@@ -211,6 +212,7 @@ return            `<div class="images-container">
 
 
 function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, isFurnished, dues, isAsSwap, frontDirection, rentalIncome) {
+    const [year,month, day] = createdAt.split( '-');
     return `<h4 class="general-info-header">General Information</h4>
                 <div class="general-info-container">
                     <div class="general-info-left">
@@ -226,7 +228,7 @@ function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus,
                         </div>
                         <div class="right-content">
                             <p class="advertise-number">${advertisementNo}</p>
-                            <p>${createdAt}</p>
+                            <p>${day.substr(0,2)}.${month}.${year}</p>
                             <p>${advertisementStatus}</p>
                             <p>${housingShape}</p>
                             <p>${rooms}</p>
@@ -266,42 +268,43 @@ function drawExplanationSection() {
                     facilisi a velit cursus sapien egestas nec, accumsan.</p>`
 }
 
-function drawFeaturesSection() {
+function drawFeaturesSection(features) {
+    console.log(features)
     return `<div class="house-features-left">
                     <h4 class="general-info-header">Interior Features</h4>
                     <ul>
-                        <li>ADSL</li>
-                        <li>Alarm</li>
-                        <li>Balcony</li>
-                        <li>Barbecue</li>
-                        <li>Laundry room</li>
-                        <li>Wallpaper</li>
-                        <li>Dressing Room</li>
-                        <li>Video Intercom</li>
-                        <li>Shower</li>
-                        <li>Laminate</li>
-                        <li>Panel Door</li>
-                        <li>Blinds</li>
-                        <li>Sauna</li>
-                        <li>Satin Plaster</li>
-                        <li>Satin Color</li>
-                        <li>Ceramic Floor</li>
+                        <li class=${features.adsl? 'isChecked' : 'isUnchecked'}>ADSL</li>
+                        <li class=${features.alarm? 'isChecked' : 'isUnchecked'}>Alarm</li>
+                        <li class=${features.balcony? 'isChecked' : 'isUnchecked'}>Balcony</li>
+                        <li class=${features.barbecue? 'isChecked' : 'isUnchecked'}>Barbecue</li>
+                        <li class=${features.blinds? 'isChecked' : 'isUnchecked'}>Laundry room</li>
+                        <li class=${features.wallpaper? 'isChecked' : 'isUnchecked'}>Wallpaper</li>
+                        <li class=${features.dressingRoom? 'isChecked' : 'isUnchecked'}>Dressing Room</li>
+                        <li class=${features.videoIntercom? 'isChecked' : 'isUnchecked'}>Video Intercom</li>
+                        <li class=${features.shower? 'isChecked' : 'isUnchecked'}>Shower</li>
+                        <li class=${features.laminate? 'isChecked' : 'isUnchecked'}>Laminate</li>
+                        <li class=${features.panelDoor? 'isChecked' : 'isUnchecked'}>Panel Door</li>
+                        <li class=${features.blinds? 'isChecked' : 'isUnchecked'}>Blinds</li>
+                        <li class=${features.sauna? 'isChecked' : 'isUnchecked'}>Sauna</li>
+                        <li class=${features.satinPlaster? 'isChecked' : 'isUnchecked'}>Satin Plaster</li>
+                        <li class=${features.satinColor? 'isChecked' : 'isUnchecked'}>Satin Color</li>
+                        <li class=${features.ceramicFloor? 'isChecked' : 'isUnchecked'}>Ceramic Floor</li>
                     </ul>
                 </div>
                 <div class="house-features-right">
                     <h4 class="general-info-header">External Features</h4>
                     <ul>
-                        <li>Elevator</li>
-                        <li>Gardened</li>
-                        <li>Fitness</li>
-                        <li>Security</li>
-                        <li>Thermal Insulation</li>
-                        <li>Generator</li>
-                        <li>Tennis Court</li>
-                        <li>Car Park</li>
-                        <li>PVC</li>
-                        <li>Basketball Field</li>
-                        <li>Market</li>
+                        <li class=${features.elevator? 'isChecked' : 'isUnchecked'}>Elevator</li>
+                        <li class=${features.gardened? 'isChecked' : 'isUnchecked'}>Gardened</li>
+                        <li class=${features.fitness? 'isChecked' : 'isUnchecked'}>Fitness</li>
+                        <li class=${features.security? 'isChecked' : 'isUnchecked'}>Security</li>
+                        <li class=${features.thermalInsulation? 'isChecked' : 'isUnchecked'}>Thermal Insulation</li>
+                        <li class=${features.generator? 'isChecked' : 'isUnchecked'}>Generator</li>
+                        <li class=${features.tennisCourt? 'isChecked' : 'isUnchecked'}>Tennis Court</li>
+                        <li class=${features.carPark? 'isChecked' : 'isUnchecked'}>Car Park</li>
+                        <li class=${features.pvc? 'isChecked' : 'isUnchecked'}>PVC</li>
+                        <li class=${features.basketballField? 'isChecked' : 'isUnchecked'}>Basketball Field</li>
+                        <li class=${features.market? 'isChecked' : 'isUnchecked'}>Market</li>
                     </ul>
                 </div>`
 }
