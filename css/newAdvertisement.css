@@ -1,0 +1,215 @@
+container-fluid{
+    background: #F8F8F8;
+}
+.multistep-status{
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.multistep-status ul{
+    list-style-type: none;
+    list-style-position: inside;
+    outline: 1px solid green;
+    width: 604px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.aside-notification{
+    width: 100%;
+    margin-top: 10px;
+    width: 260px;
+    height: 205px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 19px 32px 20px 19px;
+    display: flex;
+    flex-direction: column;
+}
+.aside-notification img{
+    height: 50px;
+    width: 50px;
+}
+.notification-title{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 21px;
+}
+.aside-notification p{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    text-align: left;
+}
+.select-category{
+    background: #fff;
+    width: 900px;
+    height: 124px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 20px 19px 20px;
+}
+.main-wrapper .section-header{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+}
+.input-row{
+    margin-top: 25px;
+}
+.select-style{
+    font-family: "Roboto", sans-serif;
+    width: 135px;
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-right: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+}
+select[name="select-housing"]{
+    margin-right: 10px;
+    width: 250px;
+}
+.general-info{
+    width: 100%;
+    height: 1240px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px 20px 19px 19px;
+}
+.new-advertise-input{
+    font-family: "Roboto", sans-serif;
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-right: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+}
+.new-advertise-input[name="title-input"]{
+    width: 470px;
+    margin-top: 25px;
+}
+.advertisement-explanation{
+    width: 860px;
+    height: 152px;
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-top: 25px;
+}
+.new-advertise-input[name="price"]{
+    width: 250px;
+    margin-bottom: 20px;
+}
+.new-advertise-input[name="type"]{
+    width: 125px;
+}
+.left-side-input{
+    width: 250px;
+}
+select[name="warming-type"]{
+    width: 250px;
+}
+.advertisement-location{
+    width: 900px;
+    height: 624px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+}
+.advertisement-photos{
+    width: 900px;
+    height: 377px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+}
+.dragDrop-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.upload-button-container{
+    width: 227px;
+    height: 116px;
+    background: #999;
+}
+.uploaded-preview-container{
+    width: 860px;
+    height: 150px;
+    background: #333;
+    margin-top: 30px;
+}
+.advertisement-features{
+    width: 900px;
+    height: 623px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+.feauter-header{
+    margin-top: 20px;
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+.interior-features-column ul{
+    list-style-position: inside;
+    list-style-type: none;
+}
+.interior-features-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.interior-features-column{
+    width: 148px;
+}
+.interior-features-column ul li{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    vertical-align: center;
+}
+.interior-features-column ul li input[type="checkbox"]{
+    margin-right: 10px;
+}
+.next-button-container{
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+.next{
+    width: 160px;
+    height: 35px;
+    background: #E02828;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}

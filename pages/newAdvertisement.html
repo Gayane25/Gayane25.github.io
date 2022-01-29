@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#673AB6">
+    <title>For sale Content</title>
+    <link rel="icon" href="../assets/images/favicon_io/favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/for_sale_content.css">
+    <link rel="stylesheet" href="../css/newAdvertisement.css">
+</head>
+<body>
+<div class="container-fluid">
+    <header class="for-sale-content-header">
+        <div class="header-container flex-div">
+            <div class="left-nav flex-div">
+                <div class="logo flex-div">
+                    <div class="logo-img"></div>
+                    <p><strong>fast</strong><span class="logo-title">home</span></p>
+                </div>
+                <div class="nav-container">
+                    <nav class="flex-div">
+                        <a href="../forSale/forSale.html" class="nav-item">For Sale</a>
+                        <a href="../for-rent/forRental.html" class="nav-item">For Rent</a>
+                        <a href="#" class="nav-item">Daily Rental</a>
+                        <a href="#" class="nav-item">Projects</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="right-nav flex-div">
+                <a href="#" class="new-advertise-button">Advertise</a>
+                <a href="#" class="profile-button"></a>
+            </div>
+        </div>
+    </header>
+    <main class="for-sale-content-main flex-div">
+        <div class="main-wrapper">
+            <section class="multistep-status">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </section>
+            <form enctype="multipart/form-data"  name="advertisementForm">
+                <section class="select-category">
+                    <h6 class="section-header">Category</h6>
+                    <div class="input-row">
+                        <select name="selectHousing" class="select-style">
+                            <option value="Apartment">Apartment</option>
+                            <option value="Building">Building</option>
+                            <option value="Summery">Summery</option>
+                            <option value="Mansion">Mansion</option>
+                            <option value="Waterside">Waterside</option>
+                            <option value="Villa">Villa</option>
+                        </select>
+                        <select name="saleRental" class="select-style">
+                            <option value="For Sale">For Sale</option>
+                            <option value="For Rental">For Rental</option>
+                        </select>
+                    </div>
+                </section>
+                <section class="general-info">
+                    <h6 class="section-header">General Information</h6>
+                    <input type="text" name="titleInput" class="new-advertise-input">
+                    <textarea class="advertisement-explanation" name="explanationText"></textarea>
+                    <div class="input-row">
+                        <input type="number" name="price" class="new-advertise-input">
+                        <select name="priceType" class="select-style">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                    <input type="number" name="rooms" class="new-advertise-input left-side-input">
+                    <div class="input-row">
+                        <input type="number" name="livingRooms" class="new-advertise-input left-side-input">
+                    </div>
+                    <div class="input-row">
+                        <input type="number" name="grossSquare" class="new-advertise-input left-side-input">
+                    </div>
+                    <div class="input-row">
+                        <input type="number" name="netSquare" class="new-advertise-input left-side-input">
+                    </div>
+                    <div class="input-row">
+                        <select name="warmingType" class="select-style">
+                            <option value="No Heating">No Heating</option>
+                            <option value="">Natural Gas</option>
+                            <option value="Natural Gas">Solar Energy</option>
+                            <option value="Geothermal">Geothermal</option>
+                            <option value="Air Conditioned">Air Conditioned</option>
+                            <option value="With Stove">With Stove</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <input type="number" name="buildingAge" class="new-advertise-input left-side-input">
+                    </div>
+                    <div class="input-row">
+                        <input type="number" name="floorLocation" class="new-advertise-input left-side-input">
+                    </div>
+                    <div class="input-row">
+                        <select name="loanAvailability" class="select-style">
+                            <option value="All of">All of</option>
+                            <option value="Available">Available</option>
+                            <option value="Not Available">Not Available</option>
+                            <option value="Unknown">Unknown</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <select name="furnishedStatus" class="select-style">
+                            <option value="Furnished">Furnished</option>
+                            <option value="Not Furnished">Not Furnished</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <select name="statusSelect" class="select-style">
+                            <option value="Zero">Zero</option>
+                            <option value="Second Hand">Second Hand</option>
+                            <option value="Under Construction">Under Construction</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <input type="number" name="duesValue" class="new-advertise-input left-side-input">
+                        <select name="duesType" class="select-style">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <select name="swapSelect" class="select-style">
+                            <option value="All of">All of</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <select name="frontDirectionSelect" class="select-style">
+                            <option value="North">North</option>
+                            <option value="">South</option>
+                            <option value="South">East</option>
+                            <option value="West">West</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <input type="number" name="rentalIncomeValue" class="new-advertise-input left-side-input">
+                        <select name="rentalIncomeType" class="select-style">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                </section>
+                <section class="advertisement-location">
+                    <h6 class="section-header">Location Information</h6>
+                    <div class="input-row">
+                        <input type="text" name="addressCity" class="new-advertise-input">
+                        <input type="text" name="addressStreet" class="new-advertise-input">
+                    </div>
+                </section>
+                <section class="advertisement-photos">
+                    <h6 class="section-header">Posting Photos</h6>
+                    <div class="dragDrop-container">
+                        <div class="upload-button-container"></div>
+                        <div class="uploaded-preview-container"></div>
+                    </div>
+                </section>
+                <section class="advertisement-features">
+                    <h6 class="section-header">Advertise Features</h6>
+                    <h6 class="feauter-header">Interrior Features</h6>
+                    <div class="interior-features-container">
+                        <div class="interior-features-column">
+                            <ul>
+                                <li><input name="hasAdsl" type="checkbox"/>ADSL</li>
+                                <li><input type="checkbox" name="hasAlarm" />Alarm</li>
+                                <li><input type="checkbox" name="hasBalcony"/>Balcony</li>
+                                <li><input type="checkbox" name="hasBuiltInKitchen"/>Built-in Kitchen</li>
+                                <li><input type="checkbox" name="hasBarbecue"/>Barbecue</li>
+                                <li><input type="checkbox" name="isFurnished"/>Furnished</li>
+                                <li><input type="checkbox" name="hasLaundryRoom"/>Laundry Room</li>
+                                <li><input type="checkbox" name="hasAirConditioner"/>Air Conditioning</li>
+                                <li><input type="checkbox" name="hasWallpaper"/>Wallpaper</li>
+                                <li><input type="checkbox" name="hasDressingRoom"/>Dressing Room</li>
+                            </ul>
+                        </div>
+                        <div class="interior-features-column">
+                            <ul>
+                                <li><input type="checkbox" name="hasVideointercom"/>Video Intercom</li>
+                                <li><input type="checkbox" name="hasJacuzzi"/>Jacuzzi</li>
+                                <li><input type="checkbox" name="hasShower"/>Shower</li>
+                                <li><input type="checkbox" name="hasTvsatellite"/>TV Satellite</li>
+                                <li><input type="checkbox" name="hasLaminate"/>Laminate</li>
+                                <li><input type="checkbox" name="hasPanelDoor"/>Panel Door</li>
+                                <li><input type="checkbox" name="hasMarbleFloor"/>Marble Floor</li>
+                                <li><input type="checkbox" name="hasBlinds"/>Blinds</li>
+                                <li><input type="checkbox" name="hasSauna"/>Sauna</li>
+                                <li><input type="checkbox" name="hasParentBathroom"/>Parent Bathroom</li>
+                            </ul>
+                        </div>
+                        <div class="interior-features-column">
+                            <ul>
+                                <li><input type="checkbox" name="hasParquet"/>Parquet</li>
+                                <li><input type="checkbox" name="hasSatinPlaster"/>Satin Plaster</li>
+                                <li><input type="checkbox" name="hasSatinColor"/>Satin Color</li>
+                                <li><input type="checkbox" name="hasCeramicFloor"/>Ceramic Floor</li>
+                                <li><input type="checkbox" name="hasSpotLight"/>Spotlight</li>
+                                <li><input type="checkbox" name="hasFirePlace"/>Fireplace</li>
+                                <li><input type="checkbox" name="hasTerrace"/>Terrace</li>
+                                <li><input type="checkbox" name="hasCloakRoom"/>Cloakroom</li>
+                                <li><input type="checkbox" name="hasUnderfloorHeateing"/>Underfloor Heating</li>
+                                <li><input type="checkbox" name="hasDoubleGlzaing"/>Double Glazing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h6 class="feauter-header">External Features</h6>
+                    <div class="interior-features-container">
+                        <div class="interior-features-column">
+                            <ul>
+                                <li><input type="checkbox" name="hasElevator"/>Elevator</li>
+                                <li><input type="checkbox" name="isGardened"/>Gardened</li>
+                                <li><input type="checkbox" name="hasFitness"/>Fitness</li>
+                                <li><input type="checkbox" name="hasSecurity"/>Security</li>
+                                <li><input type="checkbox" name="hasTermalInsulation"/>Thermal Insulation</li>
+                                <li><input type="checkbox" name="hasGenerator"/>Generator</li>
+                            </ul>
+                        </div>
+                        <div class="interior-features-column">
+                            <ul>
+                                <li><input type="checkbox" name="hasDoorman"/>Doorman</li>
+                                <li><input type="checkbox" name="hasCarPark"/>Car Park</li>
+                                <li><input type="checkbox" name="hasPlayground"/>Playground</li>
+                                <li><input type="checkbox" name="hasPvc"/>PVC</li>
+                                <li><input type="checkbox" name="hasSiding"/>Siding</li>
+                                <li><input type="checkbox" name="hasWaterTank"/>Water Tank</li>
+                            </ul>
+                        </div>
+                        <div class="interior-features-column">
+                            <ul>
+                                <li><input type="checkbox" name="hasTennisCourt"/>Tennis Court</li>
+                                <li><input type="checkbox" name="hasFireEscape"/>Fire Escape</li>
+                                <li><input type="checkbox" name="hasSwimmingPool"/>Swimming Pool</li>
+                                <li><input type="checkbox" name="hasFootballField"/>Football Field</li>
+                                <li><input type="checkbox" name="hasBasketballField"/>Basketball Field</li>
+                                <li><input type="checkbox" name="hasMarket"/>Market</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="next-button-container">
+                    <button class="next" type="submit">Next</button>
+                </section>
+            </form>
+        </div>
+        <div class="main-aside">
+            <section class="aside-notification">
+                <img src="../assets/images/new_advertisement/light-bulb.png" alt="">
+                <span class="notification-title">Ad category selection</span>
+                <p>
+                    In order for your advertisement to be sold quickly, the information must be entered completely.
+                </p>
+            </section>
+        </div>
+    </main>
+    <footer class="for-sale-content-footer">
+        <div class="footer-container">
+            <div class="footer-homefast">
+                <ul class="footer-homefast-list">
+                    <li class="title-item">Homefast</li>
+                    <li class="list-item">About Us</li>
+                    <li class="list-item">Our Awards</li>
+                    <li class="list-item">Corporate Materials</li>
+                    <li class="list-item">Advertisement</li>
+                    <li class="list-item">Human Resources</li>
+                    <li class="list-item">Sitemap</li>
+                </ul>
+            </div>
+            <div class="footer-our-services">
+                <ul class="footer-ourservice-list ">
+                    <li class="title-item">Our Services</li>
+                    <li class="list-item">Our Special Services</li>
+                    <li class="list-item">Membership</li>
+                    <li class="list-item">Corporate Membership</li>
+                    <li class="list-item">Projects</li>
+                    <li class="list-item">Advertise For Free</li>
+                    <li class="list-item">Search On Map</li>
+                </ul>
+            </div>
+            <div class="footer-other">
+                <ul class="footer-other-list">
+                    <li class="title-item">Other</li>
+                    <li class="list-item">Posting Rules</li>
+                    <li class="list-item">Terms of Use</li>
+                    <li class="list-item">Membership Agreement and Privacy Policy</li>
+                    <li class="list-item">Operation Guide</li>
+                    <li class="list-item">Cookie Policy</li>
+                    <li class="list-item">About Protection of Personal Data</li>
+                    <li class="list-item">Explicit Consent Text</li>
+                    <li class="list-item">Contact</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="../js/formHandler.js"></script>
+<!--<script>-->
+<!--    function myMap(newCoords) {-->
+<!--        const myLatLng = newCoords ? newCoords : {lat: -25.363, lng: 131.044};-->
+<!--        const mapProp = {-->
+<!--            center: myLatLng,-->
+<!--            zoom: 15,-->
+<!--        };-->
+<!--        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);-->
+<!--        new google.maps.Marker({-->
+<!--            position: myLatLng,-->
+<!--            map,-->
+<!--            title: "Here I am",-->
+<!--        });-->
+<!--    }-->
+<!--</script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeADjHaDdzVWQGGcm3etdZPeVX0CnX1og&callback=myMap"></script>-->
+</body>
+</html>
