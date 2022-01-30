@@ -35,17 +35,98 @@
       </div>
       <div class="account-side">
         <button type="submit" class="advertise-button"><a href="./clickAdvertise/advertise1.html"> Advertise</a></button>
-        <span class="account-icon"
+        <span class="account-icon" id ="open"
           ><a href="#"><i class="fas fa-user-circle" style="width: 30px"></i></a
         ></span>
       </div>
     </header>
+    <div class="modal-container" id="modal-container">
+      <div class="modal">
+        <div class="signUp-container">
+          <div class="signUp-container-left">
+            <div class="signUp-logo">
+              <img src="../assets/logoForPopUp.png" alt="" />
+            </div>
+            <h3>Why should I Join Fasthome?</h3>
+            <p>
+              To have the experience of “property”, “information” and “trust” in
+              the real estate world all together…
+            </p>
+            <div class="colorful-eclipse">
+              <div class="eclipse">
+                <span><img src="../assets/location-vector.png" alt="" /></span>
+                <p>Learn about location.</p>
+              </div>
+              <div class="eclipse">
+                <span
+                  ><img src="../assets/freeCharge-vector.png" alt=""
+                /></span>
+                <p>Find out the value of your house free of charge.</p>
+              </div>
+            </div>
+            <div class="colorful-eclipse">
+              <div class="eclipse">
+                <span><img src="../assets/qualify-vector.png" alt="" /></span>
+                <p>Discover houses that will improve your life quality.</p>
+              </div>
+              <div class="eclipse">
+                <span><img src="../assets/projects-vector.png" alt="" /></span>
+                <p>Be aware of new projects.</p>
+              </div>
+            </div>
+          </div>
+          <div class="signUp-container-right">
+            <div class="membership">
+              <span>Individual Membership</span>
+              <span>Corporate Membership</span>
+              <div class="line"></div>
+            </div>
+            <button type="submit" class="connect-google">
+              <img src="../assets/google-icon.png" />
+              Connect with Google
+            </button>
+            <i><span> or</span></i>
+            <input
+              type="text"
+              class="signUp-input"
+              placeholder="Name and Surname"
+            />
+            <input type="text" class="signUp-input" placeholder="E-mail" />
+            <input type="text" class="signUp-input" placeholder="Password" />
+            <input
+              type="text"
+              class="signUp-input"
+              placeholder="Password (Again)"
+            />
+            <div class="checkbox-agreement">
+              <input type="checkbox" id="agreement" name="agreement" />
+              <label for="agreement"
+                ><a href="#">I agree to the Membership Terms</a></label
+              >
+            </div>
+            <div class="checkbox-purposes">
+              <input type="checkbox" id="purposes" name="purposes" />
+              <label for="purposes"
+                >I allow Fasthome to contact me via e-mail, SMS, etc for
+                marketing and promotional purposes.
+              </label>
+            </div>
+            <button class="signUp-button">SIGN UP</button>
+            <span class="already-member"
+              >Already member? <a href="#">LogIn now</a></span
+            >
+          </div>
+        </div>
+      </div>
+      <div id="close"><i class="fas fa-times-circle"></i></div>
+    </div>
     <main>
       <div class="main-search">
         <div class="search-button">
           <h3 id="h3-dream-house">Your dream <br />houses is here</h3>
-          <input type="text" class="search" />
-          <button class="search-icon"></button>
+          <div class="searching-line">
+          <input type="text" class="search" /><input type="button" class="search-icon">
+          </div>
         </div>
       </div>
       <div class="sales-all">
@@ -260,5 +341,6 @@
            </ul>
         </div>
       </footer>
+      <script src="./forSale/forSaleJs/forSaleScript.js"defer></script>
   </body>
 </html>
