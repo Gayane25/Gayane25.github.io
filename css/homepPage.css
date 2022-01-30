@@ -37,6 +37,7 @@
   background: #ffffff;
   border-radius: 5px;
   margin-top: 50px;
+  border: none;
 }
 .search-button {
   margin: 125px auto;
