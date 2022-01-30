@@ -86,6 +86,10 @@ body {
   border-radius: 4px;
   background-color: #e02828;
 }
+.account-side .advertise-button a {
+  text-decoration: none;
+  color: white;
+}
 .account-side .account-icon {
   padding-left: 10px;
 }
