@@ -188,8 +188,32 @@ main {
   font-family: 'Roboto';
   width: 227px;
   height: 35px;
+  margin-bottom: 20px;
   border-radius: 5px;
   background-color: #e02828;
   color: #ffffff;
   border: none;
 }
+.uploading-yard {
+  text-align: center;
+  width: 860px;
+  height: 150px;
+  margin-top: 20px;
+  background: #f8f8f8;
+  border: 0.5px dashed rgba(0, 0, 0, 0.5);
+}
+.uploading-yard .plus-sign {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  color: #e02828;
+}
+.uploading-yard p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
