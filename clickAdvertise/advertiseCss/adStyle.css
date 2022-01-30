@@ -175,3 +175,21 @@ main {
 .uploading-Photos {
   text-align: center;
 }
+.uploading-Photos h4 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.posting-photos .download-button {
+  font-family: 'Roboto';
+  width: 227px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #e02828;
+  color: #ffffff;
+  border: none;
+}
