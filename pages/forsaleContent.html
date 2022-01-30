@@ -1,393 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>For sale Content</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/for_sale_content.css">
-</head>
-<body>
-<div class="container-fluid">
-    <header class="for-sale-content-header">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/for_sale_content.css" />
+    <link rel="stylesheet" href="../forSale/forSaleStyles/Sale.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header class="for-sale-content-header">
         <div class="header-container flex-div">
-            <div class="left-nav flex-div">
-                <div class="logo flex-div">
-                    <div class="logo-img"></div>
-                    <p><strong>fast</strong><span class="logo-title">home</span></p>
-                </div>
-                <div class="nav-container">
-                    <nav class="flex-div">
-                        <a href="#" class="nav-item">For Sale</a>
-                        <a href="#" class="nav-item">For Rent</a>
-                        <a href="#" class="nav-item">Daily Rental</a>
-                        <a href="#" class="nav-item">Projects</a>
-                    </nav>
-                </div>
+          <div class="left-nav flex-div">
+            <div class="logo flex-div">
+              <div class="logo-img"></div>
+              <p>
+                <a
+                  href="../index.html"
+                  style="text-decoration: none; color: black"
+                  ><strong>fast</strong><span class="logo-title">home</span></a
+                >
+              </p>
             </div>
-            <div class="right-nav flex-div">
-                <a href="#" class="new-advertise-button">Advertise</a>
-                <a href="#" class="profile-button"></a>
+            <div class="nav-container">
+              <nav class="flex-div">
+                <a href="../forSale/forSale.html" class="nav-item">For Sale</a>
+                <a href="../for-rent/forRental.html" class="nav-item"
+                  >For Rent</a
+                >
+                <a href="../forDailyRent/forDaily.html" class="nav-item"
+                  >Daily Rental</a
+                >
+                <a href="#" class="nav-item">Projects</a>
+              </nav>
             </div>
+          </div>
+          <div class="right-nav flex-div">
+            <a
+              href="../clickAdvertise/advertise1.html"
+              class="new-advertise-button"
+              >Advertise</a
+            >
+            <a href="#" class="profile-button" id="open"></a>
+          </div>
         </div>
-    </header>
-    <main class="for-sale-content-main flex-div">
+      </header>
+      <div class="modal-container" id="modal-container">
+        <div class="modal">
+          <div class="signUp-container">
+            <div class="signUp-container-left">
+              <div class="signUp-logo">
+                <img src="../assets/logoForPopUp.png" alt="" />
+              </div>
+              <h3>Why should I Join Fasthome?</h3>
+              <p>
+                To have the experience of “property”, “information” and “trust”
+                in the real estate world all together…
+              </p>
+              <div class="colorful-eclipse">
+                <div class="eclipse">
+                  <span
+                    ><img src="../assets/location-vector.png" alt=""
+                  /></span>
+                  <p>Learn about location.</p>
+                </div>
+                <div class="eclipse">
+                  <span
+                    ><img src="../assets/freeCharge-vector.png" alt=""
+                  /></span>
+                  <p>Find out the value of your house free of charge.</p>
+                </div>
+              </div>
+              <div class="colorful-eclipse">
+                <div class="eclipse">
+                  <span><img src="../assets/qualify-vector.png" alt="" /></span>
+                  <p>Discover houses that will improve your life quality.</p>
+                </div>
+                <div class="eclipse">
+                  <span
+                    ><img src="../assets/projects-vector.png" alt=""
+                  /></span>
+                  <p>Be aware of new projects.</p>
+                </div>
+              </div>
+            </div>
+            <div class="signUp-container-right">
+              <div class="membership">
+                <span>Individual Membership</span>
+                <span>Corporate Membership</span>
+                <div class="line"></div>
+              </div>
+              <button type="submit" class="connect-google">
+                <img src="../assets/google-icon.png" />
+                Connect with Google
+              </button>
+              <i><span> or</span></i>
+              <input
+                type="text"
+                class="signUp-input"
+                placeholder="Name and Surname"
+              />
+              <input type="text" class="signUp-input" placeholder="E-mail" />
+              <input type="text" class="signUp-input" placeholder="Password" />
+              <input
+                type="text"
+                class="signUp-input"
+                placeholder="Password (Again)"
+              />
+              <div class="checkbox-agreement">
+                <input type="checkbox" id="agreement" name="agreement" />
+                <label for="agreement"
+                  ><a href="#">I agree to the Membership Terms</a></label
+                >
+              </div>
+              <div class="checkbox-purposes">
+                <input type="checkbox" id="purposes" name="purposes" />
+                <label for="purposes"
+                  >I allow Fasthome to contact me via e-mail, SMS, etc for
+                  marketing and promotional purposes.
+                </label>
+              </div>
+              <button class="signUp-button">SIGN UP</button>
+              <span class="already-member"
+                >Already member? <a href="#">LogIn now</a></span
+              >
+            </div>
+          </div>
+        </div>
+        <div id="close"><i class="fas fa-times-circle"></i></div>
+      </div>
+      <main class="for-sale-content-main flex-div">
         <div class="main-wrapper">
-            <section class="house-title">
-                <div class="house-subtitle">
-                    <h2>Large Family House</h2>
-                    <p class="house-location">London, Oxford St.</p>
+          <section class="house-title">
+            <div class="house-subtitle">
+              <h2>Large Family House</h2>
+              <p class="house-location">London, Oxford St.</p>
+            </div>
+            <div class="house-price">
+              <span>290.000 $</span>
+            </div>
+          </section>
+          <section class="house-pictures">
+            <div class="main-picture">
+              <img src="../assets/images/house_main.png" alt="" />
+              <div class="slider-buttons">
+                <input type="image" src="../assets/images/left_arrow.png" />
+                <input type="image" src="../assets/images/right_arrow.png" />
+              </div>
+            </div>
+            <div class="additional-pictures">
+              <img src="../assets/images/house_main.png" alt="" />
+              <img src="../assets/images/house_main.png" alt="" />
+              <img src="../assets/images/house_main.png" alt="" />
+              <img src="../assets/images/house_main.png" alt="" />
+            </div>
+          </section>
+          <section class="house-general-info">
+            <h4 class="general-info-header">General Information</h4>
+            <div class="general-info-container">
+              <div class="general-info-left">
+                <div class="left-title">
+                  <p>Advertise No</p>
+                  <p>Published Date</p>
+                  <p>Advertise Status</p>
+                  <p>Housing Shape</p>
+                  <p>Room + Living Number</p>
+                  <p>Gross / Net M²</p>
+                  <p>Warming Type</p>
+                  <p>Building Age</p>
                 </div>
-                <div class="house-price">
-                    <span>290.000 $</span>
+                <div class="right-content">
+                  <p class="advertise-number">0-1234</p>
+                  <p>26 November 2020</p>
+                  <p>Sale</p>
+                  <p>Apartment</p>
+                  <p>3 + 1</p>
+                  <p>150 M² / 135 M²</p>
+                  <p>Natural Gas</p>
+                  <p>5</p>
                 </div>
-            </section>
-            <section class="house-pictures">
-                <div class="main-picture">
-                    <img src="../assets/images/house_main.png" alt="">
-                    <div class="slider-buttons">
-                        <input type="image" src="../assets/images/left_arrow.png">
-                        <input type="image" src="../assets/images/right_arrow.png">
+              </div>
+              <div class="general-info-right">
+                <div class="left-title">
+                  <p>Floor Location</p>
+                  <p>Available for Loan</p>
+                  <p>Furnished</p>
+                  <p>Dues</p>
+                  <p>Swap</p>
+                  <p>Front</p>
+                  <p>Rental Income</p>
+                </div>
+                <div class="right-content">
+                  <p>10</p>
+                  <p>Appropriate</p>
+                  <p>Not</p>
+                  <p>1.200 $</p>
+                  <p>Not</p>
+                  <p>Northwest</p>
+                  <p>3.000 $</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="house-explanation">
+            <h4 class="general-info-header">Explanation</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas
+              ac convallis tellus pellentesque non odio consectetur bibendum.
+              Auctor leo risus in tristique sit enim nec sed. Ridiculus
+              vulputate facilisi a velit cursus sapien egestas nec, accumsan.
+            </p>
+          </section>
+          <section class="house-features">
+            <div class="house-features-left">
+              <h4 class="general-info-header">Interior Features</h4>
+              <ul>
+                <li>ADSL</li>
+                <li>Alarm</li>
+                <li>Balcony</li>
+                <li>Barbecue</li>
+                <li>Laundry room</li>
+                <li>Wallpaper</li>
+                <li>Dressing Room</li>
+                <li>Video Intercom</li>
+                <li>Shower</li>
+                <li>Laminate</li>
+                <li>Panel Door</li>
+                <li>Blinds</li>
+                <li>Sauna</li>
+                <li>Satin Plaster</li>
+                <li>Satin Color</li>
+                <li>Ceramic Floor</li>
+              </ul>
+            </div>
+            <div class="house-features-right">
+              <h4 class="general-info-header">External Features</h4>
+              <ul>
+                <li>Elevator</li>
+                <li>Gardened</li>
+                <li>Fitness</li>
+                <li>Security</li>
+                <li>Thermal Insulation</li>
+                <li>Generator</li>
+                <li>Tennis Court</li>
+                <li>Car Park</li>
+                <li>PVC</li>
+                <li>Basketball Field</li>
+                <li>Market</li>
+              </ul>
+            </div>
+          </section>
+          <section class="house-location-section">
+            <h4 class="general-info-header">Location Information</h4>
+            <div class="map"></div>
+          </section>
+          <section class="house-price-changes">
+            <div class="price-changes-left">
+              <h4 class="general-info-header">Location Price Changes</h4>
+              <h6>Change in House Sales Prices</h6>
+              <div class="price-changes-tabs">
+                <div class="tabs-header">
+                  <span class="tab-header">Last 1 Year</span>
+                  <span class="tab-header">Last 3 Year</span>
+                  <span class="tab-header tab-selected">Last 5 Year</span>
+                </div>
+                <p class="tab-title">First Street</p>
+                <div class="danger-progress">
+                  <div class="progress danger-progress-fill" style="width: 58%">
+                    <span>%58</span>
+                  </div>
+                </div>
+                <p class="tab-title">Second Street</p>
+                <div class="danger-progress">
+                  <div class="progress danger-progress-fill" style="width: 27%">
+                    <span>%27</span>
+                  </div>
+                </div>
+                <p class="tab-title">Third Street</p>
+                <div class="danger-progress">
+                  <div class="progress danger-progress-fill" style="width: 83%">
+                    <span>%83</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="price-changes-right">
+              <h6 class="text-right">First, Second, Third Street</h6>
+              <h6>Change in House Rental Prices</h6>
+              <div class="price-changes-tabs">
+                <div class="tabs-header">
+                  <span class="tab-header">Last 1 Year</span>
+                  <span class="tab-header">Last 3 Year</span>
+                  <span class="tab-header tab-selected">Last 5 Year</span>
+                </div>
+                <p class="tab-title">First Street</p>
+                <div class="primary-progress">
+                  <div
+                    class="progress primary-progress-fill"
+                    style="width: 25%"
+                  >
+                    <span>%25</span>
+                  </div>
+                </div>
+                <p class="tab-title">Second Street</p>
+                <div class="primary-progress">
+                  <div
+                    class="progress primary-progress-fill"
+                    style="width: 83%"
+                  >
+                    <span>%83</span>
+                  </div>
+                </div>
+                <p class="tab-title">Third Street</p>
+                <div class="primary-progress">
+                  <div
+                    class="progress primary-progress-fill"
+                    style="width: 42%"
+                  >
+                    <span>%42</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="house-market-info">
+            <img src="../assets/images/market_charts.png" alt="" />
+          </section>
+          <section class="house-demographic">
+            <div class="demographic-heads">
+              <h4 class="general-info-header">Demographic Information</h4>
+              <h6>First, Second, Third Street</h6>
+            </div>
+            <div>
+              <div class="pie-chart-container">
+                <div class="pie-chart-item">
+                  <h5>Education Status</h5>
+                  <div class="char-item-image">
+                    <figure class="piechart2" style="--chart: 90%"></figure>
+                    <img
+                      src="../assets/images/graduation.png"
+                      class="edu_chart-img"
+                      alt=""
+                    />
+                  </div>
+                  <div class="chart-info">
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #fadddd"
+                      ></div>
+                      <span>Uneducated</span>
                     </div>
-                </div>
-                <div class="additional-pictures">
-                    <img src="../assets/images/house_main.png" alt="">
-                    <img src="../assets/images/house_main.png" alt="">
-                    <img src="../assets/images/house_main.png" alt="">
-                    <img src="../assets/images/house_main.png" alt="">
-                </div>
-            </section>
-            <section class="house-general-info">
-                <h4 class="general-info-header">General Information</h4>
-                <div class="general-info-container">
-                    <div class="general-info-left">
-                        <div class="left-title">
-                            <p>Advertise No</p>
-                            <p>Published Date</p>
-                            <p>Advertise Status</p>
-                            <p>Housing Shape</p>
-                            <p>Room + Living Number</p>
-                            <p>Gross / Net M²</p>
-                            <p>Warming Type</p>
-                            <p>Building Age</p>
-                        </div>
-                        <div class="right-content">
-                            <p class="advertise-number">0-1234</p>
-                            <p>26 November 2020</p>
-                            <p>Sale</p>
-                            <p>Apartment</p>
-                            <p>3 + 1</p>
-                            <p>150 M² / 135 M²</p>
-                            <p>Natural Gas</p>
-                            <p>5</p>
-                        </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #ec7575"
+                      ></div>
+                      <span>Pri</span>
                     </div>
-                    <div class="general-info-right">
-                        <div class="left-title">
-                            <p>Floor Location</p>
-                            <p>Available for Loan</p>
-                            <p>Furnished</p>
-                            <p>Dues</p>
-                            <p>Swap</p>
-                            <p>Front</p>
-                            <p>Rental Income</p>
-                        </div>
-                        <div class="right-content">
-                            <p>10</p>
-                            <p>Appropriate</p>
-                            <p>Not</p>
-                            <p>1.200 $</p>
-                            <p>Not</p>
-                            <p>Northwest</p>
-                            <p>3.000 $</p>
-                        </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #f5baba"
+                      ></div>
+                      <span>Middle</span>
                     </div>
-                </div>
-            </section>
-            <section class="house-explanation">
-                <h4 class="general-info-header">Explanation</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas ac convallis tellus pellentesque non
-                    odio consectetur bibendum. Auctor leo risus in tristique sit enim nec sed. Ridiculus vulputate
-                    facilisi a velit cursus sapien egestas nec, accumsan.</p>
-            </section>
-            <section class="house-features">
-                <div class="house-features-left">
-                    <h4 class="general-info-header">Interior Features</h4>
-                    <ul>
-                        <li>ADSL</li>
-                        <li>Alarm</li>
-                        <li>Balcony</li>
-                        <li>Barbecue</li>
-                        <li>Laundry room</li>
-                        <li>Wallpaper</li>
-                        <li>Dressing Room</li>
-                        <li>Video Intercom</li>
-                        <li>Shower</li>
-                        <li>Laminate</li>
-                        <li>Panel Door</li>
-                        <li>Blinds</li>
-                        <li>Sauna</li>
-                        <li>Satin Plaster</li>
-                        <li>Satin Color</li>
-                        <li>Ceramic Floor</li>
-                    </ul>
-                </div>
-                <div class="house-features-right">
-                    <h4 class="general-info-header">External Features</h4>
-                    <ul>
-                        <li>Elevator</li>
-                        <li>Gardened</li>
-                        <li>Fitness</li>
-                        <li>Security</li>
-                        <li>Thermal Insulation</li>
-                        <li>Generator</li>
-                        <li>Tennis Court</li>
-                        <li>Car Park</li>
-                        <li>PVC</li>
-                        <li>Basketball Field</li>
-                        <li>Market</li>
-                    </ul>
-                </div>
-            </section>
-            <section class="house-location-section">
-                <h4 class="general-info-header">Location Information</h4>
-                <div class="map"></div>
-            </section>
-            <section class="house-price-changes">
-                <div class="price-changes-left">
-                    <h4 class="general-info-header">Location Price Changes</h4>
-                    <h6>Change in House Sales Prices</h6>
-                    <div class="price-changes-tabs">
-                        <div class="tabs-header">
-                            <span class="tab-header">Last 1 Year</span>
-                            <span class="tab-header">Last 3 Year</span>
-                            <span class="tab-header tab-selected">Last 5 Year</span>
-                        </div>
-                        <p class="tab-title">First Street</p>
-                        <div class="danger-progress">
-                            <div class="progress danger-progress-fill" style="width: 58%;">
-                                <span>%58</span>
-                            </div>
-                        </div>
-                        <p class="tab-title">Second Street</p>
-                        <div class="danger-progress">
-                            <div class="progress danger-progress-fill" style="width: 27%;">
-                                <span>%27</span>
-                            </div>
-                        </div>
-                        <p class="tab-title">Third Street</p>
-                        <div class="danger-progress">
-                            <div class="progress danger-progress-fill" style="width: 83%;">
-                                <span>%83</span>
-                            </div>
-                        </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #e75353"
+                      ></div>
+                      <span>Uni</span>
                     </div>
-                </div>
-                <div class="price-changes-right">
-                    <h6 class="text-right">First, Second, Third Street </h6>
-                    <h6>Change in House Rental Prices</h6>
-                    <div class="price-changes-tabs">
-                        <div class="tabs-header">
-                            <span class="tab-header">Last 1 Year</span>
-                            <span class="tab-header">Last 3 Year</span>
-                            <span class="tab-header tab-selected">Last 5 Year</span>
-                        </div>
-                        <p class="tab-title">First Street</p>
-                        <div class="primary-progress">
-                            <div class="progress primary-progress-fill" style="width: 25%;">
-                                <span>%25</span>
-                            </div>
-                        </div>
-                        <p class="tab-title">Second Street</p>
-                        <div class="primary-progress">
-                            <div class="progress primary-progress-fill" style="width: 83%;">
-                                <span>%83</span>
-                            </div>
-                        </div>
-                        <p class="tab-title">Third Street</p>
-                        <div class="primary-progress">
-                            <div class="progress primary-progress-fill" style="width: 42%;">
-                                <span>%42</span>
-                            </div>
-                        </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #f19898"
+                      ></div>
+                      <span>High School</span>
                     </div>
+                  </div>
                 </div>
-            </section>
-            <section class="house-market-info">
-                <img src="../assets/images/market_charts.png" alt="">
-            </section>
-            <section class="house-demographic">
-                <div class="demographic-heads">
-                    <h4 class="general-info-header">Demographic Information</h4>
-                    <h6>First, Second, Third Street </h6>
-                </div>
-                <div>
-                    <div class="pie-chart-container">
-                        <div class="pie-chart-item">
-                            <h5>Education Status</h5>
-                            <div class="char-item-image">
-                                <figure class="piechart2" style="--chart:90%"></figure>
-                                <img src="../assets/images/graduation.png" class="edu_chart-img" alt="">
-                            </div>
-                            <div class="chart-info">
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #FADDDD"></div>
-                                    <span>Uneducated</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #EC7575"></div>
-                                    <span>Pri</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #F5BABA"></div>
-                                    <span>Middle</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #E75353"></div>
-                                    <span>Uni</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #F19898"></div>
-                                    <span>High School</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pie-chart-item">
-                            <h5>Age Distribution</h5>
-                            <div class="char-item-image">
-                                <figure class="piechart2" style="--chart:90%"></figure>
-                                <img src="../assets/images/couple.png" class="couple_chart-img" alt="">
-                            </div>
-                            <div class="chart-info">
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #FFF5DB"></div>
-                                    <span>65+</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #FED770"></div>
-                                    <span>15-24</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #FFEBB7"></div>
-                                    <span>45-64</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #FECD4C"></div>
-                                    <span>0-15</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #FEE194"></div>
-                                    <span>24-45</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pie-chart-item">
-                            <h5>Marital Status</h5>
-                            <div class="char-item-image">
-                                <figure class="piechart2" style="--chart:90%"></figure>
-                                <img src="../assets/images/group_family.png" class="group_chart-img" alt="">
-                            </div>
-                            <div class="chart-info">
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #D1EFD7"></div>
-                                    <span>Widow</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #A4DEB0"></div>
-                                    <span>Divorced</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #D1EFD7"></div>
-                                    <span>Single</span>
-                                </div>
-                                <div class="chart-info-item">
-                                    <div class="chart-info-color" style="background-color: #8DD69C"></div>
-                                    <span>Married</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="pie-chart-item">
+                  <h5>Age Distribution</h5>
+                  <div class="char-item-image">
+                    <figure class="piechart2" style="--chart: 90%"></figure>
+                    <img
+                      src="../assets/images/couple.png"
+                      class="couple_chart-img"
+                      alt=""
+                    />
+                  </div>
+                  <div class="chart-info">
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #fff5db"
+                      ></div>
+                      <span>65+</span>
                     </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #fed770"
+                      ></div>
+                      <span>15-24</span>
+                    </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #ffebb7"
+                      ></div>
+                      <span>45-64</span>
+                    </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #fecd4c"
+                      ></div>
+                      <span>0-15</span>
+                    </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #fee194"
+                      ></div>
+                      <span>24-45</span>
+                    </div>
+                  </div>
                 </div>
-            </section>
+                <div class="pie-chart-item">
+                  <h5>Marital Status</h5>
+                  <div class="char-item-image">
+                    <figure class="piechart2" style="--chart: 90%"></figure>
+                    <img
+                      src="../assets/images/group_family.png"
+                      class="group_chart-img"
+                      alt=""
+                    />
+                  </div>
+                  <div class="chart-info">
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #d1efd7"
+                      ></div>
+                      <span>Widow</span>
+                    </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #a4deb0"
+                      ></div>
+                      <span>Divorced</span>
+                    </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #d1efd7"
+                      ></div>
+                      <span>Single</span>
+                    </div>
+                    <div class="chart-info-item">
+                      <div
+                        class="chart-info-color"
+                        style="background-color: #8dd69c"
+                      ></div>
+                      <span>Married</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
         <div class="main-aside">
-            <div class="specialist">
-                <div class="experience-icon"></div>
-                <div class="specialist-border">
-                    <div class="specialist-container">
-                        <div class="specialist-image-status">
-                            <div class="specialist-image"></div>
-                            <div class="specialist-status"></div>
-                        </div>
-                        <div class="full_name">
-                            <p>Micheal James</p>
-                        </div>
-                        <div class="specialist-position">
-                            <p>Real Estate Specialist</p>
-                        </div>
-                        <div class="call-button">
-                            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.5916 11.0085L12.4983 8.91519C11.7507 8.16759 10.4798 8.46666 10.1807 9.43852C9.95646 10.1114 9.20886 10.4852 8.53601 10.3356C7.0408 9.96184 5.02227 8.01807 4.64847 6.4481C4.42418 5.77522 4.87275 5.02762 5.54559 4.80336C6.51748 4.50432 6.81652 3.23339 6.06892 2.48579L3.97562 0.392493C3.37754 -0.130831 2.48041 -0.130831 1.95709 0.392493L0.536636 1.81294C-0.883814 3.30815 0.686158 7.27046 4.1999 10.7842C7.71365 14.298 11.676 15.9427 13.1712 14.4475L14.5916 13.027C15.115 12.4289 15.115 11.5318 14.5916 11.0085Z"
-                                      fill="white"/>
-                            </svg>
-                            <span class="span-button">VIEW PHONE</span>
-                        </div>
-                        <div class="send-message-button">
-                            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.94287 7.57688L14.9997 10.7738V4.245L9.94287 7.57688Z" fill="#434FAA"/>
-                                <path d="M0 4.245V10.7738L5.05688 7.57688L0 4.245Z" fill="#434FAA"/>
-                                <path d="M14.0627 2.34375H0.937695C0.469883 2.34375 0.0986328 2.6925 0.0283203 3.14156L7.5002 8.06437L14.9721 3.14156C14.9018 2.6925 14.5305 2.34375 14.0627 2.34375Z"
-                                      fill="#434FAA"/>
-                                <path d="M9.08465 8.14313L7.75809 9.01688C7.67934 9.06844 7.59027 9.09375 7.50027 9.09375C7.41027 9.09375 7.32121 9.06844 7.24246 9.01688L5.9159 8.14219L0.0302734 11.865C0.102461 12.3103 0.471836 12.6563 0.937773 12.6563H14.0628C14.5287 12.6563 14.8981 12.3103 14.9703 11.865L9.08465 8.14313Z"
-                                      fill="#434FAA"/>
-                            </svg>
-                            <span class="span-button">SEND MESSAGE</span>
-                        </div>
-                    </div>
+          <div class="specialist">
+            <div class="experience-icon"></div>
+            <div class="specialist-border">
+              <div class="specialist-container">
+                <div class="specialist-image-status">
+                  <div class="specialist-image"></div>
+                  <div class="specialist-status"></div>
                 </div>
+                <div class="full_name">
+                  <p>Micheal James</p>
+                </div>
+                <div class="specialist-position">
+                  <p>Real Estate Specialist</p>
+                </div>
+                <div class="call-button">
+                  <svg
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.5916 11.0085L12.4983 8.91519C11.7507 8.16759 10.4798 8.46666 10.1807 9.43852C9.95646 10.1114 9.20886 10.4852 8.53601 10.3356C7.0408 9.96184 5.02227 8.01807 4.64847 6.4481C4.42418 5.77522 4.87275 5.02762 5.54559 4.80336C6.51748 4.50432 6.81652 3.23339 6.06892 2.48579L3.97562 0.392493C3.37754 -0.130831 2.48041 -0.130831 1.95709 0.392493L0.536636 1.81294C-0.883814 3.30815 0.686158 7.27046 4.1999 10.7842C7.71365 14.298 11.676 15.9427 13.1712 14.4475L14.5916 13.027C15.115 12.4289 15.115 11.5318 14.5916 11.0085Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <span class="span-button">VIEW PHONE</span>
+                </div>
+                <div class="send-message-button">
+                  <svg
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.94287 7.57688L14.9997 10.7738V4.245L9.94287 7.57688Z"
+                      fill="#434FAA"
+                    />
+                    <path
+                      d="M0 4.245V10.7738L5.05688 7.57688L0 4.245Z"
+                      fill="#434FAA"
+                    />
+                    <path
+                      d="M14.0627 2.34375H0.937695C0.469883 2.34375 0.0986328 2.6925 0.0283203 3.14156L7.5002 8.06437L14.9721 3.14156C14.9018 2.6925 14.5305 2.34375 14.0627 2.34375Z"
+                      fill="#434FAA"
+                    />
+                    <path
+                      d="M9.08465 8.14313L7.75809 9.01688C7.67934 9.06844 7.59027 9.09375 7.50027 9.09375C7.41027 9.09375 7.32121 9.06844 7.24246 9.01688L5.9159 8.14219L0.0302734 11.865C0.102461 12.3103 0.471836 12.6563 0.937773 12.6563H14.0628C14.5287 12.6563 14.8981 12.3103 14.9703 11.865L9.08465 8.14313Z"
+                      fill="#434FAA"
+                    />
+                  </svg>
+                  <span class="span-button">SEND MESSAGE</span>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </main>
-    <footer class="for-sale-content-footer">
+      </main>
+      <footer class="for-sale-content-footer">
         <div class="footer-container">
-            <div class="footer-homefast">
-                <ul class="footer-homefast-list">
-                    <li class="title-item">Homefast</li>
-                    <li class="list-item">About Us</li>
-                    <li class="list-item">Our Awards</li>
-                    <li class="list-item">Corporate Materials</li>
-                    <li class="list-item">Advertisement</li>
-                    <li class="list-item">Human Resources</li>
-                    <li class="list-item">Sitemap</li>
-                </ul>
-            </div>
-            <div class="footer-our-services">
-                <ul class="footer-ourservice-list ">
-                    <li class="title-item">Our Services</li>
-                    <li class="list-item">Our Special Services</li>
-                    <li class="list-item">Membership</li>
-                    <li class="list-item">Corporate Membership</li>
-                    <li class="list-item">Projects</li>
-                    <li class="list-item">Advertise For Free</li>
-                    <li class="list-item">Search On Map</li>
-                </ul>
-            </div>
-            <div class="footer-other">
-                <ul class="footer-other-list">
-                    <li class="title-item">Other</li>
-                    <li class="list-item">Posting Rules</li>
-                    <li class="list-item">Terms of Use</li>
-                    <li class="list-item">Membership Agreement and Privacy Policy</li>
-                    <li class="list-item">Operation Guide</li>
-                    <li class="list-item">Cookie Policy</li>
-                    <li class="list-item">About Protection of Personal Data</li>
-                    <li class="list-item">Explicit Consent Text</li>
-                    <li class="list-item">Contact</li>
-                </ul>
-            </div>
+          <div class="footer-homefast">
+            <ul class="footer-homefast-list">
+              <li class="title-item">Homefast</li>
+              <li class="list-item">About Us</li>
+              <li class="list-item">Our Awards</li>
+              <li class="list-item">Corporate Materials</li>
+              <li class="list-item">Advertisement</li>
+              <li class="list-item">Human Resources</li>
+              <li class="list-item">Sitemap</li>
+            </ul>
+          </div>
+          <div class="footer-our-services">
+            <ul class="footer-ourservice-list">
+              <li class="title-item">Our Services</li>
+              <li class="list-item">Our Special Services</li>
+              <li class="list-item">Membership</li>
+              <li class="list-item">Corporate Membership</li>
+              <li class="list-item">Projects</li>
+              <li class="list-item">Advertise For Free</li>
+              <li class="list-item">Search On Map</li>
+            </ul>
+          </div>
+          <div class="footer-other">
+            <ul class="footer-other-list">
+              <li class="title-item">Other</li>
+              <li class="list-item">Posting Rules</li>
+              <li class="list-item">Terms of Use</li>
+              <li class="list-item">Membership Agreement and Privacy Policy</li>
+              <li class="list-item">Operation Guide</li>
+              <li class="list-item">Cookie Policy</li>
+              <li class="list-item">About Protection of Personal Data</li>
+              <li class="list-item">Explicit Consent Text</li>
+              <li class="list-item">Contact</li>
+            </ul>
+          </div>
         </div>
-    </footer>
-</div>
-</body>
+      </footer>
+    </div>
+    <script src="../forSale/forSaleJs/forSaleScript.js"></script>
+  </body>
 </html>
