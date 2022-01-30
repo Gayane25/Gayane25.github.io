@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/for_sale_content.css" />
+    <link rel="stylesheet" href="../forSale/forSaleStyles/Sale.css">
   </head>
   <body>
     <div class="container-fluid">
@@ -40,11 +41,99 @@
             </div>
           </div>
           <div class="right-nav flex-div">
-            <a href="#" class="new-advertise-button">Advertise</a>
-            <a href="#" class="profile-button"></a>
+            <a
+              href="../clickAdvertise/advertise1.html"
+              class="new-advertise-button"
+              >Advertise</a
+            >
+            <a href="#" class="profile-button" id="open"></a>
           </div>
         </div>
       </header>
+      <div class="modal-container" id="modal-container">
+        <div class="modal">
+          <div class="signUp-container">
+            <div class="signUp-container-left">
+              <div class="signUp-logo">
+                <img src="../assets/logoForPopUp.png" alt="" />
+              </div>
+              <h3>Why should I Join Fasthome?</h3>
+              <p>
+                To have the experience of “property”, “information” and “trust”
+                in the real estate world all together…
+              </p>
+              <div class="colorful-eclipse">
+                <div class="eclipse">
+                  <span
+                    ><img src="../assets/location-vector.png" alt=""
+                  /></span>
+                  <p>Learn about location.</p>
+                </div>
+                <div class="eclipse">
+                  <span
+                    ><img src="../assets/freeCharge-vector.png" alt=""
+                  /></span>
+                  <p>Find out the value of your house free of charge.</p>
+                </div>
+              </div>
+              <div class="colorful-eclipse">
+                <div class="eclipse">
+                  <span><img src="../assets/qualify-vector.png" alt="" /></span>
+                  <p>Discover houses that will improve your life quality.</p>
+                </div>
+                <div class="eclipse">
+                  <span
+                    ><img src="../assets/projects-vector.png" alt=""
+                  /></span>
+                  <p>Be aware of new projects.</p>
+                </div>
+              </div>
+            </div>
+            <div class="signUp-container-right">
+              <div class="membership">
+                <span>Individual Membership</span>
+                <span>Corporate Membership</span>
+                <div class="line"></div>
+              </div>
+              <button type="submit" class="connect-google">
+                <img src="../assets/google-icon.png" />
+                Connect with Google
+              </button>
+              <i><span> or</span></i>
+              <input
+                type="text"
+                class="signUp-input"
+                placeholder="Name and Surname"
+              />
+              <input type="text" class="signUp-input" placeholder="E-mail" />
+              <input type="text" class="signUp-input" placeholder="Password" />
+              <input
+                type="text"
+                class="signUp-input"
+                placeholder="Password (Again)"
+              />
+              <div class="checkbox-agreement">
+                <input type="checkbox" id="agreement" name="agreement" />
+                <label for="agreement"
+                  ><a href="#">I agree to the Membership Terms</a></label
+                >
+              </div>
+              <div class="checkbox-purposes">
+                <input type="checkbox" id="purposes" name="purposes" />
+                <label for="purposes"
+                  >I allow Fasthome to contact me via e-mail, SMS, etc for
+                  marketing and promotional purposes.
+                </label>
+              </div>
+              <button class="signUp-button">SIGN UP</button>
+              <span class="already-member"
+                >Already member? <a href="#">LogIn now</a></span
+              >
+            </div>
+          </div>
+        </div>
+        <div id="close"><i class="fas fa-times-circle"></i></div>
+      </div>
       <main class="for-sale-content-main flex-div">
         <div class="main-wrapper">
           <section class="house-title">
@@ -488,5 +577,6 @@
         </div>
       </footer>
     </div>
+    <script src="../forSale/forSaleJs/forSaleScript.js"></script>
   </body>
 </html>
