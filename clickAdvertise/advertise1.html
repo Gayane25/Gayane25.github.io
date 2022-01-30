@@ -19,7 +19,8 @@
       crossorigin="anonymous"
     />
     <title>Advertise Page</title>
-    <script src="../forSale/forSaleJs/forSaleScript.js"></script>
+    <script src="../forSale/forSaleJs/forSaleScript.js" defer></script>
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
     <header class="header-side">
@@ -305,8 +306,21 @@
             <div class="uploading-Photos">
               <img src="../assets/uploadvector.png" alt="" />
               <h4>You can add 30 photos to your ad</h4>
-              <input type="button" id = 'clickButt' value ='download from computer' class = 'download-button'>
+              <input
+                type="button"
+                value="download from your computer"
+                class="download-button"
+                id="clickButt"
+              />
+              <div class="uploading-yard">
+                <div class="plus-sign">
+                  <span>+</span>
+                </div>
+                <p>You can add 30 photos to your ad</p>
+              </div>
+            </div>
           </div>
+          <div></div>
         </form>
       </section>
     </main>
