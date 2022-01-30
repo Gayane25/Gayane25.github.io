@@ -219,6 +219,7 @@ main {
   color: rgba(0, 0, 0, 0.5);
 }
 .ad-features {
+  margin-top: 20px;
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
@@ -281,4 +282,28 @@ main {
   background: #e02828;
   border-radius: 5px;
   color: #ffffff;
+}
+.ad-aside-block {
+  /* width: 260px; */
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  margin-left: 40px;
+  padding: 20px;
+}
+.ad-aside-block h4 {
+  padding-bottom: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.ad-aside-block p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.3);
 }
