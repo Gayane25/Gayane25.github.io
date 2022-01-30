@@ -369,9 +369,13 @@ p.house-location:before {
 .column {
     margin-top: 5px;
     float: left;
-    width: 16.66%;
+    width: 218px;
+    height: 105px;
+    margin-left: 9px;
 }
-
+.column:first-child{
+    margin-left: 0;
+}
 .demo {
     opacity: 0.6;
 }

@@ -107,9 +107,10 @@ form.addEventListener('submit', async function (ev) {
     };
 
 
-    fetch("http://localhost/new/api/newadvertisement.php", requestOptions)
+    fetch("http://aca-project.great-site.net/api/newadvertisement.php", requestOptions)
         .then(response => {
             console.log(response)
+            window.location.reload()
 
         }).catch(err => {
         console.log(err)
