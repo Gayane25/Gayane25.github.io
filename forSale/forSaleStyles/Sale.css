@@ -281,6 +281,7 @@ main {
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   background-color: #f8f8f8;
+  padding-bottom: 165px;
 }
 .select-section {
   /* width: 1180px; */
@@ -368,7 +369,6 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 165px;
 }
 .apartment-list a {
   text-decoration: none;
