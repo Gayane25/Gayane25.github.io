@@ -20,11 +20,11 @@ function pageOnLoad() {
         window.location.replace('../forSale/forSale.html?incorrect_search_params')
     }
 
-    getDataFromApi(`https://61e932047bc0550017bc6112.mockapi.io/advertisements`, advertisementId)
+    getDataFromApi(`http://localhost/new/api/advertisements.php?advertisementId=${advertisementId}`)
         .then(adv => {
-            console.log('advertisement', adv)
+            console.log(adv)
             drawMainSection(adv)
-            getDataFromApi(`https://61e932047bc0550017bc6112.mockapi.io/users`, adv.createdByUser).then(user => {
+            getDataFromApi(`https://61e932047bc0550017bc6112.mockapi.io/users/${adv.createdByUser}` ).then(user => {
                 const userContainerDiv = document.getElementById('main-aside')
                 userContainerDiv.innerHTML = drawUserSection(user)
 
@@ -49,8 +49,8 @@ function pageOnLoad() {
 }
 
 
-async function getDataFromApi(url, endpoint) {
-    const response = await fetch(`${url}/${endpoint}`);
+async function getDataFromApi(url) {
+    const response = await fetch(url);
     const responseData = await response.json();
     return responseData;
 }
@@ -101,13 +101,14 @@ function drawUserSection({avatar, email, phoneNumber, firstName, lastName, isPre
 function drawMainSection({
                              latitude,
                              longitude,
-                             mainPictureUrl,
+                             pictureUrls,
                              title,
                              addressCity,
                              addressStreet,
                              price,
+                             priceType,
                              advertisementNo,
-                             createdAt,
+                             publishedAt,
                              advertisementStatus,
                              housingShape,
                              rooms,
@@ -117,12 +118,15 @@ function drawMainSection({
                              buildingAge,
                              floorLocation,
                              isAvailableWithLoan,
-                             isFurnished,
+                             furnishedStatus,
                              dues,
+                             duesType,
                              isAsSwap,
                              frontDirection,
                              rentalIncome,
-                             interiorFeatures
+                             rentalIncomeType,
+                             interiorFeatures,
+                             explanationTExt
                          }) {
     const titleSection = document.getElementById('house-title')
     const picturesSection = document.getElementById('house-pictures')
@@ -132,87 +136,50 @@ function drawMainSection({
     latitude = parseFloat(latitude)
     longitude = parseFloat(longitude)
     myMap({lat: latitude, lng: longitude})
-    titleSection.innerHTML = drawTitleSection(title, addressCity, addressStreet, price)
-    picturesSection.innerHTML = drawPicturesSection(mainPictureUrl)
-    generalInfoSection.innerHTML = drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, isFurnished, dues, isAsSwap, frontDirection, rentalIncome)
-    explanationSection.innerHTML = drawExplanationSection()
-    featuresSection.innerHTML = drawFeaturesSection(interiorFeatures[0])
+    titleSection.innerHTML = drawTitleSection(title, addressCity, addressStreet, price,priceType)
+    picturesSection.innerHTML = drawPicturesSection(pictureUrls)
+    generalInfoSection.innerHTML = drawGeneralInfoSection(advertisementNo, publishedAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, furnishedStatus, dues, duesType,isAsSwap, frontDirection, rentalIncome,rentalIncomeType)
+    explanationSection.innerHTML = drawExplanationSection(explanationTExt)
+    featuresSection.innerHTML = drawFeaturesSection(JSON.parse(interiorFeatures)[0])
 
 }
 
-function drawTitleSection(title, addressCity, addressStreet, price) {
+function drawTitleSection(title, addressCity, addressStreet, price,priceType) {
     return `<div class="house-subtitle">
                     <h2>${title}</h2>
                     <p class="house-location">${addressCity}, ${addressStreet}</p>
                 </div>
                 <div class="house-price">
-                    <span>${price} $</span>
+                    <span>${price} ${generateSignFromType(priceType)}</span>
                 </div>`
 }
 
-function drawPicturesSection(mainPictureUrl) {
-return            `<div class="images-container">
+function drawPicturesSection(pictureUrls) {
+    pictureUrls = JSON.parse(pictureUrls);
+    length = pictureUrls.length
+    let mainPictureDivs = ''
+    let smallPictureDivs = ''
+    pictureUrls.forEach( (el, index) => {
+        mainPictureDivs +=  `<div class="mySlides">
+                                <div class="numbertext">${index + 1} / ${length}</div>
+                                <img src=${el}>
+                              </div>`
+        smallPictureDivs += `<div class="column">
+                              <img class="demo cursor" src=${el} style="width:100%" onclick="currentSlide(${index+1})" alt="The Woods">
+                            </div>`
+    } )
+   return `<div class="images-container">
                     <div class="slider-buttons">
                         <input onclick="plusSlides(-1)" type="image" src="../assets/images/left_arrow.png">
                         <input onclick="plusSlides(1)" type="image" src="../assets/images/right_arrow.png">
-                    </div>
-                      <div class="mySlides">
-                        <div class="numbertext">1 / 6</div>
-                        <img src="https://picsum.photos/200">
-                      </div>
-                    
-                      <div class="mySlides">
-                        <div class="numbertext">2 / 6</div>
-                        <img src="https://picsum.photos/300">
-                      </div>
-                    
-                      <div class="mySlides">
-                        <div class="numbertext">3 / 6</div>
-                        <img src="https://picsum.photos/400">
-                      </div>
-                        
-                      <div class="mySlides">
-                        <div class="numbertext">4 / 6</div>
-                        <img src="https://picsum.photos/500">
-                      </div>
-                    
-                      <div class="mySlides">
-                        <div class="numbertext">5 / 6</div>
-                        <img src="https://picsum.photos/600">
-                      </div>
-                        
-                      <div class="mySlides">
-                        <div class="numbertext">6 / 6</div>
-                        <img src="https://picsum.photos/700">
-                      </div>
-                    
-                    
-                      <div class="row">
-                        <div class="column">
-                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-                        </div>
-                        <div class="column">
-                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-                        </div>
-                        <div class="column">
-                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                        </div>
-                        <div class="column">
-                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                        </div>
-                        <div class="column">
-                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-                        </div>    
-                        <div class="column">
-                          <img class="demo cursor" src="https://picsum.photos/200" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-                        </div>
-                      </div>
-                    </div>`
+                    </div>` + mainPictureDivs + `<div class="row">` + smallPictureDivs + `</div></div>`
+
 }
 
 
-function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, isFurnished, dues, isAsSwap, frontDirection, rentalIncome) {
-    const [year,month, day] = createdAt.split( '-');
+function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, furnishedStatus, dues,duesType, isAsSwap, frontDirection, rentalIncome,rentalIncomeType) {
+
+    const createdDate = new Date(parseInt(createdAt)).toLocaleString().split(',')[0];
     return `<h4 class="general-info-header">General Information</h4>
                 <div class="general-info-container">
                     <div class="general-info-left">
@@ -228,7 +195,7 @@ function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus,
                         </div>
                         <div class="right-content">
                             <p class="advertise-number">${advertisementNo}</p>
-                            <p>${day.substr(0,2)}.${month}.${year}</p>
+                            <p>${createdDate}</p>
                             <p>${advertisementStatus}</p>
                             <p>${housingShape}</p>
                             <p>${rooms}</p>
@@ -248,28 +215,25 @@ function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus,
                             <p>Rental Income</p>
                         </div>
                         <div class="right-content">
-                            <p>${floorLocation}</p>
-                            <p>${isAvailableWithLoan}</p>
-                            <p>${isFurnished}</p>
-                            <p>${dues} $</p>
-                            <p>${isAsSwap}</p>
-                            <p>${frontDirection}</p>
-                            <p>${rentalIncome} $</p>
+                            <p>${floorLocation || '-'}</p>
+                            <p>${isAvailableWithLoan || '-'}</p>
+                            <p>${furnishedStatus || '-'}</p>
+                            <p>${dues || '-'} ${generateSignFromType(duesType)}</p>
+                            <p>${isAsSwap || '-'}</p>
+                            <p>${frontDirection || '-'}</p>
+                            <p>${rentalIncome || '-'} ${generateSignFromType(rentalIncomeType)}</p>
                         </div>
                     </div>
                 </div>`
 }
 
 
-function drawExplanationSection() {
+function drawExplanationSection(explanationText) {
     return `<h4 class="general-info-header">Explanation</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas ac convallis tellus pellentesque non
-                    odio consectetur bibendum. Auctor leo risus in tristique sit enim nec sed. Ridiculus vulputate
-                    facilisi a velit cursus sapien egestas nec, accumsan.</p>`
+                <p>${explanationText}</p>`
 }
 
 function drawFeaturesSection(features) {
-    console.log(features)
     return `<div class="house-features-left">
                     <h4 class="general-info-header">Interior Features</h4>
                     <ul>
@@ -307,4 +271,10 @@ function drawFeaturesSection(features) {
                         <li class=${features.market? 'isChecked' : 'isUnchecked'}>Market</li>
                     </ul>
                 </div>`
+}
+
+
+
+function generateSignFromType(typeText){
+    return typeText === 'USD' ? '$' : (typeText === 'EUR' ? '€' : '£')
 }

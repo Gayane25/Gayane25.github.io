@@ -12,7 +12,6 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    console.log('clicked')
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("demo");
