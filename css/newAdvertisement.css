@@ -1,0 +1,305 @@
+container-fluid{
+    background: #F8F8F8;
+}
+.multistep-status{
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.multistep-status ul{
+    list-style-type: none;
+    list-style-position: inside;
+    width: 604px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.aside-notification{
+    width: 100%;
+    margin-top: 10px;
+    width: 260px;
+    height: 205px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 19px 32px 20px 19px;
+    display: flex;
+    flex-direction: column;
+}
+.aside-notification img{
+    height: 50px;
+    width: 50px;
+}
+.notification-title{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 21px;
+}
+.aside-notification p{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    text-align: left;
+}
+.select-category{
+    background: #fff;
+    width: 900px;
+    height: 124px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 20px 19px 20px;
+}
+.main-wrapper .section-header{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+}
+.input-row{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+.label-container{
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.label-container input{
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    border: 0;
+    outline: 0;
+}
+.label-container select{
+    width: 100%;
+    height: 100%;
+    padding: 8px 15px;
+    border: 0;
+    outline: 0;
+}
+
+.label-container label{
+    position: absolute;
+    left: 20px;
+    top: -10px;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    background: #fff;
+    color: red;
+}
+.select-style{
+    font-family: "Roboto", sans-serif;
+    width: 135px;
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-right: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+}
+select[name="select-housing"]{
+    margin-right: 10px;
+    width: 250px;
+}
+.general-info{
+    width: 100%;
+    height: 1240px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px 20px 19px 19px;
+}
+#title-label-container{
+    width: 470px;
+    margin-top: 20px;
+    height: 40px;
+}
+.new-advertise-input{
+    font-family: "Roboto", sans-serif;
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-right: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+}
+.new-advertise-input[name="title-input"]{
+    width: 470px;
+    margin-top: 25px;
+}
+#advertisement-explanation{
+    width: 860px;
+    height: 152px;
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-top: 25px;
+}
+#advertisement-explanation textarea{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: 0;
+    border: 0;
+}
+#priceType-container{
+    width: 125px;
+}
+#duesTypeContainer{
+    width: 125px;
+}
+#rentalIncomeType-contianer{
+    width: 125px;
+}
+.new-advertise-input[name="price"]{
+    width: 250px;
+    margin-bottom: 20px;
+}
+.new-advertise-input[name="type"]{
+    width: 125px;
+}
+.left-side-input{
+    width: 250px;
+    height: 40px;
+}
+select[name="warming-type"]{
+    width: 250px;
+}
+.advertisement-location{
+    width: 900px;
+    height: 624px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+}
+.advertisement-photos{
+    width: 900px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+}
+.dragDrop-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.uploaded-preview-container{
+    width: 860px;
+    margin-top: 30px;
+    background: #F8F8F8;
+    border: 0.5px dashed rgba(0, 0, 0, 0.5);
+}
+.uploader{
+    width: 100%;
+    height: 100%;
+}
+.advertisement-features{
+    width: 900px;
+    height: 623px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+.feauter-header{
+    margin-top: 20px;
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+.interior-features-column ul{
+    list-style-position: inside;
+    list-style-type: none;
+}
+.interior-features-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.interior-features-column{
+    width: 148px;
+}
+.interior-features-column ul li{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    vertical-align: center;
+}
+.interior-features-column ul li input[type="checkbox"]{
+    margin-right: 10px;
+}
+.next-button-container{
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+.next{
+    width: 160px;
+    height: 35px;
+    background: #E02828;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* File uploader styles */
+.upload-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px dashed #fff;
+    padding-bottom: 45px;
+    position: relative;
+}
+.upload-container p{
+    text-align: center;
+    margin-top: 20px;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.upload-container input{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+}
+.upload-container img{
+    z-index: 10;
+    margin-top: 45px;
+}
