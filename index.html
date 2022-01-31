@@ -4,42 +4,347 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./forSale/forSaleStyles/Sale.css" />
     <link rel="stylesheet" href="./css/homepPage.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
-    <!-- <header class="page-header">
-      <div class="div-header">
-      <span style="margin-right: 10px;"><img src="./assets/Logo.jpg" /></span>  
-      <div style="padding-top: 14px;">
-          <a>For Sale</a>
-          <a>For Rent</a>
-          <a>Daily Rental</a>
-          <a>Projects</a>
+    <header class="header-side">
+      <div class="nav-side">
+        <a href="./index.html"><span class="logo"
+          ><img src="./assets/Logo.jpg" alt="logo icon"
+        /></span></a>
+        <ul>
+          <li><a href="./forSale/forSale.html">For sale</a></li>
+          <li><a href="./for-rent/forRental.html">For rent</a></li>
+          <li><a href="./forDailyRent/forDaily.html">Daily rental</a></li>
+          <li><a href="#">Projects</a></li>
+        </ul>
       </div>
-      <div class="jj">
-          <input id="advertise" type="button" value="Advertise">
+      <div class="account-side">
+        <button type="submit" class="advertise-button"><a href="./clickAdvertise/advertise1.html"> Advertise</a></button>
+        <span class="account-icon" id ="open"
+          ><a href="#"><i class="fas fa-user-circle" style="width: 30px"></i></a
+        ></span>
       </div>
-      </div>ader> -->
-    <div class="header-nav-block">
-      <div class="header-nav container">
-        <div class="logo-nav">
-          <div class="logo">
-            <img src="./assets/Logo.jpg" alt="" />
+    </header>
+    <div class="modal-container" id="modal-container">
+      <div class="modal">
+        <div class="signUp-container">
+          <div class="signUp-container-left">
+            <div class="signUp-logo">
+              <img src="../assets/logoForPopUp.png" alt="" />
+            </div>
+            <h3>Why should I Join Fasthome?</h3>
+            <p>
+              To have the experience of “property”, “information” and “trust” in
+              the real estate world all together…
+            </p>
+            <div class="colorful-eclipse">
+              <div class="eclipse">
+                <span><img src="../assets/location-vector.png" alt="" /></span>
+                <p>Learn about location.</p>
+              </div>
+              <div class="eclipse">
+                <span
+                  ><img src="../assets/freeCharge-vector.png" alt=""
+                /></span>
+                <p>Find out the value of your house free of charge.</p>
+              </div>
+            </div>
+            <div class="colorful-eclipse">
+              <div class="eclipse">
+                <span><img src="../assets/qualify-vector.png" alt="" /></span>
+                <p>Discover houses that will improve your life quality.</p>
+              </div>
+              <div class="eclipse">
+                <span><img src="../assets/projects-vector.png" alt="" /></span>
+                <p>Be aware of new projects.</p>
+              </div>
+            </div>
           </div>
-          <div class="nav-block">
-            <ul>
-              <li><a href="">Faasd</a></li>
-              <li><a href="">asdasd</a></li>
-              <li><a href="">asdasd</a></li>
-              <li><a href="">asdasd</a></li>
-            </ul>
+          <div class="signUp-container-right">
+            <div class="membership">
+              <span>Individual Membership</span>
+              <span>Corporate Membership</span>
+              <div class="line"></div>
+            </div>
+            <button type="submit" class="connect-google">
+              <img src="../assets/google-icon.png" />
+              Connect with Google
+            </button>
+            <i><span> or</span></i>
+            <input
+              type="text"
+              class="signUp-input"
+              placeholder="Name and Surname"
+            />
+            <input type="text" class="signUp-input" placeholder="E-mail" />
+            <input type="text" class="signUp-input" placeholder="Password" />
+            <input
+              type="text"
+              class="signUp-input"
+              placeholder="Password (Again)"
+            />
+            <div class="checkbox-agreement">
+              <input type="checkbox" id="agreement" name="agreement" />
+              <label for="agreement"
+                ><a href="#">I agree to the Membership Terms</a></label
+              >
+            </div>
+            <div class="checkbox-purposes">
+              <input type="checkbox" id="purposes" name="purposes" />
+              <label for="purposes"
+                >I allow Fasthome to contact me via e-mail, SMS, etc for
+                marketing and promotional purposes.
+              </label>
+            </div>
+            <button class="signUp-button">SIGN UP</button>
+            <span class="already-member"
+              >Already member? <a href="#">LogIn now</a></span
+            >
           </div>
         </div>
-        <div class="login-block">
-          <button id="advertise">hghghgh</button>
-        </div>
       </div>
+      <div id="close"><i class="fas fa-times-circle"></i></div>
     </div>
+    <main>
+      <div class="main-search">
+        <div class="search-button">
+          <h3 id="h3-dream-house">Your dream <br />houses is here</h3>
+          <div class="searching-line">
+          <input type="text" class="search" /><input type="button" class="search-icon">
+          </div>
+        </div>
+      </div>
+      <div class="sales-all">
+        <h4>Featured Sales</h4>
+        <button style="width:43px;"><a href="./forSale/forSale.html" style="text-decoration:none; color:black;">All</a> </button>
+      </div>
+      <div class="apartment-list">
+        <a href="./pages/forsaleContent.html"><div class="apartment">
+          <img class="apartmentPic"src="./assets/forSalePic.png" alt="Apartment picture" />
+          <div class="apartment-description">
+            <span class="price">290.000 $</span>
+            <span class="title">Apartment for sale</span>
+            <span class="address">London, Oxford St.</span>
+            <span class="announce-date">26 November 2020</span>
+            <div class="more-details">
+              <span><img src="./assets/bedIcon.png" alt=""> 3+1</span>
+              <span><img src="./assets/floorIcon.png" alt=""> 10</span>
+              <span><img src="./assets/areaIcon.png" alt="">150 &#13217</span>
+            </div>
+          </div>
+        </div></a>
+       <a href="./pages/forsaleContent.html"> <div class="apartment">
+          <img class="apartmentPic"src="./assets/forSalePic.png" alt="Apartment picture" />
+          <div class="apartment-description">
+            <span class="price">290.000 $</span>
+            <span class="title">Apartment for sale</span>
+            <span class="address">London, Oxford St.</span>
+            <span class="announce-date">26 November 2020</span>
+            <div class="more-details">
+              <span><img src="./assets/bedIcon.png" alt=""> 3+1</span>
+              <span><img src="./assets/floorIcon.png" alt=""> 10</span>
+              <span><img src="./assets/areaIcon.png" alt="">150 &#13217</span>
+            </div>
+          </div>
+        </div></a>
+        <a href="./pages/forsaleContent.html">
+          <div class="apartment">
+          <img class="apartmentPic"src="./assets/forSalePic.png" alt="Apartment picture" />
+          <div class="apartment-description">
+            <span class="price">290.000 $</span>
+            <span class="title">Apartment for sale</span>
+            <span class="address">London, Oxford St.</span>
+            <span class="announce-date">26 November 2020</span>
+            <div class="more-details">
+              <span><img src="./assets/bedIcon.png" alt=""> 3+1</span>
+              <span><img src="./assets/floorIcon.png" alt=""> 10</span>
+              <span><img src="./assets/areaIcon.png" alt="">150 &#13217</span>
+            </div>
+          </div>
+        </div>
+        </a>
+        <a href="./pages/forsaleContent.html">
+          <div class="apartment">
+          <img class="apartmentPic"src="./assets/forSalePic.png" alt="Apartment picture" />
+          <div class="apartment-description">
+            <span class="price">290.000 $</span>
+            <span class="title">Apartment for sale</span>
+            <span class="address">London, Oxford St.</span>
+            <span class="announce-date">26 November 2020</span>
+            <div class="more-details">
+              <span><img src="./assets/bedIcon.png" alt=""> 3+1</span>
+              <span><img src="./assets/floorIcon.png" alt=""> 10</span>
+              <span><img src="./assets/areaIcon.png" alt="">150 &#13217</span>
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="sales-all">
+        <h4>Featured Rental</h4>
+        <button style="width:43px;"><a href="./for-rent/forRental.html" style="text-decoration:none; color:black;">All</a> </button>
+      </div>
+      <div class="apartment-list">
+        <div class="apartment">
+          <img class="apartmentPic"src="./assets/forRentPic.png" alt="Apartment picture" />
+          <div class="apartment-description">
+            <span class="price">3000 $</span>
+            <span class="title">Apartment for rent</span>
+            <span class="address">London, John Ruskin St.</span>
+            <span class="announce-date">20 November 2020</span>
+            <div class="more-details">
+              <span><img src="./assets/bedIcon.png" alt=""> 2+1</span>
+              <span><img src="./assets/floorIcon.png" alt=""> 7</span>
+              <span><img src="./assets/areaIcon.png" alt="">110 &#13217</span>
+            </div>
+          </div>
+        </div>
+        <div class="apartment">
+          <img class="apartmentPic"src="./assets/forRentPic.png" alt="Apartment picture" />
+          <div class="apartment-description">
+            <span class="price">3000 $</span>
+            <span class="title">Apartment for rent</span>
+            <span class="address">London, John Ruskin St.</span>
+            <span class="announce-date">20 November 2020</span>
+            <div class="more-details">
+              <span><img src="./assets/bedIcon.png" alt=""> 2+1</span>
+              <span><img src="./assets/floorIcon.png" alt=""> 7</span>
+              <span><img src="./assets/areaIcon.png" alt="">110 &#13217</span>
+            </div>
+          </div>
+        </div>
+        <div class="apartment">
+          <img class="apartmentPic"src="./assets/forRentPic.png" alt="Apartment picture" />
+          <div class="apartment-description">
+            <span class="price">3000 $</span>
+            <span class="title">Apartment for rent</span>
+            <span class="address">London, John Ruskin St.</span>
+            <span class="announce-date">20 November 2020</span>
+            <div class="more-details">
+              <span><img src="./assets/bedIcon.png" alt=""> 2+1</span>
+              <span><img src="./assets/floorIcon.png" alt=""> 7</span>
+              <span><img src="./assets/areaIcon.png" alt="">110 &#13217</span>
+            </div>
+          </div>
+        </div>
+        <div class="apartment">
+          <img class="apartmentPic"src="./assets/forRentPic.png" alt="Apartment picture" />
+          <div class="apartment-description">
+            <span class="price">3000 $</span>
+            <span class="title">Apartment for rent</span>
+            <span class="address">London, John Ruskin St.</span>
+            <span class="announce-date">20 November 2020</span>
+            <div class="more-details">
+              <span><img src="./assets/bedIcon.png" alt=""> 2+1</span>
+              <span><img src="./assets/floorIcon.png" alt=""> 7</span>
+              <span><img src="./assets/areaIcon.png" alt="">110 &#13217</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search-dream-house">
+<div class="dream-house-text">
+  <h4>Search your dream house on the map</h4>
+  <p>Find the house you are looking for easely according to location information</p>
+  <button class="search-on-map-button">Search On Map</button>
+</div>
+<div>
+  <img src="./assets/searchmap.png">
+</div>
+      </div>
+       <div class="sales-all">
+        <h4>Featured Projects</h4>
+        <button style="width:43px;"><a href="#" style="text-decoration:none; color:black;">All</a> </button>
+      </div>
+      <div class="life-project">
+        <div class="life-project-text">
+          <h4>Life Valley Project</h4>
+          <p>The privileged location in Lambeth region in the west of London city</p>
+          <p style="padding-bottom: 78px;">The project is close to many hotels,hospitals and commercial centers...</p>
+          <button class="view-projct-buttone">View Project</button>
+        </div>
+        <div>
+          <img src="./assets/lifeproject.png">
+        </div>
+      </div>
+      <div class="life-projects">
+        <div class="life-project">
+          <div class="life-project-text">
+            <h4>Life Valley Project</h4>
+            <p>The privileged location in Lambeth region in the west of London city</p>
+            <p style="padding-bottom: 78px;">The project is close to many hotels,hospitals and commercial centers...</p>
+            <button class="view-projct-buttone">View Project</button>
+          </div>
+          <div>
+            <img src="./assets/lifeproject.png" style="width:250px;height:315px;">
+          </div>
+        </div>
+        <div class="life-project">
+          <div class="life-project-text">
+            <h4>Life Valley Project</h4>
+            <p>The privileged location in Lambeth region in the west of London city</p>
+            <p style="padding-bottom: 78px;">The project is close to many hotels,hospitals and commercial centers...</p>
+            <button class="view-projct-buttone">View Project</button>
+          </div>
+          <div>
+            <img src="./assets/lifeproject.png"style="width:250px;height:315px;">
+          </div>
+        </div>
+      </div>
+      
+    </main>
+    <footer class="footer-side">
+        <div class="footer-section">
+          <h3>HomeFast</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Awards</a></li>
+            <li><a href="#">Corporate Materials</a></li>
+            <li><a href="#">Advertisement</a></li>
+            <li><a href="#">Human Resources</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="#">Our Special Services</a></li>
+            <li><a href="#">Membership</a></li>
+            <li><a href="#">Corporate Membership</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Advertise For Free</a></li>
+            <li><a href="#">Search On Map</a></li>
+           </ul>
+        </div>
+        <div class="footer-section">
+           <h3>Other</h3>
+           <ul>
+            <li><a href="#">Posting Rules</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Membership Agreement and Privacy Policy</a></li>
+            <li><a href="#">Operation Guide</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">About Protection and Personal Data</a></li>
+            <li><a href="#">Explicit Consnt Text</a></li>
+            <li><a href="#">Contact</a></li>
+           </ul>
+        </div>
+      </footer>
+      <script src="./forSale/forSaleJs/forSaleScript.js"defer></script>
   </body>
 </html>

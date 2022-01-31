@@ -16,25 +16,25 @@ body {
   border-radius: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   background-color: #f8f8f8;
-  top: 15px;
+  /* width: 1000px; */
   height: 900px;
-  width: 1200px;
   display: none;
   /* justify-content: center; */
   /* padding-top: 85px; */
-  margin-left: 45px;
+  margin-left: 20px;
+  margin-right: 15px;
 }
 .modal {
   background-color: #f8f8f8;
   padding-top: 30px;
   padding-left: 25px;
   /* width: 1150px; */
-  /* height: 600px;  */
+  height: 600px;
   /* max-width: 100%; */
 }
 
 #close {
-  padding: 20px;
+  padding: 10px;
 }
 
 .header-side {
@@ -43,7 +43,10 @@ body {
   height: 60px;
   width: 100%;
   background-color: #ffffff;
+
   box-shadow: 2px 2px rgb(0 0 0 / 50%);
+
+  box-shadow: 1px 1px grey;
 }
 .nav-side {
   display: flex;
@@ -71,7 +74,7 @@ body {
   color: black;
 }
 .account-side {
-  padding-left: 545px;
+  padding-left: 400px;
   line-height: 3.5;
 }
 .account-side .advertise-button {
@@ -82,6 +85,10 @@ body {
   border: none;
   border-radius: 4px;
   background-color: #e02828;
+}
+.account-side .advertise-button a {
+  text-decoration: none;
+  color: white;
 }
 .account-side .account-icon {
   padding-left: 10px;
@@ -274,14 +281,16 @@ main {
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   background-color: #f8f8f8;
+  padding-bottom: 165px;
 }
 .select-section {
-  width: 1180px;
+  /* width: 1180px; */
   display: flex;
   flex-direction: row;
-  margin-left: 6%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 30px;
-  padding-left: 40px;
+  padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -317,7 +326,7 @@ main {
   width: 115px;
 }
 .filter {
-  padding-left: 131px;
+  padding-left: 90px;
   line-height: 2;
 }
 .smart-sort {
@@ -361,10 +370,13 @@ main {
   flex-wrap: wrap;
   justify-content: center;
 }
+.apartment-list a {
+  text-decoration: none;
+}
 .apartment {
   display: flex;
   flex-direction: column;
-  width: 285px;
+  width: 250px;
   padding: 10px;
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -414,7 +426,7 @@ main {
   background-color: #2d363c;
   flex-direction: row;
   padding-bottom: 50px;
-  margin-top: 165px;
+  /* margin-top: 165px; */
   padding-left: 135px;
   padding-top: 50px;
   width: 100%;
