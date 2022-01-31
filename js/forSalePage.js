@@ -20,7 +20,7 @@ function pageOnLoad() {
         window.location.replace('../forSale/forSale.html?incorrect_search_params')
     }
 
-    getDataFromApi(`http://aca-project.great-site.net/api/advertisements.php?advertisementId=${advertisementId}`)
+    getDataFromApi(`https://acaproject.000webhostapp.com/api/advertisements.php?advertisementId=${advertisementId}`)
         .then(adv => {
             console.log(adv)
             drawMainSection(adv)
