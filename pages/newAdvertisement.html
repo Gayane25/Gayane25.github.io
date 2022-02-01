@@ -215,8 +215,10 @@
                         <div class="left-side-input label-container">
                             <label for="addressStreet">Street</label>
                             <input type="text" name="addressStreet" id="addressStreet" class="new-advertise-input">
+                            <input type="text" hidden id="mapCoords" name="googleCoordinates">
                         </div>
                     </div>
+                    <div id="googleMap" ></div>
                 </section>
                 <section class="advertisement-photos">
                     <h6 class="section-header">Posting Photos</h6>
@@ -382,6 +384,7 @@
 <!--        });-->
 <!--    }-->
 <!--</script>-->
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeADjHaDdzVWQGGcm3etdZPeVX0CnX1og&callback=myMap"></script>-->
+<script src="../js/googleMap.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeADjHaDdzVWQGGcm3etdZPeVX0CnX1og&callback=myMap"></script>
 </body>
 </html>
