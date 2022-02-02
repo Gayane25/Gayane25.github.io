@@ -158,6 +158,10 @@ select[name="select-housing"]{
     outline: 0;
     border: 0;
 }
+#googleMap{
+    width: 100%;
+    height: 480px;
+}
 #priceType-container{
     width: 125px;
 }

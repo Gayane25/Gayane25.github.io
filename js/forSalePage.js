@@ -20,11 +20,13 @@ function pageOnLoad() {
         window.location.replace('../forSale/forSale.html?incorrect_search_params')
     }
 
-    getDataFromApi(`http://aca-project.great-site.net/api/advertisements.php?advertisementId=${advertisementId}`)
+    getDataFromApi(`https://acaproject.000webhostapp.com/api/advertisements.php?advertisementId=${advertisementId}`)
         .then(adv => {
             console.log(adv)
             drawMainSection(adv)
-            getDataFromApi(`https://61e932047bc0550017bc6112.mockapi.io/users/${adv.createdByUser}` ).then(user => {
+            getDataFromApi(`https://randomuser.me/api/?seed=${adv.createdByUser}` ).then(userResponse => {
+                const user = userResponse.results[0]
+                console.log('user:',  user)
                 const userContainerDiv = document.getElementById('main-aside')
                 userContainerDiv.innerHTML = drawUserSection(user)
 
@@ -55,22 +57,23 @@ async function getDataFromApi(url) {
     return responseData;
 }
 
-function drawUserSection({avatar, email, phoneNumber, firstName, lastName, isPremium, profession}) {
+function drawUserSection({picture:avatar, email, cell:phoneNumber, name, registered:checkPremium, location:profession}) {
+    isPremium = checkPremium > 5 ? true : false
     const userHtml = `<div class="specialist">
                         <div class="experience-icon"></div>
                             <div class="specialist-border">
                                 <div class="specialist-container">
                                     <div class="specialist-image-status">
                                         <div class="specialist-image" id="userImageContainer">
-                                            <img src=${avatar} alt="${firstName} ${lastName}">
+                                            <img src=${avatar.medium} alt="${name.first} ${name.last}">
                                         </div>
                                         ${(isPremium && '<div class="specialist-status" id="userIsPremium"></div>') || ''}
                                     </div>
                                     <div class="full_name">
-                                        <p  id="userFullName">${firstName} ${lastName}</p>
+                                        <p  id="userFullName">${name.first} ${name.last}</p>
                                     </div>
                                     <div class="specialist-position">
-                                        <p id="userProfession">${profession}</p>
+                                        <p id="userProfession">${profession.state}</p>
                                     </div>
                                     <div class="call-button">
                                         <svg viewBox="0 0 15 15"  xmlns="http://www.w3.org/2000/svg">
