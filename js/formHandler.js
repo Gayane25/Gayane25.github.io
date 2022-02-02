@@ -1,6 +1,6 @@
 let form = document.forms.namedItem("advertisementForm");
 const picturesInput = document.querySelector('input[type="file"]')
-
+const apiUrl = 'https://acaproject.000webhostapp.com/api/'
 picturesInput.addEventListener('change', function () {
     const uploadedFiles = picturesInput.files
     document.getElementById('fileUploaderParagraph').innerText = uploadedFiles.length + " file(s) selected"
@@ -12,13 +12,17 @@ form.addEventListener('submit', async function (ev) {
     const uploadedFiles = picturesInput.files
     const pictureUrls = []
     //Validating emty inputs
-    if( advertisementData.price.value === ''     || advertisementData.titleInput.value === '' || advertisementData.addressStreet.value === '' ||
-        advertisementData.rooms.value === ''     || advertisementData.livingRooms.value === '' || advertisementData.grossSquare.value === '' ||
+    if (advertisementData.price.value === '' || advertisementData.titleInput.value === '' || advertisementData.addressStreet.value === '' ||
+        advertisementData.rooms.value === '' || advertisementData.livingRooms.value === '' || advertisementData.grossSquare.value === '' ||
         advertisementData.netSquare.value === '' || advertisementData.buildingAge.value === '' || advertisementData.floorLocation.value === '' ||
         advertisementData.duesValue.value === '' || advertisementData.rentalIncomeValue === '' || advertisementData.addressCity.value === '' ||
-        uploadedFiles.length === 0
-        ){
-        alert('There are still empty fields')
+        uploadedFiles.length === 0 || advertisementData.longitude.value === '' || advertisementData.latitude.value === ''
+    ) {
+        if (advertisementData.longitude.value === '' || advertisementData.latitude.value === '') {
+            alert('Please choose correct location on the map!')
+        } else {
+            alert('There are still empty fields')
+        }
         return false
     }
 
@@ -56,8 +60,8 @@ form.addEventListener('submit', async function (ev) {
         "rentalIncomeType": advertisementData.rentalIncomeType.value,
         "createdByUser": getRndInteger(1, 99),
         "explanationTExt": advertisementData.explanationText.value,
-        "longitude": "44.496841",
-        "latitude": "40.202827",
+        "longitude": advertisementData.longitude.value,
+        "latitude": advertisementData.latitude.value,
         "interiorFeatures": [{
             "adsl": advertisementData.hasAdsl.checked,
             "alarm": advertisementData.hasAlarm.checked,
@@ -107,7 +111,7 @@ form.addEventListener('submit', async function (ev) {
     };
 
 
-    fetch("http://aca-project.great-site.net/api/newadvertisement.php", requestOptions)
+    fetch(`${apiUrl}/newadvertisement.php`, requestOptions)
         .then(response => {
             console.log(response)
             window.location.reload()

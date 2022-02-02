@@ -1,4 +1,5 @@
 window.addEventListener("load", pageOnLoad);
+const apiUrl = 'https://acaproject.000webhostapp.com/api/'
 window.addEventListener('scroll', () => {
     let content = document.querySelector('.progress-span')
     let contentPosition = content.getBoundingClientRect().top
@@ -20,7 +21,7 @@ function pageOnLoad() {
         window.location.replace('../forSale/forSale.html?incorrect_search_params')
     }
 
-    getDataFromApi(`https://acaproject.000webhostapp.com/api/advertisements.php?advertisementId=${advertisementId}`)
+    getDataFromApi(`${apiUrl}advertisements.php?advertisementId=${advertisementId}`)
         .then(adv => {
             console.log(adv)
             drawMainSection(adv)

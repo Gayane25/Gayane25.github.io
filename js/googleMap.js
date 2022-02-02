@@ -25,7 +25,10 @@ function myMap() {
     let changedLatitude = evt.latLng.lat().toFixed(5);
     let changedLongitude = evt.latLng.lng().toFixed(5);
     document.getElementById(
-      'googleMap'
-    ).value = `${changedLatitude},${changedLongitude}`;
+      'longitude'
+    ).value = changedLongitude;
+    document.getElementById(
+      'latitude'
+    ).value = changedLatitude;
   });
 }
