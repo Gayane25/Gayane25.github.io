@@ -50,7 +50,7 @@
                     <h6 class="section-header">Category</h6>
                     <div class="input-row">
                         <div class="label-container">
-                            <label for="selectHousing">Housing</label>
+                            <label for="selectHousing">Housing <span class="color-red">*</span></label>
                             <select name="selectHousing" id="selectHousing" class="select-style">
                                 <option value="Apartment">Apartment</option>
                                 <option value="Building">Building</option>
@@ -61,7 +61,7 @@
                             </select>
                         </div>
                         <div class="label-container">
-                            <label for="saleRental">Sale</label>
+                            <label for="saleRental">Sale <span class="color-red">*</span></label>
                             <select name="saleRental" id="saleRental" class="select-style">
                                 <option value="1">For Sale</option>
                                 <option value="2">For Rental</option>
@@ -73,20 +73,20 @@
                 <section class="general-info">
                     <h6 class="section-header">General Information</h6>
                     <div class="label-container" id="title-label-container">
-                        <label for="titleInput">Title *</label>
+                        <label for="titleInput">Title <span class="color-red">*</span></label>
                         <input type="text" name="titleInput" id="titleInput" class="new-advertise-input">
                     </div>
                     <div class="label-container" id="advertisement-explanation">
-                        <label for="explanationText">Explanation *</label>
+                        <label for="explanationText">Explanation <span class="color-red">*</span></label>
                         <textarea name="explanationText" id="explanationText"></textarea>
                     </div>
                     <div class="input-row">
                         <div class="label-container">
-                            <label for="price">Price*</label>
+                            <label for="price">Price<span class="color-red">*</span></label>
                             <input type="number" name="price" id="price" class="new-advertise-input">
                         </div>
                         <div class="label-container" id="priceType-container">
-                            <label for="priceType">Type *</label>
+                            <label for="priceType">Type</label>
                             <select name="priceType" id="priceType" class="select-style">
                                 <option value="USD">USD</option>
                                 <option value="EUR">EUR</option>
@@ -95,26 +95,26 @@
                         </div>
                     </div>
                     <div class="label-container left-side-input">
-                        <label for="rooms">Number of Room *</label>
+                        <label for="rooms">Number of Room <span class="color-red">*</span></label>
                         <input type="number" name="rooms" id="rooms" class="new-advertise-input left-side-input">
                     </div>
                     <div class="left-side-input label-container">
-                        <label for="livingRooms">Number of Living Room *</label>
+                        <label for="livingRooms">Number of Living Room <span class="color-red">*</span></label>
                         <input type="number" name="livingRooms" id="livingRooms"
                                class="new-advertise-input left-side-input">
                     </div>
                     <div class="left-side-input label-container">
-                        <label for="grossSquare">Gross M² *</label>
+                        <label for="grossSquare">Gross M² <span class="color-red">*</span></label>
                         <input type="number" name="grossSquare" id="grossSquare"
                                class="new-advertise-input left-side-input">
                     </div>
                     <div class="left-side-input label-container">
-                        <label for="netSquare">Net M² *</label>
+                        <label for="netSquare">Net M² <span class="color-red">*</span></label>
                         <input type="number" name="netSquare" id="netSquare"
                                class="new-advertise-input left-side-input">
                     </div>
                     <div class="left-side-input label-container">
-                        <label for="warmingType">Warming Type *</label>
+                        <label for="warmingType">Warming Type</label>
                         <select name="warmingType" id="warmingType" class="select-style">
                             <option value="No Heating">No Heating</option>
                             <option value="">Natural Gas</option>
@@ -125,17 +125,17 @@
                         </select>
                     </div>
                     <div class="left-side-input label-container">
-                        <label for="buildingAge">Building Age *</label>
+                        <label for="buildingAge">Building Age <span class="color-red">*</span></label>
                         <input type="number" name="buildingAge" id="buildingAge"
                                class="new-advertise-input left-side-input">
                     </div>
                     <div class="left-side-input label-container">
-                        <label for="floorLocation">Floor Location *</label>
+                        <label for="floorLocation">Floor Location <span class="color-red">*</span></label>
                         <input type="number" name="floorLocation" id="floorLocation"
                                class="new-advertise-input left-side-input">
                     </div>
                     <div class="left-side-input label-container">
-                        <label for="loanAvailability">Available for Loan *</label>
+                        <label for="loanAvailability">Available for Loan</label>
                         <select name="loanAvailability" id="loanAvailability" class="select-style">
                             <option value="All of">All of</option>
                             <option value="Available">Available</option>
@@ -160,7 +160,7 @@
                     </div>
                     <div class="input-row ">
                         <div class="left-side-input label-container">
-                            <label for="duesValue">Dues</label>
+                            <label for="duesValue">Dues <span class="color-red">*</span></label>
                             <input type="number" name="duesValue" id="duesValue" id="duesValue"
                                    class="new-advertise-input left-side-input">
                         </div>
@@ -192,7 +192,7 @@
                     </div>
                     <div class="input-row">
                         <div class="left-side-input label-container">
-                            <label for="rentalIncomeValue">Rental Income</label>
+                            <label for="rentalIncomeValue">Rental Income <span class="color-red">*</span></label>
                             <input type="number" name="rentalIncomeValue" id="rentalIncomeValue"
                                    class="new-advertise-input left-side-input">
                         </div>
@@ -210,11 +210,11 @@
                     <h6 class="section-header">Location Information</h6>
                     <div class="input-row">
                         <div class="left-side-input label-container">
-                            <label for="addressCity">City</label>
+                            <label for="addressCity">City <span class="color-red">*</span></label>
                             <input type="text" name="addressCity" id="addressCity" class="new-advertise-input">
                         </div>
                         <div class="left-side-input label-container">
-                            <label for="addressStreet">Street</label>
+                            <label for="addressStreet">Street <span class="color-red">*</span></label>
                             <input type="text" name="addressStreet" id="addressStreet" class="new-advertise-input">
                             <input type="text" hidden id="longitude" name="longitude">
                             <input type="text" hidden id="latitude" name="latitude">
