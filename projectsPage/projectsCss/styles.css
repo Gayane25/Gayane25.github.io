@@ -35,3 +35,7 @@
   width: 250px;
   height: 310px;
 } */
+
+.singleProject {
+  display: flex;
+}

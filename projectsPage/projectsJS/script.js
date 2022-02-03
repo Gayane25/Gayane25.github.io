@@ -8,6 +8,7 @@ const projectObj = {
 const lifeProjects = document.getElementById('lifeProjects');
 lifeProjects.className = 'life-projects';
 const singleProject = document.createElement('div');
+singleProject.className = 'singleProject';
 lifeProjects.append(singleProject);
 const leftSide = document.createElement('div');
 leftSide.className = 'left-side';
