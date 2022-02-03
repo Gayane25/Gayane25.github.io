@@ -1,0 +1,37 @@
+.h4title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+.project-paragraph {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.hoverButton {
+  width: 100px;
+  height: 25px;
+  background-color: #ffffff;
+  color: #e02828;
+  border: 1px solid #e02828;
+  border-radius: 5px;
+}
+.hoverButton:hover {
+  background-color: #e02828;
+  color: #ffffff;
+}
+.left-side {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+/* .right-side {
+  width: 250px;
+  height: 310px;
+} */
