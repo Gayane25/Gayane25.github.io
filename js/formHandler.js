@@ -1,6 +1,7 @@
 let form = document.forms.namedItem("advertisementForm");
 const picturesInput = document.querySelector('input[type="file"]')
-const apiUrl = 'https://acaproject.000webhostapp.com/api/'
+const apiUrl = 'http://localhost/new/api/'
+// const apiUrl = 'https://acaproject.000webhostapp.com/api/'
 picturesInput.addEventListener('change', function () {
     const uploadedFiles = picturesInput.files
     document.getElementById('fileUploaderParagraph').innerText = uploadedFiles.length + " file(s) selected"
@@ -44,6 +45,7 @@ form.addEventListener('submit', async function (ev) {
         "publishedAt": Date.now(),
         "advertisementStatus": advertisementData.statusSelect.value,
         "housingShape": advertisementData.selectHousing.value,
+        "saleRental": advertisementData.saleRental.value,
         "rooms": `${advertisementData.rooms.value} + ${advertisementData.livingRooms.value}`,
         "grossArea": advertisementData.grossSquare.value,
         "netArea": advertisementData.netSquare.value,
