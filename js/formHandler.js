@@ -1,7 +1,6 @@
 let form = document.forms.namedItem("advertisementForm");
 const picturesInput = document.querySelector('input[type="file"]')
-const apiUrl = 'http://localhost/new/api/'
-// const apiUrl = 'https://acaproject.000webhostapp.com/api/'
+
 picturesInput.addEventListener('change', function () {
     const uploadedFiles = picturesInput.files
     document.getElementById('fileUploaderParagraph').innerText = uploadedFiles.length + " file(s) selected"

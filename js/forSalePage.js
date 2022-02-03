@@ -1,5 +1,5 @@
 window.addEventListener("load", pageOnLoad);
-const apiUrl = 'https://acaproject.000webhostapp.com/api/'
+
 window.addEventListener('scroll', () => {
     let content = document.querySelector('.progress-span')
     let contentPosition = content.getBoundingClientRect().top
