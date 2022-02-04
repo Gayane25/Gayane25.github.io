@@ -38,6 +38,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  background-color: #ffffff;
 }
 /* .right-side {
   width: 250px;
@@ -53,17 +54,4 @@
 .right-side img {
   width: 250px;
   height: 315px;
-}
-#pagination {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-#pagination li {
-  font-family: 'Roboto';
-  list-style-type: none;
-  margin-right: 5px;
-  padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  background-color: sandybrown;
 }

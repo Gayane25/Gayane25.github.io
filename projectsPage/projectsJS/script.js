@@ -76,6 +76,7 @@ function createElement(object) {
     singleProjectParagraph1.textContent = `${object[i].p1}`;
     let singleProjectParagraph2 = document.createElement('p');
     singleProjectParagraph2.className = 'project-paragraph';
+    singleProjectParagraph2.style.paddingBottom = '75px';
     singleProjectParagraph2.textContent = `${object[i].p2}`;
     let rightSideImg = document.createElement('img');
     rightSideImg.setAttribute('src', `${object[i].img}`);
@@ -94,30 +95,3 @@ function createElement(object) {
 }
 
 createElement(projects);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
