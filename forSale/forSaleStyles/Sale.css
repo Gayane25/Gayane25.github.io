@@ -43,10 +43,7 @@ body {
   height: 60px;
   width: 100%;
   background-color: #ffffff;
-
-  box-shadow: 2px 2px rgb(0 0 0 / 50%);
-
-  box-shadow: 1px 1px grey;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 .nav-side {
   display: flex;
@@ -380,8 +377,6 @@ main {
   padding: 10px;
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative;
-
   background-color: white;
 }
 .apartmentPic {
@@ -459,7 +454,7 @@ main {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.5);
 }
-.apartment-cover{
+.apartment-cover {
   background: transparent;
   width: 100%;
   height: 100%;
