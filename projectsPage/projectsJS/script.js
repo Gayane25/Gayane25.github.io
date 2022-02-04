@@ -1,90 +1,6 @@
 const lifeProjects = document.querySelector('#lifeProjects');
 
-const projects = [
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
-  {
-    title: 'Life Valley Project',
-    p2: 'The project is close to many hotels,hospitals and commercial centers...',
-    p1: 'The privileged location in Lambeth region in the west of London city',
-    button: 'View Project',
-    img: '../../assets/lifeproject.png',
-  },
+let projects = [
   {
     title: 'Life Valley Project',
     p2: 'The project is close to many hotels,hospitals and commercial centers...',
@@ -142,8 +58,6 @@ const projects = [
     img: '../../assets/lifeproject.png',
   },
 ];
-let items = document.querySelectorAll('#pagination li');
-console.log(items);
 
 function createElement(object) {
   for (let i = 0; i < object.length; i++) {
@@ -180,3 +94,30 @@ function createElement(object) {
 }
 
 createElement(projects);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
