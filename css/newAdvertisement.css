@@ -96,6 +96,8 @@ container-fluid{
     line-height: 16px;
     color: rgba(0, 0, 0, 0.5);
     background: #fff;
+}
+.label-container .color-red{
     color: red;
 }
 .select-style{
