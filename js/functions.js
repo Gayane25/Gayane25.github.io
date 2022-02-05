@@ -1,11 +1,16 @@
-function drawPageFromData(rootDivId) {
+function drawPageFromData(mainDivId,rootDivId,searchParam,pageNumber=1) {
     const rootDiv = document.getElementById(rootDivId)
-    getDataFromApi(`${apiUrl}advertisements.php?search=all`)
-        .then(advertisements => {
-            console.log(advertisements)
-            advertisements.forEach(adv => {
-                rootDiv.appendChild(drawAdvertismentCard(adv))
+    const mainDiv = document.getElementById(mainDivId)
+    const foundResults = document.getElementById('found-results')
+    getDataFromApi(`${apiUrl}advertisements.php?search=${searchParam}&page_number=${pageNumber}`)
+        .then(items => {
+            foundResults.innerText = items.pagination.totalCount
+            rootDiv.innerHTML=''
+            items.advertisements.forEach(adv => {
+                rootDiv.prepend(drawAdvertismentCard(adv))
             })
+            console.log(items)
+            drawPagination(mainDivId,rootDivId,items.pagination)
             appartmentsAddEventlistener()
         })
         .catch(err => console.log(err))
@@ -93,6 +98,14 @@ function appartmentsAddEventlistener() {
         window.location = `../pages/forsaleContent.html?advertisementId=${currentDivAdvertisementId}`
     }))
 }
+function pageNumbersAddEventlistener(mainDivId,rootDivId,searchParam) {
+    const clickableDivs = document.querySelectorAll('.page_number')
+    clickableDivs.forEach(div => div.addEventListener('click', (event) => {
+        let pageNumber = event.target.getAttribute('pageNumber')
+        let purpose = event.target.getAttribute('pageNumber')
+        drawPageFromData(mainDivId,rootDivId,searchParam,pageNumber)
+    }))
+}
 
 
 async function getDataFromApi(url) {
@@ -104,3 +117,46 @@ async function getDataFromApi(url) {
 function generateSignFromType(typeText) {
     return typeText === 'USD' ? '$' : (typeText === 'EUR' ? '€' : '£')
 }
+
+
+function drawPagination(mainDivId,rootDivId,{countOnEachPage,currentPage,totalCount,searchParam}){
+    const pages = Math.ceil(totalCount/countOnEachPage)
+    const paginationContainer = document.createElement('section')
+    paginationContainer.setAttribute('class', 'pagination')
+    if(currentPage > 1){
+        const previousLink = document.createElement('a')
+        previousLink.setAttribute('class', 'next-previous')
+        previousLink.textContent = 'Previous'
+        paginationContainer.prepend(previousLink)
+    }
+
+    for(let i = 1; i <= pages; i++){
+        const pageLink = document.createElement('a')
+        pageLink.setAttribute('class', 'page_number')
+        pageLink.setAttribute('pageNumber', i)
+        pageLink.setAttribute('purpose', searchParam)
+        if(i == currentPage)pageLink.classList.add('active')
+        pageLink.textContent=`${i}`
+        paginationContainer.append(pageLink)
+    }
+    if(pages > 1) {
+        const nextLink = document.createElement('a')
+        nextLink.setAttribute('class', 'next-previous')
+        nextLink.textContent = 'Next'
+        paginationContainer.append(nextLink)
+    }
+    const oldPagination = document.querySelector('.pagination')
+    if(oldPagination) oldPagination.remove()
+    document.getElementById(mainDivId).append(paginationContainer)
+    pageNumbersAddEventlistener(mainDivId,rootDivId,searchParam)
+}
+
+
+// function changePage(searchParam,pageNumber){
+//     getDataFromApi(`${apiUrl}advertisements.php?search=${searchParam}&page_number=${pageNumber}`)
+//         .then(advertisements => {
+//             console.log(advertisements)
+//         })
+// }
+
+

@@ -462,3 +462,40 @@ main {
   left: 0;
   top: 0;
 }
+.pagination{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.pagination a{
+  margin: 0 5px;
+  color: #000;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 35px;
+  height: 35px;
+  text-align: center;
+  text-decoration: none;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+.pagination .page_number{
+  width: 33px;
+}
+.pagination a:first-child{
+  margin-left: 0;
+}
+.pagination a:last-child{
+  margin-right: 0;
+}
+.next-previous{
+  width: 100px;
+}
+.pagination a.active, .pagination a:hover{
+  background: #E02828;
+  color: #fff;
+  border: 1px solid #E02828;
+}

@@ -121,7 +121,7 @@
       </div>
       <div id="close"><i class="fas fa-times-circle"></i></div>
     </div>
-    <main>
+    <main id="daily_main">
       <div class="select-section">
         <select name="" id=""class="select-style">
           <option value="province">Province</option>
@@ -154,7 +154,7 @@
       </div>
       <section class="smart-sort">
           <span class="page-title">Apartment for Daily Rental</span>
-          <span class="found-results">(32.564) results found.</span>
+          <span class="found-results"><span  id="found-results"></span> results found.</span>
           <select name="smart-select" id="smart-select">
             <option value="smartSorting" selected ="selected">Smart Sorting <span><img src="../assets/smartSort.png" alt=""></span>
             </option>
@@ -203,7 +203,7 @@
       </div>
     </footer>
     <script>
-        window.addEventListener("load", drawPageFromData('dailyRentApartmentList'));
+        window.addEventListener("load", drawPageFromData('daily_main','dailyRentApartmentList','for_dailyRent'));
     </script>
     <script src="../forSale/forSaleJs/forSaleScript.js" defer></script>
   </body>
