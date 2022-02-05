@@ -1,10 +1,10 @@
-function drawPageFromData(rootDivId) {
+function drawPageFromData(rootDivId,searchParam) {
     const rootDiv = document.getElementById(rootDivId)
-    getDataFromApi(`${apiUrl}advertisements.php?search=all`)
+    getDataFromApi(`${apiUrl}advertisements.php?search=${searchParam}`)
         .then(advertisements => {
             console.log(advertisements)
-            advertisements.forEach(adv => {
-                rootDiv.appendChild(drawAdvertismentCard(adv))
+            advertisements.advertisements.forEach(adv => {
+                rootDiv.prepend(drawAdvertismentCard(adv))
             })
             appartmentsAddEventlistener()
         })

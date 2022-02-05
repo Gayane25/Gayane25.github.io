@@ -160,7 +160,21 @@
         </select>
 
     </section>
-    <section class="apartment-list" id="apartmentList"></section>
+    <section class="apartment-list" id="apartmentList">
+        <div class="pagination">
+            <a href="#" class="page_number active">1</a>
+            <a href="#" class="page_number">2</a>
+            <a href="#" class="page_number">3</a>
+            <a href="#" class="page_number">4</a>
+            <a href="#" class="page_number">5</a>
+            <a href="#" class="page_number">6</a>
+            <a href="#" class="page_number">7</a>
+            <a href="#" class="page_number">8</a>
+            <a href="#" class="page_number">9</a>
+            <a href="#" class="page_number">10</a>
+            <a href="#" class="next-previous">Next</a>
+        </div>
+    </section>
 </main>
 <footer class="footer-side">
     <div class="footer-section">
@@ -200,7 +214,7 @@
     </div>
 </footer>
 <script>
-    window.addEventListener("load", drawPageFromData('apartmentList'));
+    window.addEventListener("load", drawPageFromData('apartmentList','for_rent'));
 </script>
 <script src="../forSale/forSaleJs/forSaleScript.js"></script>
 </body>
