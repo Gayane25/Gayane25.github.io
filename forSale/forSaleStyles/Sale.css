@@ -472,7 +472,7 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 .pagination a{
   margin: 0 5px;
