@@ -4,7 +4,6 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -19,6 +18,8 @@
     />
     <link rel="stylesheet" href="./forSaleStyles/Sale.css"/>
     <title>Apartment for sale</title>
+    <script src="../js/functions.js"></script>
+    <script src="../js/configs.js"></script>
 </head>
 <body>
 <header class="header-side">
@@ -122,25 +123,25 @@
 </div>
 
 
-<main>
+<main id="forSale-main">
     <div class="select-section">
-        <select name=""  class="select-style">
+        <select name="" class="select-style">
             <option value="province">Province</option>
             <option value="province">Province</option>
         </select>
-        <select name=""  class="select-style">
+        <select name="" class="select-style">
             <option value="housing">Housing</option>
             <option value="housing">Housing</option>
         </select>
-        <select name=""  class="select-style">
+        <select name="" class="select-style">
             <option value="price">Price</option>
             <option value="price">Price</option>
         </select>
-        <select name=""  class="select-style">
+        <select name="" class="select-style">
             <option value="size">Size(&#13217)</option>
             <option value="size">Size(&#13217)</option>
         </select>
-        <select name=""  class="select-style">
+        <select name="" class="select-style">
             <option value="member">Member of room</option>
             <option value="member">Member of room</option>
         </select>
@@ -155,7 +156,7 @@
     </div>
     <section class="smart-sort">
         <span class="page-title">Apartment for sale</span>
-        <span class="found-results">(32.564) results found.</span>
+        <span class="found-results"><span  id="found-results"></span> results found.</span>
         <select name="smart-select" id="smart-select">
             <option value="smartSorting" selected="selected">Smart Sorting <span><img src="../assets/smartSort.png"
                                                                                       alt=""></span>
@@ -165,321 +166,40 @@
         </select>
 
     </section>
-          
-    <section class="apartment-list">
 
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
+    <section class="apartment-list" id="forSale-apartments">
+
+        <div class="apartment">
+            <div class="advertisement-loader-container">
+                <div class="animated-background picture-animation"></div>
             </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
+        </div>
+
+        <div class="apartment">
+            <div class="advertisement-loader-container">
+                <div class="animated-background picture-animation"></div>
             </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
+        </div>
+
+        <div class="apartment">
+            <div class="advertisement-loader-container">
+                <div class="animated-background picture-animation"></div>
             </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
+        </div>
+
+        <div class="apartment">
+            <div class="advertisement-loader-container">
+                <div class="animated-background picture-animation"></div>
             </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
+        </div>
+
+        <div class="apartment">
+            <div class="advertisement-loader-container">
+                <div class="animated-background picture-animation"></div>
             </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="../pages/forsaleContent.html">
-            <div class="apartment">
-                <img class="apartmentPic" src="../assets/forSalePic.png" alt="Apartment picture"/>
-                <div class="apartment-description">
-                    <span class="price">290.000 $</span>
-                    <span class="title">Apartment for sale</span>
-                    <span class="address">London, Oxford St.</span>
-                    <span class="announce-date">26 November 2020</span>
-                    <div class="more-details">
-                        <span><img src="../assets/bedIcon.png" alt=""> 3+1</span>
-                        <span><img src="../assets/floorIcon.png" alt=""> 10</span>
-                        <span><img src="../assets/areaIcon.png" alt="">150 &#13217</span>
-                    </div>
-                </div>
-            </div>
-        </a>
+        </div>
+
     </section>
-    <div style="display: flex; justify-content: center;">
-        <ul class="pagination">
-            <li class="p-1 mb-2 bg-warning" class="page-item"><a class="page-link" href="../forSale/forSale.html">1</a></li>
-            <li class="p-1 mb-2 bg-warning" class="page-item"><a class="page-link" href="../forSale/forSale.html">2</a></li>
-          </ul>
-        </nav><nav aria-label="Page navigation example">
-    </div>
 </main>
 <footer class="footer-side">
     <div class="footer-section">
@@ -520,8 +240,10 @@
         </ul>
     </div>
 </footer>
-
-<script src="../js/forSale.js"></script>
+<script>
+    window.addEventListener("load", drawPageFromData('forSale-main', 'forSale-apartments', 'for_sale'));
+</script>
+<!--<script src="../js/forSale.js"></script>-->
 <script src="./forSaleJs/forSaleScript.js">
 </script>
 </body>
