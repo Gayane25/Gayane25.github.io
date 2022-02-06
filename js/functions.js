@@ -101,9 +101,11 @@ function appartmentsAddEventlistener() {
 function pageNumbersAddEventlistener(mainDivId,rootDivId,searchParam) {
     const clickableDivs = document.querySelectorAll('.page_number')
     clickableDivs.forEach(div => div.addEventListener('click', (event) => {
+        if(event.target.classList.contains('active')) return false
         let pageNumber = event.target.getAttribute('pageNumber')
-        let purpose = event.target.getAttribute('pageNumber')
+        // let purpose = event.target.getAttribute('pageNumber')
         drawPageFromData(mainDivId,rootDivId,searchParam,pageNumber)
+        disableClickedButton(event.target)
     }))
 }
 
@@ -124,14 +126,16 @@ function drawPagination(mainDivId,rootDivId,{countOnEachPage,currentPage,totalCo
     const paginationContainer = document.createElement('section')
     paginationContainer.setAttribute('class', 'pagination')
     if(currentPage > 1){
-        const previousLink = document.createElement('a')
+        const previousLink = document.createElement('button')
         previousLink.setAttribute('class', 'next-previous')
+        previousLink.setAttribute('id', 'previousButton')
+        previousLink.setAttribute('onclick', `changePage('-','${mainDivId}','${rootDivId}','${searchParam}')`)
         previousLink.textContent = 'Previous'
         paginationContainer.prepend(previousLink)
     }
 
     for(let i = 1; i <= pages; i++){
-        const pageLink = document.createElement('a')
+        const pageLink = document.createElement('button')
         pageLink.setAttribute('class', 'page_number')
         pageLink.setAttribute('pageNumber', i)
         pageLink.setAttribute('purpose', searchParam)
@@ -139,9 +143,11 @@ function drawPagination(mainDivId,rootDivId,{countOnEachPage,currentPage,totalCo
         pageLink.textContent=`${i}`
         paginationContainer.append(pageLink)
     }
-    if(pages > 1) {
-        const nextLink = document.createElement('a')
+    if(pages > 1 && currentPage < pages) {
+        const nextLink = document.createElement('button')
         nextLink.setAttribute('class', 'next-previous')
+        nextLink.setAttribute('id', 'nextButton')
+        nextLink.setAttribute('onclick', `changePage('+','${mainDivId}','${rootDivId}','${searchParam}')`)
         nextLink.textContent = 'Next'
         paginationContainer.append(nextLink)
     }
@@ -152,11 +158,19 @@ function drawPagination(mainDivId,rootDivId,{countOnEachPage,currentPage,totalCo
 }
 
 
-// function changePage(searchParam,pageNumber){
-//     getDataFromApi(`${apiUrl}advertisements.php?search=${searchParam}&page_number=${pageNumber}`)
-//         .then(advertisements => {
-//             console.log(advertisements)
-//         })
-// }
 
+function disableClickedButton(target){
+    target.setAttribute('disabled',true)
+    const iTag = document.createElement('i')
+    iTag.classList.add('fa','fa-spinner', 'fa-spin')
+    target.append(iTag)
+}
 
+function changePage(sign,mainDivId,rootDivId,searchParam){
+    const activePageElement = document.querySelector('.active')
+    const pageNumber = sign === '+' ? parseInt(activePageElement.getAttribute('pagenumber')) + 1 : parseInt(activePageElement.getAttribute('pagenumber')) - 1
+    const clickedButton = sign === '+' ? document.getElementById('nextButton') : document.getElementById('previousButton')
+    disableClickedButton(clickedButton)
+    drawPageFromData(mainDivId,rootDivId,searchParam,pageNumber)
+
+}
