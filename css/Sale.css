@@ -378,7 +378,7 @@ main {
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: white;
-  position: relative;
+  /* position: relative; */
 }
 .apartmentPic {
   padding-bottom: 20px;
@@ -463,14 +463,14 @@ main {
   left: 0;
   top: 0;
 }
-.pagination{
+.pagination {
   margin-top: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
 }
-.pagination button{
+.pagination button {
   margin: 0 5px;
   color: #000;
   font-family: Roboto;
@@ -479,32 +479,32 @@ main {
   height: 35px;
   text-align: center;
   text-decoration: none;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
- display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
 }
-.pagination .page_number{
+.pagination .page_number {
   width: 33px;
 }
-.pagination button:first-child{
+.pagination button:first-child {
   margin-left: 0;
 }
-.pagination button:last-child{
+.pagination button:last-child {
   margin-right: 0;
 }
-.next-previous{
+.next-previous {
   width: 100px;
 }
-.pagination button.active, .pagination button:hover{
-  background: #E02828;
+.pagination button.active,
+.pagination button:hover {
+  background: #e02828;
   color: #fff;
-  border: 1px solid #E02828;
+  border: 1px solid #e02828;
 }
-.pagination button i{
+.pagination button i {
   position: absolute;
   /*top: 4px;*/
   /*left: 2px;*/
@@ -513,10 +513,10 @@ main {
 /* Animation BG start */
 @keyframes placeholder {
   0% {
-    background-position: -600px 0
+    background-position: -600px 0;
   }
   100% {
-    background-position: 600px 0
+    background-position: 600px 0;
   }
 }
 
@@ -529,7 +529,6 @@ main {
   background: #eeeeee;
   background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
   background-size: 1200px 100px;
-
 }
 .picture-animation {
   width: 100%;
