@@ -1,0 +1,539 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto';
+  background-color: #edeef6;
+}
+.modal-container {
+  /* opacity: 0;
+  pointer-events: none; */
+  position: fixed;
+  top: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #f8f8f8;
+  /* width: 1000px; */
+  height: 900px;
+  display: none;
+  /* justify-content: center; */
+  /* padding-top: 85px; */
+  margin-left: 20px;
+  margin-right: 15px;
+}
+.modal {
+  background-color: #f8f8f8;
+  padding-top: 30px;
+  padding-left: 25px;
+  /* width: 1150px; */
+  height: 600px;
+  /* max-width: 100%; */
+}
+
+#close {
+  padding: 10px;
+}
+
+.header-side {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+.nav-side {
+  display: flex;
+  flex-direction: row;
+  padding-left: 6%;
+  padding-top: 9px;
+}
+.nav-side ul {
+  display: flex;
+  flex-direction: row;
+  padding-left: 40px;
+  padding-top: 13px;
+  list-style-type: none;
+}
+.nav-side ul li {
+  font-family: 'Roboto';
+  padding-right: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+.nav-side ul li a {
+  text-decoration: none;
+  color: black;
+}
+.account-side {
+  padding-left: 400px;
+  line-height: 3.5;
+}
+.account-side .advertise-button {
+  width: 122px;
+  height: 30px;
+  color: white;
+  font-family: 'Roboto';
+  border: none;
+  border-radius: 4px;
+  background-color: #e02828;
+}
+.account-side .advertise-button a {
+  text-decoration: none;
+  color: white;
+}
+.account-side .account-icon {
+  padding-left: 10px;
+}
+.account-side .account-icon a {
+  text-decoration: none;
+  color: black;
+}
+.signUp-container {
+  display: flex;
+  flex-direction: row;
+  /* position: fixed;
+  transform: translate(-50% -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  width: 1200px;
+  max-width: 90%;
+  background-color: #f8f8f8; */
+}
+
+.signUp-container-left {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  /* justify-content: center; */
+  padding-left: 100px;
+  padding-right: 80px;
+  padding-top: 100px;
+  text-align: center;
+}
+.signUp-container-left .signUp-logo {
+  padding-bottom: 80px;
+}
+.signUp-container-left .colorful-eclipse {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 25px;
+}
+.colorful-eclipse .eclipse {
+  width: 100px;
+}
+
+.signUp-container-left h3 {
+  padding-bottom: 18px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #000000;
+}
+.signUp-container-left p {
+  padding-bottom: 20px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+.signUp-container-right {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding-top: 100px;
+  padding-left: 57px;
+  padding-right: 57px;
+}
+.signUp-container-right .membership {
+  /* display: flex; */
+  /*flex-direction: row;*/
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.membership span:nth-child(2) {
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.membership .line {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  background: gray;
+  position: relative;
+  height: 2px;
+}
+.line:before {
+  content: '';
+  background: blue;
+  width: 50%;
+  height: 2px;
+  position: absolute;
+}
+.connect-google {
+  width: 100%;
+  /* height: 40px; */
+  z-index: 1;
+  background: #434faa;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  line-height: 2;
+  color: #ffffff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.connect-google img {
+  padding-left: 4px;
+}
+.signUp-container-right i {
+  padding-top: 40px;
+  /* padding-bottom: 30px; */
+  width: 100%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+i span {
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+.signUp-input {
+  margin-top: 15px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  font-family: Roboto;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+}
+input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+}
+.checkbox-agreement label,
+.checkbox-purposes label {
+  padding-left: 15px;
+}
+.checkbox-agreement,
+.checkbox-purposes {
+  padding-top: 25px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+.checkbox-agreement a {
+  text-decoration: none;
+  color: #68acfd;
+}
+.signUp-container-right .signUp-button {
+  margin-top: 30px;
+  border: none;
+  width: 100%;
+  height: 40px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  color: #ffffff;
+  background: #68acfd;
+  border-radius: 5px;
+}
+.already-member {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+.already-member a {
+  text-decoration: none;
+  color: #68acfd;
+}
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f8f8;
+  padding-bottom: 165px;
+}
+.select-section {
+  /* width: 1180px; */
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background-color: white;
+}
+.select-section .select-style {
+  font-family: 'Roboto', sans-serif;
+  width: 135px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-right: 15px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+.search-line {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Roboto', sans-serif;
+  width: 135px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background-color: white;
+}
+.inputIcon {
+  border: none;
+  padding-left: 10px;
+  width: 115px;
+}
+.filter {
+  padding-left: 90px;
+  line-height: 2;
+}
+.smart-sort {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 21px;
+  padding-top: 31px;
+  padding-left: 120px;
+}
+.smart-sort .page-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  padding-right: 12px;
+}
+.smart-sort .found-results {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 2.5;
+  color: rgba(0, 0, 0, 0.5);
+  padding-right: 12px;
+}
+#smart-select {
+  width: 218px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  /* identical to box height */
+  color: #000000;
+}
+.apartment-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.apartment-list a {
+  text-decoration: none;
+}
+.apartment {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  position: relative;
+}
+.apartmentPic {
+  padding-bottom: 20px;
+}
+.apartment-description {
+  display: flex;
+  flex-direction: column;
+}
+.apartment-description span {
+  padding-bottom: 10px;
+}
+.apartment-description .price {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+}
+.apartment-description .title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
+.address,
+.announce-date {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.more-details span {
+  padding-right: 10px;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+}
+
+.footer-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #2d363c;
+  flex-direction: row;
+  padding-bottom: 50px;
+  /* margin-top: 165px; */
+  padding-left: 135px;
+  padding-top: 50px;
+  width: 100%;
+}
+.footer-side h3 {
+  font-family: Roboto;
+  padding-bottom: 6px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+.footer-side ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.footer-side ul li {
+  padding-bottom: 6px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.footer-side ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+.apartment-cover {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.pagination{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.pagination button{
+  margin: 0 5px;
+  color: #000;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 35px;
+  height: 35px;
+  text-align: center;
+  text-decoration: none;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+ display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+.pagination .page_number{
+  width: 33px;
+}
+.pagination button:first-child{
+  margin-left: 0;
+}
+.pagination button:last-child{
+  margin-right: 0;
+}
+.next-previous{
+  width: 100px;
+}
+.pagination button.active, .pagination button:hover{
+  background: #E02828;
+  color: #fff;
+  border: 1px solid #E02828;
+}
+.pagination button i{
+  position: absolute;
+  /*top: 4px;*/
+  /*left: 2px;*/
+  font-size: 25px;
+}
+/* Animation BG start */
+@keyframes placeholder {
+  0% {
+    background-position: -600px 0
+  }
+  100% {
+    background-position: 600px 0
+  }
+}
+
+.animated-background {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholder;
+  animation-timing-function: linear;
+  background: #eeeeee;
+  background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
+  background-size: 1200px 100px;
+
+}
+.picture-animation {
+  width: 100%;
+  height: 300px;
+}
+
+/* Animation BG end */
