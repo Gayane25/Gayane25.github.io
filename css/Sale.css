@@ -4,14 +4,15 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   background-color: #edeef6;
 }
 .modal-container {
   /* opacity: 0;
   pointer-events: none; */
-  position: fixed;
-  top: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -23,6 +24,7 @@ body {
   /* padding-top: 85px; */
   margin-left: 20px;
   margin-right: 15px;
+  z-index: 100;
 }
 .modal {
   background-color: #f8f8f8;
@@ -59,7 +61,7 @@ body {
   list-style-type: none;
 }
 .nav-side ul li {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   padding-right: 20px;
   font-style: normal;
   font-weight: normal;
@@ -78,7 +80,7 @@ body {
   width: 122px;
   height: 30px;
   color: white;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   border: none;
   border-radius: 4px;
   background-color: #e02828;
@@ -174,7 +176,7 @@ body {
   height: 2px;
 }
 .line:before {
-  content: '';
+  content: "";
   background: blue;
   width: 50%;
   height: 2px;
@@ -224,7 +226,7 @@ i span {
   font-size: 14px;
   line-height: 16px;
 }
-input[type='checkbox'] {
+input[type="checkbox"] {
   width: 15px;
   height: 15px;
 }
@@ -276,7 +278,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f8f8f8;
   padding-bottom: 165px;
 }
@@ -295,7 +297,7 @@ main {
   background-color: white;
 }
 .select-section .select-style {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 135px;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -310,7 +312,7 @@ main {
 .search-line {
   display: flex;
   flex-direction: row;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 135px;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -378,7 +380,7 @@ main {
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: white;
-  /* position: relative; */
+  position: relative;
 }
 .apartmentPic {
   padding-bottom: 20px;
