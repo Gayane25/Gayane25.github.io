@@ -1,80 +1,97 @@
-window.addEventListener("load", pageOnLoad);
+window.addEventListener('load', pageOnLoad);
 
 window.addEventListener('scroll', () => {
-    let content = document.querySelector('.progress-span')
-    let contentPosition = content.getBoundingClientRect().top
-    let screenPosition = window.innerHeight
+  let content = document.querySelector('.progress-span');
+  let contentPosition = content.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight;
 
-    if (contentPosition < screenPosition) {
-        document.querySelectorAll('.progress-span').forEach(el => {
-            el.classList.add('active')
-        })
-    }
-})
+  if (contentPosition < screenPosition) {
+    document.querySelectorAll('.progress-span').forEach(el => {
+      el.classList.add('active');
+    });
+  }
+});
 
 function pageOnLoad() {
-    const url = window.location;
-    const urlGetParams = new URLSearchParams(url.search);
-    const advertisementIdArray = urlGetParams.getAll('advertisementId');
-    const [advertisementId, fakeAdvertisementId] = advertisementIdArray
-    if (fakeAdvertisementId || !advertisementId) {
-        window.location.replace('../forSale/forSale.html?incorrect_search_params')
-    }
+  const url = window.location;
+  const urlGetParams = new URLSearchParams(url.search);
+  const advertisementIdArray = urlGetParams.getAll('advertisementId');
+  const [advertisementId, fakeAdvertisementId] = advertisementIdArray;
+  if (fakeAdvertisementId || !advertisementId) {
+    window.location.replace('../pages/forSale.html?incorrect_search_params');
+  }
 
-    getDataFromApi(`${apiUrl}advertisements.php?advertisementId=${advertisementId}`)
-        .then(adv => {
-            console.log(adv)
-            drawMainSection(adv)
-            getDataFromApi(`https://randomuser.me/api/?seed=${adv.createdByUser}` ).then(userResponse => {
-                const user = userResponse.results[0]
-                console.log('user:',  user)
-                const userContainerDiv = document.getElementById('main-aside')
-                userContainerDiv.innerHTML = drawUserSection(user)
+  getDataFromApi(
+    `${apiUrl}advertisements.php?advertisementId=${advertisementId}`
+  )
+    .then(adv => {
+      console.log(adv);
+      drawMainSection(adv);
+      getDataFromApi(
+        `https://randomuser.me/api/?seed=${adv.createdByUser}`
+      ).then(userResponse => {
+        const user = userResponse.results[0];
+        console.log('user:', user);
+        const userContainerDiv = document.getElementById('main-aside');
+        userContainerDiv.innerHTML = drawUserSection(user);
 
-                const viewPhoneButton = document.getElementById('view_phone');
-                viewPhoneButton.addEventListener('click', function (event) {
-                    const mainText = event.target.innerText
-                    viewPhoneButton.innerText = event.target.getAttribute('phoneNumber')
-                    const newTimeout = setTimeout(() => {
-                        viewPhoneButton.innerText = mainText
-                    }, 5000)
-                })
+        const viewPhoneButton = document.getElementById('view_phone');
+        viewPhoneButton.addEventListener('click', function (event) {
+          const mainText = event.target.innerText;
+          viewPhoneButton.innerText = event.target.getAttribute('phoneNumber');
+          const newTimeout = setTimeout(() => {
+            viewPhoneButton.innerText = mainText;
+          }, 5000);
+        });
 
-
-                showSlides(1);
-            })
-        })
-        .catch(err => {
-            console.log(err)
-        })
-
-
+        showSlides(1);
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
 }
-
 
 async function getDataFromApi(url) {
-    const response = await fetch(url);
-    const responseData = await response.json();
-    return responseData;
+  const response = await fetch(url);
+  const responseData = await response.json();
+  return responseData;
 }
 
-function drawUserSection({picture:avatar, email, cell:phoneNumber, name, registered:checkPremium, location:profession}) {
-    isPremium = checkPremium > 5 ? true : false
-    const userHtml = `<div class="specialist">
+function drawUserSection({
+  picture: avatar,
+  email,
+  cell: phoneNumber,
+  name,
+  registered: checkPremium,
+  location: profession,
+}) {
+  isPremium = checkPremium > 5 ? true : false;
+  const userHtml = `<div class="specialist">
                         <div class="experience-icon"></div>
                             <div class="specialist-border">
                                 <div class="specialist-container">
                                     <div class="specialist-image-status">
                                         <div class="specialist-image" id="userImageContainer">
-                                            <img src=${avatar.medium} alt="${name.first} ${name.last}">
+                                            <img src=${avatar.medium} alt="${
+    name.first
+  } ${name.last}">
                                         </div>
-                                        ${(isPremium && '<div class="specialist-status" id="userIsPremium"></div>') || ''}
+                                        ${
+                                          (isPremium &&
+                                            '<div class="specialist-status" id="userIsPremium"></div>') ||
+                                          ''
+                                        }
                                     </div>
                                     <div class="full_name">
-                                        <p  id="userFullName">${name.first} ${name.last}</p>
+                                        <p  id="userFullName">${name.first} ${
+    name.last
+  }</p>
                                     </div>
                                     <div class="specialist-position">
-                                        <p id="userProfession">${profession.state}</p>
+                                        <p id="userProfession">${
+                                          profession.state
+                                        }</p>
                                     </div>
                                     <div class="call-button">
                                         <svg viewBox="0 0 15 15"  xmlns="http://www.w3.org/2000/svg">
@@ -98,93 +115,148 @@ function drawUserSection({picture:avatar, email, cell:phoneNumber, name, registe
                             </div>
                         </div>`;
 
-
-    return userHtml
+  return userHtml;
 }
 
 function drawMainSection({
-                             latitude,
-                             longitude,
-                             pictureUrls,
-                             title,
-                             addressCity,
-                             addressStreet,
-                             price,
-                             priceType,
-                             advertisementNo,
-                             publishedAt,
-                             advertisementStatus,
-                             housingShape,
-                             rooms,
-                             grossArea,
-                             netArea,
-                             warmingType,
-                             buildingAge,
-                             floorLocation,
-                             isAvailableWithLoan,
-                             furnishedStatus,
-                             dues,
-                             duesType,
-                             isAsSwap,
-                             frontDirection,
-                             rentalIncome,
-                             rentalIncomeType,
-                             interiorFeatures,
-                             explanationTExt
-                         }) {
-    const titleSection = document.getElementById('house-title')
-    const picturesSection = document.getElementById('house-pictures')
-    const generalInfoSection = document.getElementById('house-general-info')
-    const explanationSection = document.getElementById('house-explanation')
-    const featuresSection = document.getElementById('house-features')
-    latitude = parseFloat(latitude)
-    longitude = parseFloat(longitude)
-    myMap({lat: latitude, lng: longitude})
-    titleSection.innerHTML = drawTitleSection(title, addressCity, addressStreet, price,priceType)
-    picturesSection.innerHTML = drawPicturesSection(pictureUrls)
-    generalInfoSection.innerHTML = drawGeneralInfoSection(advertisementNo, publishedAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, furnishedStatus, dues, duesType,isAsSwap, frontDirection, rentalIncome,rentalIncomeType)
-    explanationSection.innerHTML = drawExplanationSection(explanationTExt)
-    featuresSection.innerHTML = drawFeaturesSection(JSON.parse(interiorFeatures)[0])
-
+  latitude,
+  longitude,
+  pictureUrls,
+  title,
+  addressCity,
+  addressStreet,
+  price,
+  priceType,
+  advertisementNo,
+  publishedAt,
+  advertisementStatus,
+  housingShape,
+  rooms,
+  grossArea,
+  netArea,
+  warmingType,
+  buildingAge,
+  floorLocation,
+  isAvailableWithLoan,
+  furnishedStatus,
+  dues,
+  duesType,
+  isAsSwap,
+  frontDirection,
+  rentalIncome,
+  rentalIncomeType,
+  interiorFeatures,
+  explanationTExt,
+}) {
+  const titleSection = document.getElementById('house-title');
+  const picturesSection = document.getElementById('house-pictures');
+  const generalInfoSection = document.getElementById('house-general-info');
+  const explanationSection = document.getElementById('house-explanation');
+  const featuresSection = document.getElementById('house-features');
+  latitude = parseFloat(latitude);
+  longitude = parseFloat(longitude);
+  myMap({ lat: latitude, lng: longitude });
+  titleSection.innerHTML = drawTitleSection(
+    title,
+    addressCity,
+    addressStreet,
+    price,
+    priceType
+  );
+  picturesSection.innerHTML = drawPicturesSection(pictureUrls);
+  generalInfoSection.innerHTML = drawGeneralInfoSection(
+    advertisementNo,
+    publishedAt,
+    advertisementStatus,
+    housingShape,
+    rooms,
+    buildingAge,
+    grossArea,
+    netArea,
+    warmingType,
+    buildingAge,
+    floorLocation,
+    isAvailableWithLoan,
+    furnishedStatus,
+    dues,
+    duesType,
+    isAsSwap,
+    frontDirection,
+    rentalIncome,
+    rentalIncomeType
+  );
+  explanationSection.innerHTML = drawExplanationSection(explanationTExt);
+  featuresSection.innerHTML = drawFeaturesSection(
+    JSON.parse(interiorFeatures)[0]
+  );
 }
 
-function drawTitleSection(title, addressCity, addressStreet, price,priceType) {
-    return `<div class="house-subtitle">
+function drawTitleSection(title, addressCity, addressStreet, price, priceType) {
+  return `<div class="house-subtitle">
                     <h2>${title}</h2>
                     <p class="house-location">${addressCity}, ${addressStreet}</p>
                 </div>
                 <div class="house-price">
                     <span>${price} ${generateSignFromType(priceType)}</span>
-                </div>`
+                </div>`;
 }
 
 function drawPicturesSection(pictureUrls) {
-    pictureUrls = JSON.parse(pictureUrls);
-    length = pictureUrls.length
-    let mainPictureDivs = ''
-    let smallPictureDivs = ''
-    pictureUrls.forEach( (el, index) => {
-        mainPictureDivs +=  `<div class="mySlides">
-                                <div class="numbertext">${index + 1} / ${length}</div>
+  pictureUrls = JSON.parse(pictureUrls);
+  length = pictureUrls.length;
+  let mainPictureDivs = '';
+  let smallPictureDivs = '';
+  pictureUrls.forEach((el, index) => {
+    mainPictureDivs += `<div class="mySlides">
+                                <div class="numbertext">${
+                                  index + 1
+                                } / ${length}</div>
                                 <img src=${el}>
-                              </div>`
-        smallPictureDivs += `<div class="column">
-                              <img class="demo cursor" src=${el} style="width:100%" onclick="currentSlide(${index+1})" alt="The Woods">
-                            </div>`
-    } )
-   return `<div class="images-container">
+                              </div>`;
+    smallPictureDivs += `<div class="column">
+                              <img class="demo cursor" src=${el} style="width:100%" onclick="currentSlide(${
+      index + 1
+    })" alt="The Woods">
+                            </div>`;
+  });
+  return (
+    `<div class="images-container">
                     <div class="slider-buttons">
                         <input onclick="plusSlides(-1)" type="image" src="../assets/images/left_arrow.png">
                         <input onclick="plusSlides(1)" type="image" src="../assets/images/right_arrow.png">
-                    </div>` + mainPictureDivs + `<div class="row">` + smallPictureDivs + `</div></div>`
-
+                    </div>` +
+    mainPictureDivs +
+    `<div class="row">` +
+    smallPictureDivs +
+    `</div></div>`
+  );
 }
 
-
-function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus, housingShape, rooms, buildingAge, grossArea, netArea, warmingType, buildingAge, floorLocation, isAvailableWithLoan, furnishedStatus, dues,duesType, isAsSwap, frontDirection, rentalIncome,rentalIncomeType) {
-
-    const createdDate = new Date(parseInt(createdAt)).toLocaleString().split(',')[0];
-    return `<h4 class="general-info-header">General Information</h4>
+function drawGeneralInfoSection(
+  advertisementNo,
+  createdAt,
+  advertisementStatus,
+  housingShape,
+  rooms,
+  buildingAge,
+  grossArea,
+  netArea,
+  warmingType,
+  buildingAge,
+  floorLocation,
+  isAvailableWithLoan,
+  furnishedStatus,
+  dues,
+  duesType,
+  isAsSwap,
+  frontDirection,
+  rentalIncome,
+  rentalIncomeType
+) {
+  const createdDate = new Date(parseInt(createdAt))
+    .toLocaleString()
+    .split(',')[0];
+  return `<h4 class="general-info-header">General Information</h4>
                 <div class="general-info-container">
                     <div class="general-info-left">
                         <div class="left-title">
@@ -222,63 +294,120 @@ function drawGeneralInfoSection(advertisementNo, createdAt, advertisementStatus,
                             <p>${floorLocation || '-'}</p>
                             <p>${isAvailableWithLoan || '-'}</p>
                             <p>${furnishedStatus || '-'}</p>
-                            <p>${dues || '-'} ${generateSignFromType(duesType)}</p>
+                            <p>${dues || '-'} ${generateSignFromType(
+    duesType
+  )}</p>
                             <p>${isAsSwap || '-'}</p>
                             <p>${frontDirection || '-'}</p>
-                            <p>${rentalIncome || '-'} ${generateSignFromType(rentalIncomeType)}</p>
+                            <p>${rentalIncome || '-'} ${generateSignFromType(
+    rentalIncomeType
+  )}</p>
                         </div>
                     </div>
-                </div>`
+                </div>`;
 }
 
-
 function drawExplanationSection(explanationText) {
-    return `<h4 class="general-info-header">Explanation</h4>
-                <p>${explanationText}</p>`
+  return `<h4 class="general-info-header">Explanation</h4>
+                <p>${explanationText}</p>`;
 }
 
 function drawFeaturesSection(features) {
-    return `<div class="house-features-left">
+  return `<div class="house-features-left">
                     <h4 class="general-info-header">Interior Features</h4>
                     <ul>
-                        <li class=${features.adsl? 'isChecked' : 'isUnchecked'}>ADSL</li>
-                        <li class=${features.alarm? 'isChecked' : 'isUnchecked'}>Alarm</li>
-                        <li class=${features.balcony? 'isChecked' : 'isUnchecked'}>Balcony</li>
-                        <li class=${features.barbecue? 'isChecked' : 'isUnchecked'}>Barbecue</li>
-                        <li class=${features.blinds? 'isChecked' : 'isUnchecked'}>Laundry room</li>
-                        <li class=${features.wallpaper? 'isChecked' : 'isUnchecked'}>Wallpaper</li>
-                        <li class=${features.dressingRoom? 'isChecked' : 'isUnchecked'}>Dressing Room</li>
-                        <li class=${features.videoIntercom? 'isChecked' : 'isUnchecked'}>Video Intercom</li>
-                        <li class=${features.shower? 'isChecked' : 'isUnchecked'}>Shower</li>
-                        <li class=${features.laminate? 'isChecked' : 'isUnchecked'}>Laminate</li>
-                        <li class=${features.panelDoor? 'isChecked' : 'isUnchecked'}>Panel Door</li>
-                        <li class=${features.blinds? 'isChecked' : 'isUnchecked'}>Blinds</li>
-                        <li class=${features.sauna? 'isChecked' : 'isUnchecked'}>Sauna</li>
-                        <li class=${features.satinPlaster? 'isChecked' : 'isUnchecked'}>Satin Plaster</li>
-                        <li class=${features.satinColor? 'isChecked' : 'isUnchecked'}>Satin Color</li>
-                        <li class=${features.ceramicFloor? 'isChecked' : 'isUnchecked'}>Ceramic Floor</li>
+                        <li class=${
+                          features.adsl ? 'isChecked' : 'isUnchecked'
+                        }>ADSL</li>
+                        <li class=${
+                          features.alarm ? 'isChecked' : 'isUnchecked'
+                        }>Alarm</li>
+                        <li class=${
+                          features.balcony ? 'isChecked' : 'isUnchecked'
+                        }>Balcony</li>
+                        <li class=${
+                          features.barbecue ? 'isChecked' : 'isUnchecked'
+                        }>Barbecue</li>
+                        <li class=${
+                          features.blinds ? 'isChecked' : 'isUnchecked'
+                        }>Laundry room</li>
+                        <li class=${
+                          features.wallpaper ? 'isChecked' : 'isUnchecked'
+                        }>Wallpaper</li>
+                        <li class=${
+                          features.dressingRoom ? 'isChecked' : 'isUnchecked'
+                        }>Dressing Room</li>
+                        <li class=${
+                          features.videoIntercom ? 'isChecked' : 'isUnchecked'
+                        }>Video Intercom</li>
+                        <li class=${
+                          features.shower ? 'isChecked' : 'isUnchecked'
+                        }>Shower</li>
+                        <li class=${
+                          features.laminate ? 'isChecked' : 'isUnchecked'
+                        }>Laminate</li>
+                        <li class=${
+                          features.panelDoor ? 'isChecked' : 'isUnchecked'
+                        }>Panel Door</li>
+                        <li class=${
+                          features.blinds ? 'isChecked' : 'isUnchecked'
+                        }>Blinds</li>
+                        <li class=${
+                          features.sauna ? 'isChecked' : 'isUnchecked'
+                        }>Sauna</li>
+                        <li class=${
+                          features.satinPlaster ? 'isChecked' : 'isUnchecked'
+                        }>Satin Plaster</li>
+                        <li class=${
+                          features.satinColor ? 'isChecked' : 'isUnchecked'
+                        }>Satin Color</li>
+                        <li class=${
+                          features.ceramicFloor ? 'isChecked' : 'isUnchecked'
+                        }>Ceramic Floor</li>
                     </ul>
                 </div>
                 <div class="house-features-right">
                     <h4 class="general-info-header">External Features</h4>
                     <ul>
-                        <li class=${features.elevator? 'isChecked' : 'isUnchecked'}>Elevator</li>
-                        <li class=${features.gardened? 'isChecked' : 'isUnchecked'}>Gardened</li>
-                        <li class=${features.fitness? 'isChecked' : 'isUnchecked'}>Fitness</li>
-                        <li class=${features.security? 'isChecked' : 'isUnchecked'}>Security</li>
-                        <li class=${features.thermalInsulation? 'isChecked' : 'isUnchecked'}>Thermal Insulation</li>
-                        <li class=${features.generator? 'isChecked' : 'isUnchecked'}>Generator</li>
-                        <li class=${features.tennisCourt? 'isChecked' : 'isUnchecked'}>Tennis Court</li>
-                        <li class=${features.carPark? 'isChecked' : 'isUnchecked'}>Car Park</li>
-                        <li class=${features.pvc? 'isChecked' : 'isUnchecked'}>PVC</li>
-                        <li class=${features.basketballField? 'isChecked' : 'isUnchecked'}>Basketball Field</li>
-                        <li class=${features.market? 'isChecked' : 'isUnchecked'}>Market</li>
+                        <li class=${
+                          features.elevator ? 'isChecked' : 'isUnchecked'
+                        }>Elevator</li>
+                        <li class=${
+                          features.gardened ? 'isChecked' : 'isUnchecked'
+                        }>Gardened</li>
+                        <li class=${
+                          features.fitness ? 'isChecked' : 'isUnchecked'
+                        }>Fitness</li>
+                        <li class=${
+                          features.security ? 'isChecked' : 'isUnchecked'
+                        }>Security</li>
+                        <li class=${
+                          features.thermalInsulation
+                            ? 'isChecked'
+                            : 'isUnchecked'
+                        }>Thermal Insulation</li>
+                        <li class=${
+                          features.generator ? 'isChecked' : 'isUnchecked'
+                        }>Generator</li>
+                        <li class=${
+                          features.tennisCourt ? 'isChecked' : 'isUnchecked'
+                        }>Tennis Court</li>
+                        <li class=${
+                          features.carPark ? 'isChecked' : 'isUnchecked'
+                        }>Car Park</li>
+                        <li class=${
+                          features.pvc ? 'isChecked' : 'isUnchecked'
+                        }>PVC</li>
+                        <li class=${
+                          features.basketballField ? 'isChecked' : 'isUnchecked'
+                        }>Basketball Field</li>
+                        <li class=${
+                          features.market ? 'isChecked' : 'isUnchecked'
+                        }>Market</li>
                     </ul>
-                </div>`
+                </div>`;
 }
 
-
-
-function generateSignFromType(typeText){
-    return typeText === 'USD' ? '$' : (typeText === 'EUR' ? '€' : '£')
+function generateSignFromType(typeText) {
+  return typeText === 'USD' ? '$' : typeText === 'EUR' ? '€' : '£';
 }
